@@ -51,7 +51,7 @@ h6 {
 
 .navbar-floating {
   position: fixed;
-  top: 1rem;
+  top: calc(1rem + var(--sf-banner-offset, 0px));
   left: 50%;
   /* Center horizontally */
   transform: translateX(-50%) translateZ(0);
@@ -83,7 +83,8 @@ h6 {
   /* Drop shadow for depth */
 
   z-index: 1030;
-  transition: all 0.3s ease;
+  /* Not "all": top follows the scroll each frame and must not lag behind it */
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease, width 0.3s ease, max-width 0.3s ease;
   will-change: height, transform, background, box-shadow;
 }
 
@@ -1413,5 +1414,102 @@ code {
     top: auto;
     bottom: 100%;
     border-color: transparent transparent #9dbee3 transparent;
+  }
+}
+
+/* ===========================================
+   STACKFWD ANNOUNCEMENT BANNER
+   In the page flow above the fixed navbar. The inline script in index.html sets
+   --sf-banner-offset to the banner's visible height, so pages without a banner
+   keep the navbar at its normal position.
+   =========================================== */
+:root {
+  --sf-banner-offset: 0px;
+}
+
+.sf-banner {
+  position: relative;
+  z-index: 1031;
+  background: var(--primary-blue);
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.sf-banner__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.625rem;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sf-banner__link:hover,
+.sf-banner__link:focus {
+  color: #fff;
+}
+
+.sf-banner__link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
+.sf-banner__tag {
+  flex-shrink: 0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--primary-blue);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sf-banner__text strong {
+  font-weight: 700;
+}
+
+.sf-banner__link:hover .sf-banner__text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sf-banner__arrow {
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.sf-banner__link:hover .sf-banner__arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 767.98px) {
+  .sf-banner__more {
+    display: none;
+  }
+
+  .sf-banner__link {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Small phones: drop the tag so the line fits on one row */
+@media (max-width: 399.98px) {
+  .sf-banner__tag {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sf-banner__arrow {
+    transition: none;
   }
 }

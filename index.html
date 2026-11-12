@@ -105,6 +105,29 @@
 
 <body>
 
+    <!-- StackFwd announcement banner. Sits in the page flow; the inline script keeps
+         the fixed navbar below it (via --sf-banner-offset). -->
+    <div class="sf-banner" id="sf-banner" role="region" aria-label="Announcement">
+      <a class="sf-banner__link" href="https://stackfwd.com/?utm_source=cloud.runql.com&amp;utm_medium=banner&amp;utm_campaign=runql_crosspromo" target="_blank" rel="noopener">
+        <span class="sf-banner__tag">New</span>
+        <span class="sf-banner__text"><strong>StackFwd:</strong> Build internal web apps with AI<span class="sf-banner__more">, on a foundation your IT approves</span></span>
+        <span class="sf-banner__arrow" aria-hidden="true">&rarr;</span><span class="visually-hidden"> (opens in a new tab)</span>
+      </a>
+    </div>
+    <script>
+      (function () {
+        var banner = document.getElementById('sf-banner');
+        var root = document.documentElement;
+        var height = 0;
+        function sync() { root.style.setProperty('--sf-banner-offset', Math.max(0, height - window.scrollY) + 'px'); }
+        function measure() { height = banner.offsetHeight; sync(); }
+        measure();
+        window.addEventListener('scroll', sync, { passive: true });
+        window.addEventListener('resize', measure);
+        if ('ResizeObserver' in window) new ResizeObserver(measure).observe(banner);
+      })();
+    </script>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-floating">
         <div class="container-fluid">
