@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="canonical" href="https://cloud.runql.com/" />
+  <!-- Favicon icon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/img/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>February and March 2024 Product Updates | runQL</title>
+  <!-- SEO Meta Tags -->
+  <meta name="title" content="February and March 2024 Product Updates | runQL">
+  <meta name="description"
+    content="See what shipped in February: inline query comments, workflow improvements, better autocomplete, and more admin tools.">
+  <meta name="keywords"
+    content="runQL, SQL IDE, Business Analytics, Data Teams, AI Queries, Inline Comments, Workflow Steps">
+  <meta name="author" content="runQL">
+  <meta property="og:title" content="February and March 2024 Product Updates | runQL">
+  <meta property="og:site_name" content="runQL.com">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cloud.runql.com/blog/runql-update-2024-03.html">
+  <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+  <meta property="og:description"
+    content="See what shipped in February and March: inline query comments, workflow improvements, better autocomplete, and more admin tools.">
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://cloud.runql.com/blog/runql-update-2024-03.html">
+  <meta name="twitter:title" content="February and March 2024 Product Updates | runQL">
+  <meta name="twitter:description"
+    content="See what shipped in February and March: inline query comments, workflow improvements, better autocomplete, and more admin tools.">
+  <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "February and March 2024 Product Updates",
+      "datePublished": "2024-02-29",
+      "author": {
+        "@type": "Organization",
+        "name": "runQL"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "runQL",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cloud.runql.com/img/logo.png"
+        }
+      },
+      "description": "See what shipped in February and March: inline query comments, workflow improvements, better autocomplete, and more admin tools."
+    }
+    </script>
+
+
+  <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-floating">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/img/runQL-logo.png" alt="runQL Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+            <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+              <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                  Data Dictionary</a></li>
+              <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                  Resource Dictionary</a>
+              </li>
+              <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                  Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+              <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                  Integrations</a></li>
+            </ul>
+          </li>
+          <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+            <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+              <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+              <li><a class="dropdown-item py-2"
+                  href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark Report</a>
+              </li>
+              <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+              <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+              <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+              <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+            class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="">
+    <section class="hero-section">
+      <div class="container blog-wrapper">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="blog-post">
+
+
+              <div class="text-center mb-5 mt-5">
+                <!-- <span class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small" style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span> -->
+                <h1 class="display-5 fw-bold mb-3"> February and March 2024 Product Updates</h1>
+
+                <div
+                  class="d-flex justify-content-center align-items-center gap-3 text-muted small text-uppercase fw-bold"
+                  style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                  <span>runQL Team</span>
+                  <span>•</span>
+                  <span>March 31, 2024</span>
+                </div>
+              </div>
+
+              <p class="mb-4">
+                In February and March we rolled out automatic inline query comments, smarter workflows, better
+                autocomplete, improved business user answers, and more admin controls — all designed to make your data
+                work faster, easier, and better documented. Let’s dive in!
+              </p>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Databricks <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>You now have the option to add databricks as a data source.</p>
+                <ul>
+                  <li>Connect Databricks directly as a queryable data source</li>
+                  <li>Expands support for modern data lakehouse platforms</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Query runtimes <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>We now track and show query runtimes.</p>
+                <ul>
+                  <li>Query execution time now displayed in results</li>
+                  <li>Helps identify slow queries and optimize performance</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">RunSource (proxy) links <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>When using a runSource query in an external BI tool you can now use the token id generated (web link)
+                  to easily navigate to the underlying query in runQL.</p>
+                <ul>
+                  <li>Improved traceability from BI tools to runQL</li>
+                  <li>Makes debugging and validation faster</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Neo4j Cypher inline comments <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>An update to improve Neo4j Cypher query inline comments.</p>
+                <ul>
+                  <li>More accurate inline documentation for Cypher queries</li>
+                  <li>Improves clarity when reading or reusing Neo4j code</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Email updates <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>An update to provide html formatting to the transactional emails (invite email, etc.)</p>
+                <ul>
+                  <li>Emails now use styled HTML formatting</li>
+                  <li>Improves readability and user experience</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Automatic Inline Comments <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>We now automatically generate inline comments for your SQL and Cypher (Neo4j) queries. That's right
+                  not only do we describe and title queries for you, we now fully document the query, all this with one
+                  click of the save button.</p>
+                <ul>
+                  <li>Instant inline documentation for SQL and Cypher queries</li>
+                  <li>One-click save to add full comments and context</li>
+                </ul>
+                <div><img src="/img/blog/feb-inline-comments.png" style="max-width:60%;"></div>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Query Suggestions <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>When you expand a query suggestion in the right column you can now see the inline comments.</p>
+                <ul>
+                  <li>Expanded suggestions now reveal full inline comments</li>
+                  <li>Helps users understand query logic faster</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Autocomplete <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Previously you would have to type "tableName." in order to get syntax autocomplete for column names.
+                  Now we suggest column names for the database you are working in without the need for table context.
+                </p>
+                <ul>
+                  <li>Column names autocomplete without needing table prefix</li>
+                  <li>Speeds up query writing across your database</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Invite process <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>We have now added optional firstname/lastname fields when inviting a new user via email.</p>
+                <ul>
+                  <li>Capture user details during invitation flow</li>
+                  <li>Supports better user management and personalization</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Monitoring <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Changes to our monitoring of the API.</p>
+                <ul>
+                  <li>Improved system observability and resilience</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">AI response changes <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>We changed how we send requests and receive/process AI responses.</p>
+                <ul>
+                  <li>Optimized AI request/response handling</li>
+                  <li>Improves performance and reliability for AI features</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Deleted workspaces <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>A fix to filter deleted workspaces from the list available to a person.</p>
+                <ul>
+                  <li>Ensures cleaner workspace listings</li>
+                  <li>Prevents access confusion with deleted workspaces</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Workflows <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>- Add a workflow step is now a text action that displays as an option after you have run a query.<br>
+                  - When you run a workflow you can now see the results for each query (step) in a result set tab.<br>
+                  - You can compare step results in multiple result set tabs.<br>
+                  - You can now run one step individually to see the results for the specific query. This helps when you
+                  need to modify one query in the workflow and test its result.<br>
+                  - There is now a Run Workflow and Save/Version button at the top of a workflow.</p>
+                <ul>
+                  <li>New text action to add workflow steps after query runs</li>
+                  <li>Step-by-step result sets for better workflow debugging</li>
+                  <li>Run single workflow steps individually</li>
+                  <li>Run Workflow and Save/Version button added</li>
+                </ul>
+                <div><img src="/img/blog/feb-workflow-update.png" style="max-width:60%;"></div>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Business User Answers Search<span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>We have updated the business user answers page to show the title, question and description for each
+                  item. This allows the business user to see the question they are getting an answer for along with any
+                  other details in the description.</p>
+                <ul>
+                  <li>Business users now see question title, text, and description</li>
+                  <li>Improves clarity and trust in self-serve answers</li>
+                </ul>
+                <div><img src="/img/blog/feb-business-answers-update.png" style="max-width:60%;"></div>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Export Saved Queries <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>We all have a need to know where the exit doors on a plane are, even though we may never need it.
+                  With that in mind an organization can now export/download their saved queries from a workspace to SQL
+                  files. Each sql file will be named with the title of the query and contain the latest version of the
+                  query.</p>
+                <ul>
+                  <li>Organizations can export all saved queries as SQL files</li>
+                  <li>Each file named after the query title for easy navigation</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Browser back button <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>This is a change to the navigation behaviour of the browser back button. It now takes you back to the
+                  last page you came from (ie. from explore to home) whereas before you had to do all your navigation
+                  from links in runQL.</p>
+                <ul>
+                  <li>Browser back button now works intuitively</li>
+                  <li>Smoother navigation between pages</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Organizational Admin <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>An organizational admin now has full rights to any workspace.</p>
+                <ul>
+                  <li>Admins have full control across workspaces</li>
+                  <li>Simplifies organizational management</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Query Author <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Fixed a bug where the query author would not show up in the version history for a query.</p>
+                <ul>
+                  <li>Query authorship now correctly shown in version history</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Workflow steps <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Fixed a bug, for specific situations, where the steps would show out of order in the UI.</p>
+                <ul>
+                  <li>Ensures correct step order display in workflows</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <p>— The runQL Team</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+  <!-- Bottom CTA -->
+  <section class="section-padding bg-dark text-white text-center">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-3 text-white">When time-to-decision matters.</h2>
+      <p class="lead text-white-50 mb-5">Find where data is, understand how to use it, and get answers fast.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+          class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-3">
+          <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+          <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Product</h6>
+          <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+          <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+          <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+            Dictionary</a>
+          <a href="/product/integrations/" class="footer-link">Integrations</a>
+        </div>
+        <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Resources</h6>
+          <a href="/blog/" class="footer-link">Blog</a>
+          <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+            class="footer-link">Benchmark Report</a>
+          <a href="/data-security/" class="footer-link">Security</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Company</h6>
+          <a href="/about/" class="footer-link">About</a>
+
+          <a href="/privacy/" class="footer-link">Privacy</a>
+          <a href="/terms-of-service/" class="footer-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="/js/main.js"></script>
+
+
+  <!-- Scroll top -->
+  <div class="btn-scroll-top">
+    <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+      <path
+        d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+    </svg>
+  </div>
+</body>
+
+</html>

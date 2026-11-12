@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERDs - runQL</title>
+    <meta name="description" content="See how tables connect so joins stop being guesswork.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation (Same as Index) -->
+    <nav class="navbar navbar-expand-lg navbar-floating">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/img/runQL-logo.png" alt="runQL Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                                    Data Dictionary</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                                    Resource Dictionary</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                                    Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                            <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                                    Integrations</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                            <li><a class="dropdown-item py-2"
+                                    href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                                    Report</a></li>
+                            <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                            <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                            <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                            <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                        class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-4 fw-bold mb-4">See how tables connect—so joins stop being guesswork.</h1>
+                    <p class="lead text-secondary mb-5">runQL generates ERDs from schema metadata and query patterns,
+                        helping builders understand relationships quickly before they build.</p>
+                    <div class="d-flex justify-content-center gap-3 mb-5">
+                        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                            class="btn btn-primary btn-lg plausible-event-name--bookMeetingLink">Request demo</a>
+                    </div>
+                    <!-- Hero Visual Placeholder -->
+                    <div class="hero-visual-card p-5 bg-light border">
+                        <div class="text-muted">Annotated Screenshot: "ERD view → customer table highlighted with
+                            orders/payments/events."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Great For Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Great for when...</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-code-branch"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Complex Joins</h5>
+                            <p class="text-secondary">You’re joining 3–5 tables and getting stuck.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-fingerprint"></i></div>
+                        <div>
+                            <h5 class="fw-bold">ID Changes</h5>
+                            <p class="text-secondary">IDs changed across systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-database"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Legacy DBs</h5>
+                            <p class="text-secondary">You inherited a DB nobody fully remembers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-check-double"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Retool Clarity</h5>
+                            <p class="text-secondary">You’re building in Retool and need clarity on joins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots / Features -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5 bg-white rounded shadow-sm border text-center text-muted"
+                        style="min-height: 300px; display:flex; align-items:center; justify-content:center;">
+                        Screenshot: Click relationship → see key fields used for joins.
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h3 class="fw-bold mb-3">Relational Clarity</h3>
+                    <p class="text-secondary">Click on any relationship line to instantly see which keys are used for
+                        joins, eliminating SQL errors.</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-5 bg-white rounded shadow-sm border text-center text-muted"
+                        style="min-height: 300px; display:flex; align-items:center; justify-content:center;">
+                        Screenshot: Search entity ‘business customer’ → ERD zooms to relevant cluster.
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-3">Zoom to Context</h3>
+                    <p class="text-secondary">Search for any entity, like 'business customer', and the ERD automatically
+                        zooms and centers on the relevant table cluster.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Related features</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <a href="/product/sql-assistance/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-code"></i></div>
+                        <h4 class="h6 fw-bold">SQL Assistance</h4>
+                        <p class="small text-secondary mb-0">Get the SQL you need to build faster in Retool and Sigma.
+                        </p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/automated-data-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-book"></i></div>
+                        <h4 class="h6 fw-bold">Automated Data Dictionary</h4>
+                        <p class="small text-secondary mb-0">Automatically document schemas so everyone knows what
+                            fields mean.</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/data-chat-search/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h4 class="h6 fw-bold">Data Chat & Search</h4>
+                        <p class="small text-secondary mb-0">Ask questions in plain English and get pointed to the right
+                            place.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section-padding bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 text-white">Join with confidence.</h2>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                    class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+                    <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Product</h6>
+                    <a href="/product/automated-data-dictionary/" class="footer-link">Data Dictionary</a>
+                    <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+                    <a href="/product/answers-library/" class="footer-link">Answers Library</a>
+                    <a href="/product/integrations/" class="footer-link">Integrations</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Resources</h6>
+                    <a href="/blog/" class="footer-link">Blog</a>
+                    <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                        class="footer-link">Benchmark Report</a>
+                    <a href="/data-security/" class="footer-link">Security</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="/about/" class="footer-link">About</a>
+
+                    <a href="/privacy/" class="footer-link">Privacy</a>
+                    <a href="/terms-of-service/" class="footer-link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

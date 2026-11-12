@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /whitepaper-2025-download.html
+Disallow: /report-2025-download.html

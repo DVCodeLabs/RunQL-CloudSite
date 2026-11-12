@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+   <title>runQL - Meet</title>
+   <meta name="description"
+      content="Write queries faster in a smart IDE and say goodbye to hard-to-find queries, missing documentation, and version chaos. Built for data work with support for SQL, Python, and Neo4j Cypher.">
+   <meta name="keywords" content="">
+   <meta name="author" content="runQL">
+   <meta property="og:title" content="runQL: The smart SQL, Python & Cypher IDE that you'll enjoy using.">
+   <meta property="og:site_name" content="runQL.com">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://runQL.com">
+   <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+   <meta property="og:description"
+      content="Write queries faster in a smart IDE and say goodbye to hard-to-find queries, missing documentation, and version chaos. Built for data work with support for SQL, Python, and Neo4j Cypher.">
+   <meta name="twitter:card" content="summary">
+   <meta property="twitter:url" content="https://cloud.runql.com/">
+   <meta name="twitter:title" content="runQL: The smart SQL, Python & Cypher IDE that you'll enjoy using.">
+   <meta name="twitter:description"
+      content="Write queries faster in a smart IDE and say goodbye to hard-to-find queries, missing documentation, and version chaos. Built for data work with support for SQL, Python, and Neo4j Cypher.">
+   <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+   <meta name="twitter:image:src" content="https://cloud.runql.com/img/runQL-social-share.png">
+   <meta name="twitter:image:alt" content="runQL.com Logo">
+   <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body data-bs-theme-value="dark" class="bs-theme-text">
+   <div class="#action">
+      <a href="#action" id="button-meet-with-us"
+         class="btn btn-link text-dark mb-2 mb-lg-0 plausible-event-name--bookMeetingLinkDirect"
+         style="text-decoration:none;" target="_blank">Redirecting you to the schedule meeting page.</a>
+   </div>
+   <!-- Theme JS -->
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
+      integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- Theme JS -->
+   <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+   <script>
+      $(document).ready(function () {
+         if (typeof plausible === "function") {
+            plausible("bookMeetingLinkDirect", {
+               callback: function () {
+                  console.log("Redirecting you to the schedule meeting page.");
+                  setTimeout(function () {
+                     window.location.href = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ19JBJuGWL1OPI7vHuU7Z0oLBhheoa_NS6_ddifPrN8S4ZWRHQkwDX5wpTdL2_36BDyYur16qxY";
+                  }, 1000);
+               }
+            });
+         } else {
+            //Plausible did not load - redirecting user anyway.
+            setTimeout(function () {
+               window.location.href = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ19JBJuGWL1OPI7vHuU7Z0oLBhheoa_NS6_ddifPrN8S4ZWRHQkwDX5wpTdL2_36BDyYur16qxY";
+            }, 1000);
+         }
+      });
+   </script>
+</body>
+
+</html>

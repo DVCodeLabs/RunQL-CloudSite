@@ -1,0 +1,1417 @@
+/* runQL Marketing Site Styles */
+
+:root {
+  --primary-blue: #3371B3;
+  --primary-blue-hover: #224A76;
+  --primary-orange: #FF4F00;
+  --primary-orange-hover: #E04600;
+  --text-dark: #1F2937;
+  --text-muted: #6B7280;
+  --bg-light: #FFFFFF;
+  --bg-subtle: #F9FAFB;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --navbar-height: 72px;
+  --bg-tag: #F3F4F6;
+  --bg-tab-bar: #F3F4F6;
+  --text-tag: #374151;
+  --text-tab-inactive: #4B5563;
+  --text-heading: #111827;
+  --text-body: #374151;
+  --border-color: #E5E7EB;
+  --tooltip-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --bg-primary: #3371B3;
+  --bs-primary-rgb: 51, 113, 179;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+
+  background-image: url('../img/background/background-waves-pattern-blue.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #111827;
+}
+
+.navbar-floating {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%) translateZ(0);
+  /* Center + GPU */
+  width: calc(100% - 1.5rem);
+
+  /* Layout equivalent to display: grid but compatible with Bootstrap nav structure */
+  display: flex;
+  align-items: center;
+
+  padding: 0.5rem 1.5rem;
+  /* ~ var(--spacing-2) */
+
+  /* Light Mode */
+  background: linear-gradient(137deg, rgba(255, 255, 255, 0.70) 5%, rgba(255, 255, 255, 0.90) 95%);
+  backdrop-filter: blur(12px) saturate(800%);
+  /* Slightly higher blur for light mode legibility */
+  -webkit-backdrop-filter: blur(12px) saturate(800%);
+
+  /* Borders & Shadows */
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  /* Subtle dark border */
+  border-radius: 12px;
+  /* var(--rounding-lg) */
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.8),
+    /* Top highlight */
+    0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  /* Drop shadow for depth */
+
+  z-index: 1030;
+  transition: all 0.3s ease;
+  will-change: height, transform, background, box-shadow;
+}
+
+/* Responsive widths to match .container */
+@media (min-width: 576px) {
+  .navbar-floating {
+    max-width: 516px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-floating {
+    max-width: 696px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-floating {
+    max-width: 936px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-floating {
+    max-width: 1116px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar-floating {
+    max-width: 1296px;
+  }
+}
+
+/* Scrolled state (triggered by JS) */
+.navbar-floating.navbar-scrolled {
+  background: linear-gradient(137deg, rgba(255, 255, 255, 0.85) 5%, rgba(255, 255, 255, 0.95) 95%);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+    0 20px 40px -10px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand img {
+  height: 32px;
+  width: auto;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #4B5563 !important;
+  font-size: 1rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: #111827 !important;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Custom Buttons */
+.btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--primary-blue-hover);
+  border-color: var(--primary-blue-hover);
+}
+
+.btn-secondary-action {
+  background-color: transparent;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+}
+
+.btn-outline-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.btn-secondary-action:hover {
+  background-color: #F3F4F6;
+  color: #111827;
+  border-color: #D1D5DB;
+}
+
+.btn-orange {
+  background-color: var(--primary-orange);
+  border-color: var(--primary-orange);
+  color: white;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+}
+
+.btn-orange:hover {
+  background-color: var(--primary-orange-hover);
+  border-color: var(--primary-orange-hover);
+  color: white;
+}
+
+.btn-outline-light {
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-subtle {
+  background-color: var(--bg-subtle);
+}
+
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+/* Hero Section */
+.hero-section {
+  padding-top: calc(var(--navbar-height) + 6rem);
+  padding-bottom: 8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-visual-card {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: white;
+  overflow: hidden;
+}
+
+/* Social Proof */
+.logo-bar {
+  padding: 3rem 0;
+  background-color: var(--bg-subtle);
+  border-top: 1px solid #F3F4F6;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.logo-bar img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s;
+  max-height: 32px;
+}
+
+.logo-bar img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Problem Cards */
+.problem-card {
+  height: 100%;
+  padding: 2rem;
+  border-radius: 16px;
+  background: white;
+  border: 1px solid #F3F4F6;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  border-color: #E5E7EB;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: #EFF6FF;
+  /* Blue-50 */
+  color: var(--primary-blue);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Feature Grid */
+.static-feature-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #F3F4F6;
+  border-radius: 12px;
+  height: 100%;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Feature Grid */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #F3F4F6;
+  border-radius: 12px;
+  height: 100%;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.feature-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 6px -1px rgba(51, 113, 179, 0.1);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: var(--primary-orange);
+  margin-bottom: 1rem;
+}
+
+/* Steps Component */
+/* Steps Component */
+.step-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #F3F4F6;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  border-color: #E5E7EB;
+}
+
+.step-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #EFF6FF;
+  /* Very light blue to match brand slightly or stay grey */
+  color: rgba(51, 113, 179, 0.15);
+  /* Brand blue with low opacity */
+  margin-bottom: 1rem;
+  line-height: 1;
+  display: block;
+}
+
+/* Footer */
+footer {
+  background-color: #F9FAFB;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid #E5E7EB;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  height: 24px;
+  margin-bottom: 1.5rem;
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+.footer-heading {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.footer-link {
+  color: #4B5563;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.75rem;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--primary-blue);
+}
+
+/* Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #111827 0%, #4B5563 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-padding {
+  padding-bottom: 8rem;
+  padding-top: 8rem;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-floating {
+    width: 94%;
+    padding: 0.75rem 1rem;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--navbar-height) + 3rem);
+    text-align: center;
+  }
+
+  .hero-visual-card {
+    margin-top: 3rem;
+  }
+}
+
+code {
+  font-size: 0.9em;
+  color: var(--bs-primary);
+  word-wrap: break-word;
+}
+
+/* Dictionary Example Styles */
+.dictionary-example .tags-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.dictionary-example .tag-pill {
+  background-color: var(--bg-tag);
+  color: var(--text-tag);
+  padding: 3px 7px;
+  border-radius: 9999px;
+  /* Fully rounded */
+  font-size: 0.6rem;
+  font-weight: 400;
+  border: 1px solid #E5E7EB;
+  /* Subtle border match */
+  white-space: nowrap;
+}
+
+/* Tab Bar Container */
+.dictionary-example .tab-bar {
+  background-color: var(--bg-tab-bar);
+  padding: 4px;
+  border-radius: 12px;
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.dictionary-example .tab-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-tab-inactive);
+  font-weight: 400;
+  font-size: .75rem;
+  transition: all 0.2s ease;
+  user-select: none;
+  flex: 1 1 auto;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.dictionary-example .tab-item i {
+  font-size: .9rem;
+}
+
+/* Active Tab Style */
+.dictionary-example .tab-item.active {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-weight: 400;
+  color: #111827;
+}
+
+/* Dictionary styles - data results */
+
+/* Table Styles */
+.dictionary-data-results-example .data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dictionary-data-results-example .data-table th,
+.data-table td {
+  text-align: left;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.75rem;
+}
+
+.dictionary-data-results-example .data-table th {
+  background-color: #F9FAFB;
+  font-weight: 500;
+  color: var(--text-heading);
+}
+
+.dictionary-data-results-example .data-table tr:hover td {
+  background-color: #FCFCFD;
+}
+
+.dictionary-data-results-example .status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.dictionary-data-results-example .status-active {
+  background-color: #DEF7EC;
+  color: #03543F;
+}
+
+.dictionary-data-results-example .status-pending {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.dictionary-data-results-example .status-inactive {
+  background-color: #F3F4F6;
+  color: #374151;
+}
+
+/* Increased margin to accommodate tooltip */
+.dictionary-data-results-example {
+  margin-top: 110px;
+}
+
+/* TOOLTIP FOCUS STATE */
+/* Mimic the specific hovered column header style */
+.dictionary-data-results-example .data-table th.active-column-header {
+  background-color: #EFF6FF;
+  /* lighter blue tint */
+  color: var(--primary-blue);
+  position: relative;
+  /* We need relative to position the absolute tooltip */
+  overflow: visible;
+  border-top: 2px solid var(--primary-blue);
+  border-bottom: none;
+  /* White bottom to merge with row below? No, usually distinct. */
+}
+
+/* The Tooltip Card */
+.dictionary-data-results-example .definition-tooltip {
+  position: absolute;
+  bottom: 110%;
+  /* Place above header */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--tooltip-shadow);
+  padding: 16px;
+  z-index: 10;
+  text-align: left;
+  color: var(--text-body);
+  font-weight: 400;
+  pointer-events: none;
+  /* Just visual */
+}
+
+/* Little arrow/triangle */
+.dictionary-data-results-example .definition-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  /* Center the arrow */
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.dictionary-data-results-example .tooltip-tag {
+  font-size: 0.75rem;
+  color: var(--primary-blue);
+  font-family: monospace;
+  background: #EFF6FF;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.dictionary-data-results-example .tooltip-title {
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.dictionary-data-results-example .tooltip-desc {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* Blinking Cursor Animation */
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Hero Animation Container */
+.hero-animation-container {
+  display: grid;
+  grid-template-areas: "hero-stack";
+  width: 100%;
+}
+
+.hero-animation-container>.hero-visual-card {
+  grid-area: hero-stack;
+  width: 100%;
+  opacity: 0;
+  /* If you change this you need to change the offset in .hero-animation-container>.hero-visual-card:nth-child(2) */
+  animation: heroFade 20s infinite ease-in-out;
+}
+
+.hero-animation-container>.hero-visual-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.hero-animation-container>.hero-visual-card:nth-child(2) {
+  animation-delay: -10s;
+}
+
+@keyframes heroFade {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  40% {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  50% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  90% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+/* --- Internal Hero Animations --- */
+
+/*
+   Timing Strategy for 20s Loop (10s per card):
+   0.0s - 0.5s: Panel A appears
+   0.5s - 2.5s: Typing animation (2s duration)
+   2.5s - 3.5s: Return Key appears/fades (1s interaction)
+   3.5s: Panel B appears (all content at once)
+   5.5s: Panel C appears
+*/
+
+/* --- Card 1 (Delay 0s) --- */
+
+/* 1. Typing Text */
+/* 1. Typing Text - JS Controlled */
+.hero-animation-container>.hero-visual-card:nth-child(1) .hero-typewriter-text {
+  /* JS handles content */
+}
+
+/* 2. Return Key */
+.hero-animation-container>.hero-visual-card:nth-child(1) .hero-return-key {
+  opacity: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d1d5db;
+  border-bottom: 2px solid #d1d5db;
+  /* Key depth */
+  border-radius: 4px;
+  background-color: #f3f4f6;
+  font-size: 10px;
+  color: #4b5563;
+  margin-left: 8px;
+
+  animation: heroReturnKeyCycle 20s linear infinite;
+  animation-delay: 2.5s;
+}
+
+/* 3. Panel B Container (All content inside appears with it) */
+.hero-animation-container>.hero-visual-card:nth-child(1) .hero-panel-b {
+  opacity: 0;
+  animation: heroRevealCycle 20s linear infinite;
+  animation-delay: 3.5s;
+}
+
+/* 4. Panel C */
+.hero-animation-container>.hero-visual-card:nth-child(1) .hero-panel-c {
+  opacity: 0;
+  animation: heroRevealCycle 20s linear infinite;
+  animation-delay: 4.5s;
+}
+
+
+/* --- Card 2 (Offset by 10s) --- */
+
+/* 1. Typing Text */
+/* 1. Typing Text - JS Controlled */
+.hero-animation-container>.hero-visual-card:nth-child(2) .hero-typewriter-text {
+  /* JS handles content */
+}
+
+/* 2. Return Key */
+.hero-animation-container>.hero-visual-card:nth-child(2) .hero-return-key {
+  opacity: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d1d5db;
+  border-bottom: 2px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #f3f4f6;
+  font-size: 10px;
+  color: #4b5563;
+  margin-left: 8px;
+
+  animation: heroReturnKeyCycle 20s linear infinite;
+  animation-delay: 12.5s;
+}
+
+/* 3. Panel B Container */
+.hero-animation-container>.hero-visual-card:nth-child(2) .hero-panel-b {
+  opacity: 0;
+  animation: heroRevealCycle 20s linear infinite;
+  animation-delay: 13.5s;
+}
+
+/* 4. Panel C */
+.hero-animation-container>.hero-visual-card:nth-child(2) .hero-panel-c {
+  opacity: 0;
+  animation: heroRevealCycle 20s linear infinite;
+  animation-delay: 14.5s;
+}
+
+/* Legal Pages Styling */
+.legal-content {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+.legal-content h1 {
+  margin-bottom: 0.5rem;
+}
+
+.legal-content h5 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.legal-content h6 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.legal-content p {
+  margin-bottom: 1.5rem;
+}
+
+.legal-content ul,
+.legal-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Ensure lists with list-style-type: none align nicely if manually set */
+.legal-content ul li[style*="list-style-type: none"] {
+  padding-left: 0;
+}
+
+@media (min-width: 992px) {
+  .legal-content {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* 
+   Typing Cycle 1: "Where do I find the activation date for a customer?"
+*/
+/* Old Typing Keyframes Removed */
+
+/* Return Key Cycle: Appear, Press, Disappear (within 1s / 5%) */
+@keyframes heroReturnKeyCycle {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    background-color: #f3f4f6;
+    border-bottom: 2px solid #d1d5db;
+  }
+
+  1% {
+    opacity: 1;
+    /* Appear */
+    transform: scale(1);
+    background-color: #f3f4f6;
+    border-bottom: 2px solid #d1d5db;
+  }
+
+  /* Press the key */
+  2.5% {
+    opacity: 1;
+    transform: scale(0.95) translateY(1px);
+    /* Move down slightly */
+    background-color: #e5e7eb;
+    /* Darker on press */
+    border-bottom: 1px solid #d1d5db;
+    /* Reduce depth */
+  }
+
+  /* Release */
+  4% {
+    opacity: 1;
+    transform: scale(1);
+    background-color: #f3f4f6;
+    border-bottom: 2px solid #d1d5db;
+  }
+
+  5% {
+    opacity: 0;
+    /* Fade out just as results appear */
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+@keyframes heroRevealCycle {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  2% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  45% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.chat-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* User Message */
+.chat-container .user-message-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+  padding-left: 40px;
+}
+
+.chat-container .user-bubble {
+  background-color: #0f172a;
+  /* Dark navy/slate */
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: .75em;
+  font-weight: 400;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.chat-container .user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #4b5563;
+}
+
+/* Bot Message */
+.chat-container .bot-message-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.chat-container .bot-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+  border: 1px solid #9ca3af;
+}
+
+.chat-container .bot-bubble {
+  background-color: #f3f4f6;
+  /* Light gray */
+  color: #374151;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: .75em;
+  flex: 1;
+}
+
+.chat-container .bot-content p {
+  margin-bottom: 16px;
+}
+
+.chat-container .bot-content p:last-child {
+  margin-bottom: 0;
+}
+
+.chat-container .bot-content strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.chat-container .bot-content code {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Slight darkening for code bg if needed, or just keep transparent as it looks subtle in image */
+  /* In the image, code spans look bold/distinct. Let's rely on font family mainly. */
+  font-size: .75em;
+  color: #111827;
+  font-weight: 500;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.chat-container .bot-content ul {
+  list-style-type: none;
+  margin-left: 0;
+  margin-bottom: 16px;
+}
+
+.chat-container .bot-content li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.chat-container .bot-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6b7280;
+}
+
+/* Input Area at bottom */
+.chat-container .input-area {
+  margin-top: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-top: 0px;
+}
+
+.chat-container .input-area input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: .75em;
+  font-family: 'Inter', sans-serif;
+  color: #374151;
+}
+
+.chat-container .input-area input::placeholder {
+  color: #9ca3af;
+}
+
+.chat-container .send-button {
+  background: #9ca3af;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.chat-container .send-button:hover {
+  background: #6b7280;
+}
+
+.chat-container .send-button svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  transform: translateX(-1px) translateY(1px);
+  /* Optical adjustment */
+}
+
+/* Utility for svg icons */
+.chat-container .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Integration Card Hover Effects */
+.integration-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent !important;
+  /* Override border-0 */
+}
+
+.integration-card:hover {
+  border-color: var(--primary-blue) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-4px);
+}
+
+/* Scroll To Top Button */
+.btn-scroll-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 46px;
+  height: 46px;
+  z-index: 999;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  background: #ffffff;
+  border-radius: 8px;
+  /* Matching site rounding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.btn-scroll-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.progress-square {
+  transform: rotate(-90deg);
+}
+
+.progress-square path {
+  fill: none;
+  stroke: var(--primary-blue);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+/* Add an icon inside the square */
+.btn-scroll-top::after {
+  content: "\f062";
+  /* FontAwesome arrow-up */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-blue);
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.btn-scroll-top:hover::after {
+  color: var(--primary-blue-hover);
+}
+
+.profile-image {
+  height: 160px;
+  border-radius: 8px;
+}
+
+.fs-14p {
+  font-size: 14px;
+}
+
+.fs-13p {
+  font-size: 13px;
+}
+
+.fs-12p {
+  font-size: 12px;
+}
+
+.fs-11p {
+  font-size: 11px;
+}
+
+.fs-10p {
+  font-size: 10px;
+}
+
+.fs-9p {
+  font-size: 9px;
+}
+
+.fs-8p {
+  font-size: 8px;
+}
+
+/* --- Hero Progress Bar & Pause --- */
+
+.hero-animation-container {
+  position: relative;
+  /* Ensure absolute positioning works for children */
+  cursor: pointer;
+  /* Indicate clickability for pause */
+}
+
+.hero-progress-container {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 4px;
+  /* background-color: #E5E7EB; Removed background from container */
+  z-index: 20;
+}
+
+.hero-progress-segment {
+  background-color: #f8f9fa;
+  /* Light grey track for each segment */
+  border-radius: 2px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.hero-progress-fill {
+  height: 100%;
+  background-color: var(--primary-blue);
+  width: 0%;
+  transform-origin: left;
+}
+
+/* 
+   Total Loop: 20s
+   Card 1: 0s - 10s
+   Card 2: 10s - 20s
+*/
+
+.fill-1 {
+  animation: heroProgressSegment1 20s linear infinite;
+}
+
+.fill-2 {
+  animation: heroProgressSegment2 20s linear infinite;
+}
+
+@keyframes heroProgressSegment1 {
+  0% {
+    width: 0%;
+    opacity: 1;
+  }
+
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  /* Fills in first 10s */
+  55% {
+    width: 100%;
+    opacity: 0;
+  }
+
+  /* Fade out over 1s */
+  55.1% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  /* Reset width */
+  55.2% {
+    width: 0%;
+    opacity: 1;
+  }
+
+  /* Reset opacity */
+  100% {
+    width: 0%;
+    opacity: 1;
+  }
+
+  /* Stays empty */
+}
+
+@keyframes heroProgressSegment2 {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  /* Starts full from previous loop */
+  5% {
+    width: 100%;
+    opacity: 0;
+  }
+
+  /* Fade out over 1s */
+  5.1% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  /* Reset width */
+  5.2% {
+    width: 0%;
+    opacity: 1;
+  }
+
+  /* Reset opacity */
+  50% {
+    width: 0%;
+    opacity: 1;
+  }
+
+  /* Start filling */
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  /* Finish filling */
+}
+
+/* Pause State handling */
+.hero-animation-container.paused .hero-visual-card,
+.hero-animation-container.paused .hero-typewriter-text,
+.hero-animation-container.paused .hero-return-key,
+.hero-animation-container.paused .hero-panel-b,
+.hero-animation-container.paused .hero-panel-c,
+.hero-animation-container.paused .hero-progress-fill {
+  animation-play-state: paused !important;
+}
+
+.hero-pause-btn {
+  position: absolute;
+  bottom: 8px;
+  /* Slightly above the progress bar */
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #E5E7EB;
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.hero-pause-btn:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Static Tooltips on Hero Boxes */
+.static-tooltip {
+  position: absolute;
+  bottom: 115%;
+  /* Default above */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9dbee3;
+  color: #FFF;
+  font-size: 0.50rem;
+  font-weight: 500;
+  padding: 2px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Tiny triangle arrow pointing down */
+.static-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  /* Bottom of tooltip */
+  left: 50%;
+  margin-left: -4px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #9dbee3 transparent transparent transparent;
+}
+
+/* Responsive override for "Saved Answer" tooltips */
+@media (max-width: 767.98px),
+(min-width: 992px) and (max-width: 1399.98px) {
+  .static-tooltip.tooltip-responsive-bottom {
+    bottom: auto;
+    /* Remove top positioning */
+    top: 125%;
+    /* Move below */
+  }
+
+  /* Triangle pointing up */
+  .static-tooltip.tooltip-responsive-bottom::after {
+    top: auto;
+    bottom: 100%;
+    border-color: transparent transparent #9dbee3 transparent;
+  }
+}

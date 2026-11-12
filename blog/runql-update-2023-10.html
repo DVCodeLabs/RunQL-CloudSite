@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+   <link rel="canonical" href="https://cloud.runql.com/" />
+   <!-- Favicon icon-->
+   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+   <link rel="manifest" href="/img/favicon/site.webmanifest" />
+   <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+   <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+   <meta name="msapplication-TileColor" content="#080032">
+   <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap 5 CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="/css/styles.css">
+   <title>October Product Update: Virtual Query Service, Charts, Navigator & More | runQL</title>
+   <meta name="title" content="October Product Update: Virtual Query Service, Charts, Navigator & More | runQL">
+   <meta name="description"
+      content="runQL’s October 2023 update launches the runSource Virtual Query Service, redesigned Navigator, data set charting, pivot tables, Hugging Face LLM integration, and more.">
+   <meta name="keywords"
+      content="runQL, Virtual Query Service, SQL IDE, BI dashboards, Hugging Face integration, Pivot tables, Data charts, Postgres support, Snowflake fix, LLM data source, runSource, Smart Status Bar">
+   <meta name="author" content="runQL">
+   <meta property="og:title" content="October Product Update: Virtual Query Service, Charts, Navigator & More | runQL">
+   <meta property="og:site_name" content="runQL.com">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://cloud.runql.com/blog/runql-update-2023-10.html">
+   <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+   <meta property="og:description"
+      content="runQL’s October 2023 update launches the runSource Virtual Query Service, redesigned Navigator, data set charting, pivot tables, Hugging Face LLM integration, and more.">
+   <meta name="twitter:card" content="summary">
+   <meta property="twitter:url" content="https://cloud.runql.com/blog/runql-update-2023-10.html">
+   <meta name="twitter:title" content="October Product Update: Virtual Query Service, Charts, Navigator & More | runQL">
+   <meta name="twitter:description"
+      content="runQL’s October 2023 update launches the runSource Virtual Query Service, redesigned Navigator, data set charting, pivot tables, Hugging Face LLM integration, and more.">
+   <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+   <meta name="twitter:image:src" content="https://cloud.runql.com/img/runQL-social-share.png">
+   <meta name="twitter:image:alt" content="runQL Logo">
+
+   <script type="application/ld+json">
+   {
+   "@context": "https://schema.org",
+   "@type": "BlogPosting",
+   "headline": "October Product Update: Virtual Query Service, Charts, Navigator & More",
+   "datePublished": "2023-10-31",
+   "author": {
+      "@type": "Organization",
+      "name": "runQL"
+   },
+   "publisher": {
+      "@type": "Organization",
+      "name": "runQL",
+      "logo": {
+         "@type": "ImageObject",
+         "url": "https://cloud.runql.com/img/logo.png"
+      }
+   },
+   "description": "runQL’s October 2023 update launches the runSource Virtual Query Service, redesigned Navigator, data set charting, pivot tables, Hugging Face LLM integration, and more."
+   }
+   </script>
+
+
+   <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-floating">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="/">
+            <img src="/img/runQL-logo.png" alt="runQL Logo">
+         </a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                     aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                  <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                     <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                           Data Dictionary</a></li>
+                     <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                           Resource Dictionary</a>
+                     </li>
+                     <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                           Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                     <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                           Integrations</a></li>
+                  </ul>
+               </li>
+               <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+               <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                     aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                  <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                     <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                     <li><a class="dropdown-item py-2"
+                           href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                           Report</a></li>
+                     <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                     <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                     <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                     <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+            </ul>
+            <div class="d-flex gap-2">
+               <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                  class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <main class="">
+      <section class="hero-section">
+         <div class="container blog-wrapper">
+            <div class="row justify-content-center">
+               <div class="col-12 col-lg-8">
+                  <div class="blog-post">
+
+
+                     <div class="text-center mb-5 mt-5">
+                        <!-- <span class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small" style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span> -->
+                        <h1 class="display-5 fw-bold mb-3"> October 2023 Product Update: Virtual Query Service, Charts,
+                           Navigator, and More</h1>
+
+                        <div
+                           class="d-flex justify-content-center align-items-center gap-3 text-muted small text-uppercase fw-bold"
+                           style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                           <span>runQL Team</span>
+                           <span>•</span>
+                           <span>October 2023</span>
+                        </div>
+                     </div>
+
+                     <h3 class="mt-8">October 6, 2023</h3>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Redesigned Explorer (now called Navigator) <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>You can now:</p>
+                        <ul>
+                           <li>Drag to resize the Navigator panel to any size that you prefer</li>
+                           <li>Accommodates long-named data sources, tables, and fields — ready for LLM prompt
+                              integrations</li>
+                           <li>View field attributes beside the field name without hovering</li>
+                           <li>Fixed multiple bugs with schema refreshes</li>
+                        </ul>
+                        <div><img src="/img/blog/redesigned-navigator.png" style="max-width:60%; border:1px solid #eee;"
+                              class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">LLM Data Source - Hugging Face <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>You now have the option to add Hugging Face inference endpoints as a data source for testing:
+                        </p>
+                        <ul>
+                           <li>Question Answering</li>
+                           <li>Sentence Similarity</li>
+                           <li>Text Classification</li>
+                           <li>Zero Shot Classification</li>
+                        </ul>
+                        <div><img src="/img/blog/huggin-face-llm-data-source.png"
+                              style="max-width:60%; border:1px solid #eee;" class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Quick Query Action <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>You can now click the arrow icon beside any table for a quick
+                           <code>SELECT * FROM tableName LIMIT 10</code> query. If you already have a query open, it
+                           will open a new Explore tab.
+                        </p>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">PostgreSQL DB Support <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>PostgreSQL is now a supported database.</p>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">QueryLogs & Version History Paging <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>In Explore Tabs, you now have paging for both queries and version history.</p>
+                     </div>
+
+                     <h3 class="mt-8">October 13, 2023</h3>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Charts in Data Result Sets <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>You can now create and download charts right from your data set results! You can create
+                           column, bar, pie, line, scatter, area, histogram, or combination charts.</p>
+                        <div><img src="/img/blog/charts-data-results.gif" style="max-width:60%; border:1px solid #eee;"
+                              class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Smart Status Bar <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>We now help you quickly sum, count, average, and get min/max for any fields you select. This
+                           is part of the new Smart Status Bar at the bottom of data set results which also shows the
+                           total number of results for your query.</p>
+                        <div><img src="/img/blog/statusBar.gif" style="max-width:60%; border:1px solid #eee;"
+                              class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Grouping & Pivot Tables <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>No need to download to Sheets or MS Excel. Did you know you can group and pivot right inside
+                           runQL?</p>
+                        <div><img src="/img/blog/pivot-data.gif" style="max-width:60%; border:1px solid #eee;"
+                              class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">LLM Prompts <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                        </h2>
+                        <p>Fixed an issue with loading saved LLM Prompts and “save as new” for LLM Prompts.</p>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Plan Limits & Onboarding <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                        </h2>
+                        <p>Cleaned up subscription-level plan limits, onboarding, and sign-in experiences.</p>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Global Query History <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                        </h2>
+                        <p>Fixed an issue for some organizations with displaying Global Query History.</p>
+                     </div>
+
+                     <h3 class="mt-8">October 20, 2023</h3>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">More Charts for Workbooks <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>For the orgs that have access to our Workbooks (alpha release) you now have Line, Bar, Area,
+                           and Histogram chart options. A workbook chart uses a saved query as its source. If you change
+                           the saved query, all charts that use it automatically update.</p>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Basic Explorer Role <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>This is an update to add a Basic Explorer role. The Basic Explorer can run existing queries
+                           and view results (in workspaces they are invited to) but cannot create, edit, or add others
+                           to a workspace. Important for wider rollout plans.</p>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Allowing Pro Explorers to Invite Collaborators <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>Pro Explorers (non-admins) can now invite collaborators to a workspace and to the
+                           organization.</p>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Permissions Fix for "My Workspace" <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                        </h2>
+                        <p>A permissions fix when a new person is invited to an organization affecting "My Workspace."
+                        </p>
+                     </div>
+
+                     <h3 class="mt-8">October 27, 2023</h3>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">runSource Virtual Query Service <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>We are super excited to announce the new runSource Virtual Query Service! It was all hands on
+                           deck for this feature as we were down to the protocol level to make this work. You know how
+                           when you move, you can have the post office automatically forward mail sent to your old
+                           address to your new address without having to update your address for everyone? You can now
+                           get that same functionality with your SQL queries.</p>
+                        <ul>
+                           <li>Have one source of truth for your queries reused across external BI tools like Metabase,
+                              PowerBI, etc.</li>
+                           <li>Shield your external services from underlying query and database changes</li>
+                           <li>Secure and log access while hiding real database credentials</li>
+                        </ul>
+                        <div class="mb-4"><img src="/img/blog/virtual-query-service.png"
+                              style="max-width:50%; border:1px solid #eee;" class="rounded-4"></div>
+                        <p>To make use of this feature click the runSource link below any saved query and it will
+                           generate the Virtual Query for your external tool. Documentation can be found in My
+                           Account/Documentation.</p>
+                        <div><img src="/img/blog/virtual-query-service-setup.png"
+                              style="max-width:60%; border:1px solid #eee;" class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Explore Page Updates <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                        </h2>
+                        <p>Based on feedback we moved the Explore, Saved, and History links on the Explore page to make
+                           more space for the query editor and data results.</p>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Query Editor Updates <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                        </h2>
+                        <p>We are seeing a 34% saved query reuse rate! We optimized the query editor layout to make it
+                           even easier to access query suggestions, search, and the Saved Query dropdown.</p>
+                     </div>
+
+                     <div class="mb-5">
+                        <p>— The runQL Team</p>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+
+
+
+
+   <!-- Bottom CTA -->
+   <section class="section-padding bg-dark text-white text-center">
+      <div class="container">
+         <h2 class="display-5 fw-bold mb-3 text-white">When time-to-decision matters.</h2>
+         <p class="lead text-white-50 mb-5">Find where data is, understand how to use it, and get answers fast.</p>
+         <div class="d-flex justify-content-center gap-3">
+            <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+               class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+         </div>
+      </div>
+   </section>
+
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <div class="row g-5">
+            <div class="col-lg-3">
+               <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+               <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+            </div>
+            <div class="col-6 col-lg-2">
+               <h6 class="footer-heading">Product</h6>
+               <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+               <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+               <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+                  Dictionary</a>
+               <a href="/product/integrations/" class="footer-link">Integrations</a>
+            </div>
+            <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+            <div class="col-6 col-lg-2">
+               <h6 class="footer-heading">Resources</h6>
+               <a href="/blog/" class="footer-link">Blog</a>
+               <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                  class="footer-link">Benchmark Report</a>
+               <a href="/data-security/" class="footer-link">Security</a>
+            </div>
+            <div class="col-6 col-lg-2">
+               <h6 class="footer-heading">Company</h6>
+               <a href="/about/" class="footer-link">About</a>
+
+               <a href="/privacy/" class="footer-link">Privacy</a>
+               <a href="/terms-of-service/" class="footer-link">Terms</a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Bootstrap Bundle JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Custom JS -->
+   <script src="/js/main.js"></script>
+
+
+   <!-- Scroll top -->
+   <div class="btn-scroll-top">
+      <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+         <path
+            d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+      </svg>
+   </div>
+</body>
+
+</html>

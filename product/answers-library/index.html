@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Specific Styles for Instant Answers Visuals */
+        .result-view-table th {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 12px 16px;
+            background-color: #F9FAFB;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-view-table td {
+            font-size: 0.85rem;
+            padding: 12px 16px;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-view-controls {
+            display: flex;
+            gap: 8px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fff;
+            align-items: center;
+        }
+
+        .control-btn {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: #fff;
+            border: 1px solid #E5E7EB;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            cursor: default;
+            /* Mock UI */
+        }
+
+        .control-btn:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            background-color: #EFF6FF;
+        }
+
+        .control-btn.active {
+            background-color: #EFF6FF;
+            color: var(--primary-blue);
+            border-color: var(--primary-blue-hover);
+        }
+
+        /* Tabbed Interface */
+        .nav-pills .nav-link {
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #EFF6FF;
+            color: var(--primary-blue);
+            border-color: rgba(51, 113, 179, 0.2);
+            position: relative;
+            /* For arrow */
+        }
+
+        /* Arrow for active tab */
+        .nav-pills .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px 8px 0;
+            border-style: solid;
+            border-color: #EFF6FF transparent transparent transparent;
+            z-index: 2;
+        }
+
+        /* Optional: Border outline for the arrow */
+        .nav-pills .nav-link.active::before {
+            content: "";
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px 8px 0;
+            border-style: solid;
+            border-color: rgba(51, 113, 179, 0.2) transparent transparent transparent;
+            z-index: 1;
+        }
+
+        .nav-pills .nav-link:hover:not(.active) {
+            background-color: #F9FAFB;
+            color: var(--text-dark);
+            border-color: #E5E7EB;
+        }
+
+        .tab-visual-container {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Comparison Section */
+        .comparison-card {
+            height: 100%;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .comparison-header {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .comparison-body {
+            padding: 2rem;
+            background-color: #fff;
+        }
+
+        .resource-found-tile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            max-width: 250px;
+            margin: 0 auto 1.5rem auto;
+            transition: transform 0.2s;
+        }
+
+        .resource-found-tile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-blue);
+        }
+    </style>
+
+    <!-- SEO -->
+    <title>Answers Library | runQL</title>
+    <link rel="canonical" href="https://cloud.runql.com/product/answers-library/" />
+
+    <meta name="description"
+          content="Reuse answers, not effort. Save questions, SQL, documentation, and links to Sigma/Retool so your team can find consistent answers fast, avoid rework, and seed a library of ready-to-use answers." />
+
+    <meta name="author" content="runQL" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+    <!-- Optional: keywords (not used by Google; OK for internal/LLM hints) -->
+    <meta name="keywords"
+          content="answers library, saved answers, reusable answers, answer seeding, SQL library, query library, data documentation, Sigma, Retool, data discovery, knowledge base for analytics, ops analytics, customer success analytics" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Answers Library | runQL" />
+    <meta property="og:site_name" content="runQL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloud.runql.com/product/answers-library/" />
+    <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta property="og:image:alt" content="runQL" />
+    <meta property="og:description"
+          content="Save questions, SQL, documentation, and Sigma/Retool links together so your team can reuse answers, avoid duplicate work, and keep knowledge easy to find." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cloud.runql.com/product/answers-library/" />
+    <meta name="twitter:title" content="Answers Library | runQL" />
+    <meta name="twitter:description"
+          content="Save questions, SQL, documentation, and Sigma/Retool links together so your team can reuse answers, avoid rework, and ramp faster." />
+    <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta name="twitter:image:alt" content="runQL" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Answers Library",
+            "url": "https://cloud.runql.com/product/answers-library/",
+            "description": "Save and reuse answers as assets by storing the question, SQL, documentation, and links to related dashboards and apps.",
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "runQL",
+                "url": "https://cloud.runql.com/"
+            },
+            "about": {
+                "@type": "SoftwareApplication",
+                "name": "runQL",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "url": "https://cloud.runql.com/",
+                "featureList": [
+                    "Save answers as reusable assets (question, SQL, documentation, notes)",
+                    "Attach links to Sigma dashboards and Retool apps",
+                    "Search answers by question, keyword, tag, owner",
+                    "Answer Seeding for new datasets",
+                    "Publish workflows with tags and guidance"
+                ]
+            }
+        }
+    </script>
+
+    <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+    <!-- Navigation (Same as Index) -->
+    <nav class="navbar navbar-expand-lg navbar-floating">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/img/runQL-logo.png" alt="runQL Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                                    Data Dictionary</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                                    Resource Dictionary</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                                    Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                            <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                                    Integrations</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                            <li><a class="dropdown-item py-2"
+                                    href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                                    Report</a></li>
+                            <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                            <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                            <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                            <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                        class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-4 fw-bold mb-4">Reuse answers, not effort</h1>
+                    <p class="lead text-secondary mb-5">Save the answer (SQL, question, documentation, context) with
+                        links
+                        to dashboards/apps, so your team can get consistent answers fast and prevent unnecessary rework.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 mb-5">
+                        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                            class="btn btn-primary btn-lg plausible-event-name--bookMeetingLink">Request demo</a>
+                        <a href="#learn-more" class="btn btn-outline-secondary btn-lg">Learn more</a>
+                    </div>
+                    <div class="hero-visual-card p-4 bg-light border text-start">
+                        <!-- Visual representation of an Answer Card (Full UI) -->
+                        <div class="bg-white rounded shadow-sm border text-start overflow-hidden"
+                            style="max-width: 1000px; margin: 0 auto; font-family: 'Inter', sans-serif;">
+                            <!-- Top Header -->
+                            <div class="pt-4 px-4 pb-1 border-bottom">
+                                <div class="">
+                                    <div>
+                                        <div class="d-flex align-items-start justify-content-between">
+                                            <h4 class="fw-bold mb-3">Top 10 products by revenue in the past 30 days</h4>
+                                            <button type="button" class="btn-close" aria-label="Close"></button>
+                                        </div>
+                                        <!-- Meta -->
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center overflow-hidden"
+                                                    style="width: 32px; height: 32px;">
+                                                    <img src="/img/team/rob3.jpg" alt="Rob D" class="img-fluid"
+                                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <div class="d-flex flex-column" style="line-height: 1.2;">
+                                                    <span class="small fw-bold text-dark">By Rob D</span>
+                                                    <span class="small text-muted" style="font-size: 0.7rem;">Added Jan
+                                                        02,
+                                                        2026</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex gap-3 text-muted small">
+                                                <span><i class="fa-regular fa-eye me-1"></i> 320</span>
+                                                <span><i class="fa-regular fa-heart me-1"></i> 24</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-column flex-lg-row">
+                                <!-- Sidebar -->
+                                <div class="col-lg-3 p-4 border-end bg-light-subtle">
+                                    <div class="mb-4">
+                                        <h6 class="fw-bold fs-6 mb-2">Answer</h6>
+                                        <p class="small text-secondary mb-0">What are the top 10 products by revenue in
+                                            the last 30 days?</p>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <h6 class="fw-bold fs-6 mb-2">Description</h6>
+                                        <p class="small">This answer identifies your best-selling products by revenue
+                                            contribution over the last 30 days.
+                                        </p>
+                                        <p class="small">"Revenue" is defined as the sum of <span
+                                                class="text-primary">product_price</span> from
+                                            the <span class="text-primary">order_items</span> table.<br />
+                                            "Last 30 days" is interpreted as the 30-day period immediately
+                                            preceding the current timestamp when the query is executed... <span
+                                                class="small text-primary">View More</span></p>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <h6 class="fw-bold fs-6 mb-2">Data</h6>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span
+                                                class="badge bg-white text-secondary border fw-normal">jaffle_shop.order_items</span>
+                                            <span
+                                                class="badge bg-white text-secondary border fw-normal">jaffle_shop.product</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <h6 class="fw-bold fs-6 mb-2">Related Resources</h6>
+                                        <div class="d-flex gap-2 flex-wrap hero-boxes">
+                                            <div
+                                                class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                <i class="fa-regular fa-file-lines text-secondary"></i>
+                                                <small class="fw-semibold fs-12p">order_items</small>
+                                            </div>
+                                            <div
+                                                class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                <img src="/img/integrations/sigma-icon.png" style="height:20px;"
+                                                    alt="Sigma" height="20">
+                                                <small class="fw-semibold fs-12p">Monthly Revenue <i
+                                                        class="fa fa-arrow-up-right-from-square ms-2"></i></small>
+                                            </div>
+                                            <div
+                                                class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                <img src="/img/integrations/retool-icon.svg" alt="Sigma" height="20">
+                                                <small class="fw-semibold fs-12p">Monthly Revenue <i
+                                                        class="fa fa-arrow-up-right-from-square ms-2"></i></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Main Content -->
+                                <div class="col-lg-9 p-4 bg-light">
+                                    <div class="card border shadow-sm h-100">
+                                        <div class="card-header bg-white border-bottom-0 pt-3 px-0 pb-0">
+                                            <div class="small fw-bold text-secondary mb-2 px-3">Answer</div>
+                                            <div class="result-view-controls bg-light">
+                                                <div class="dictionary-example">
+                                                    <div class="tab-bar bg-light">
+                                                        <div class="tab-item active">
+                                                            <i class="fa-solid fa-table"></i>
+                                                            Results
+                                                        </div>
+                                                        <div class="tab-item">
+                                                            <i class="fa-solid fa-chart-bar"></i>
+                                                            Chart
+                                                        </div>
+                                                        <div class="tab-item">
+                                                            <i class="fa-solid fa-code"></i>
+                                                            Query
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1"></div>
+                                                <div class="control-btn border-1 d-none d-sm-block"><i class="fa-solid fa-filter"></i>
+                                                </div>
+                                                <div class="control-btn border-1 d-none d-sm-block"><i
+                                                        class="fa-solid fa-arrow-down-short-wide"></i></div>
+                                                <div class="control-btn border-1 d-none d-sm-block"><i
+                                                        class="fa-solid fa-arrows-rotate"></i></div>
+                                                <div class="control-btn border-1 d-none d-sm-block"><i class="fa-solid fa-download"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-0 border-top">
+                                            <div class="table-responsive bg-white">
+                                                <table class="table table-hover mb-0" style="font-size: 0.85rem;">
+                                                    <thead class="bg-light border-bottom">
+                                                        <tr>
+                                                            <th
+                                                                class="ps-3 py-2 border-bottom-0 text-secondary fw-bold bg-white">
+                                                                product_id</th>
+                                                            <th
+                                                                class="py-2 border-bottom-0 text-secondary fw-bold bg-white">
+                                                                product_name</th>
+                                                            <th
+                                                                class="text-end py-2 border-bottom-0 text-secondary fw-bold bg-white">
+                                                                total_revenue</th>
+                                                            <th
+                                                                class="text-end py-2 pe-3 border-bottom-0 text-secondary fw-bold bg-white">
+                                                                revenue_rank</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- Filter row simulation -->
+                                                    <tr class="bg-white border-bottom">
+                                                        <td class="ps-3 py-2">
+                                                            <div class="d-flex align-items-center gap-2"><input
+                                                                    type="text"
+                                                                    class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                    disabled>
+                                                            </div>
+                                                        </td>
+                                                        <td class="py-2">
+                                                            <div class="d-flex align-items-center gap-2"><input
+                                                                    type="text"
+                                                                    class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                    disabled>
+                                                            </div>
+                                                        </td>
+                                                        <td class="py-2">
+                                                            <div class="d-flex align-items-center gap-2"><input
+                                                                    type="text"
+                                                                    class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                    disabled>
+                                                            </div>
+                                                        </td>
+                                                        <td class="pe-3 py-2">
+                                                            <div class="d-flex align-items-center gap-2"><input
+                                                                    type="text"
+                                                                    class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                    disabled>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="ps-3">BEV-004</td>
+                                                            <td>for richer or pour</td>
+                                                            <td class="text-end">$8,3447</td>
+                                                            <td class="text-end pe-3">1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">JAF-004</td>
+                                                            <td>flame impala</td>
+                                                            <td class="text-end">$7,2436</td>
+                                                            <td class="text-end pe-3">2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">BEV-003</td>
+                                                            <td>vanilla ice</td>
+                                                            <td class="text-end">$7,1856</td>
+                                                            <td class="text-end pe-3">3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">BEV-001</td>
+                                                            <td>tangaroo</td>
+                                                            <td class="text-end">$7,1484</td>
+                                                            <td class="text-end pe-3">4</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">JAF-005</td>
+                                                            <td>mel-bun</td>
+                                                            <td class="text-end">$6,1128</td>
+                                                            <td class="text-end pe-3">5</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">JAF-003</td>
+                                                            <td>the krautback</td>
+                                                            <td class="text-end">$6,0936</td>
+                                                            <td class="text-end pe-3">6</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">BEV-002</td>
+                                                            <td>chai and mighty</td>
+                                                            <td class="text-end">$5,9855</td>
+                                                            <td class="text-end pe-3">7</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">JAF-001</td>
+                                                            <td>nutellaphone</td>
+                                                            <td class="text-end">$5,5451</td>
+                                                            <td class="text-end pe-3">8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">JAF-002</td>
+                                                            <td>doctor stew</td>
+                                                            <td class="text-end">$5,5154</td>
+                                                            <td class="text-end pe-3">9</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-3">BEV-005</td>
+                                                            <td>adele-ade</td>
+                                                            <td class="text-end">$4,7088</td>
+                                                            <td class="text-end pe-3">10</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What you get Section -->
+    <section id="learn-more" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5 pb-2">
+                <h2 class="fw-bold">What gets saved in the Answers Library</h2>
+                <p class="text-secondary">Not just a number or a chart, all the context your team needs to reuse it
+                    confidently.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-circle-question"></i></div>
+                        <div>
+                            <h5 class="fw-bold">The Question</h5>
+                            <p class="text-secondary">Automatically Captured in plain English so it's easy to search.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-code"></i></div>
+                        <div>
+                            <h5 class="fw-bold">The SQL</h5>
+                            <p class="text-secondary">The exact code used, including templates and parameters.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-link"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Direct Links</h5>
+                            <p class="text-secondary">Deep links to related Sigma dashboards and Retool apps.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-book-open"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Definitions</h5>
+                            <p class="text-secondary">Related key terms (e.g., “activation date”, “ARR”).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Guidance</h5>
+                            <p class="text-secondary">Notes on how to use it (“don’t use this for revenue reporting”).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-user-tag"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Context</h5>
+                            <p class="text-secondary">Descriptions, ownership info, last updated dates, and tags for
+                                discovery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How it works</h2>
+                <p class="text-secondary">Capture what worked once and reuse it everywhere.</p>
+            </div>
+
+            <div class="row g-4 text-center justify-content-center">
+                <!-- Step 1 -->
+                <div class="col-md-3 position-relative">
+                    <div class="step-card">
+                        
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-comment-dots"></i></div>
+                        <h6 class="fw-bold mt-2">Create</h6>
+                        <p class="small text-secondary mb-0">Ask a question (business user) and save the answer or write
+                            a query (technical user).</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h6 class="fw-bold mt-2">Enrich</h6>
+                        <p class="small text-secondary mb-0">runQL automatically enriches the query with descriptions,
+                            links, and documentation.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-floppy-disk"></i></div>
+                        <h6 class="fw-bold mt-2">Publish</h6>
+                        <p class="small text-secondary mb-0">Edit anything and then publish the answer to the Library
+                            (optionally review/approve).</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-bolt"></i></div>
+                        <h6 class="fw-bold mt-2">Reuse</h6>
+                        <p class="small text-secondary mb-0">Now when a team member searches or asks a question, the
+                            answer is suggested instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What it looks like -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center fw-bold">What it looks like for your team</h2>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <p class="text-center text-secondary">Your team can instantly find and reuse the answers they need.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Tabs Navigation -->
+            <ul class="nav nav-pills justify-content-center mb-5" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-add-tab" data-bs-toggle="pill" data-bs-target="#pills-add"
+                        type="button" role="tab" aria-controls="pills-add" aria-selected="true">Step 1. Add an
+                        Answer</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-use-tab" data-bs-toggle="pill" data-bs-target="#pills-use"
+                        type="button" role="tab" aria-controls="pills-use" aria-selected="false">Step 2. Use an
+                        Answer</button>
+                </li>
+            </ul>
+
+            <!-- Tabs Content -->
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Tab 1: Add (Save + Seed) -->
+                <div class="tab-pane fade show active" id="pills-add" role="tabpanel" aria-labelledby="pills-add-tab"
+                    tabindex="0">
+
+                    <!-- Next Button for Flow -->
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-lg-10 text-center">
+                            <button class="btn btn-link text-decoration-none text-primary fw-medium"
+                                onclick="document.getElementById('pills-use-tab').click()">
+                                Next: Use an Answer <i class="fa-solid fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Option A: Save -->
+                    <div class="border rounded-3 p-5 mb-5"
+                        style="background-color:#EFF6FF; border-color:rgba(51, 113, 179, 0.2);">
+                        <div class="row g-5 align-items-center mb-5">
+                            <div class="col-lg-5">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Option A</span>
+                                </div>
+                                <h3 class="fw-bold mb-3">Save as you go</h3>
+                                <p class="text-secondary">When you get an instant answer to your question or write a
+                                    query
+                                    (technical person), you can instantly save that answer for reuse by your team. The
+                                    question,
+                                    description, notes, SQL, chart code, and related resources are automatically created
+                                    and saved
+                                    together.</p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="hero-visual-card p-4 bg-white rounded-3">
+                                    <!-- EXISTING SAVE VISUAL -->
+                                    <div class="bg-white border rounded shadow-sm text-start p-3">
+                                        <div
+                                            class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+                                            <div class="d-flex align-items-center gap-3 text-secondary">
+                                                <span class="small fw-bold">Editor Toolbar</span>
+                                            </div>
+                                            <div class="d-flex gap-2">
+                                                <button
+                                                    class="btn btn-sm btn-light border text-secondary fw-medium px-3">Edit</button>
+                                                <button
+                                                    class="btn btn-sm btn-light border text-secondary fw-medium px-3">Preview</button>
+                                            </div>
+                                        </div>
+                                        <div class="px-2">
+                                            <h4 class="fw-bold mb-3">Top 10 products by revenue in the past 30 days</h4>
+                                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center overflow-hidden"
+                                                        style="width: 32px; height: 32px;">
+                                                        <img src="/img/team/rob3.jpg" alt="Rob D" class="img-fluid"
+                                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                                    </div>
+                                                    <div class="d-flex flex-column" style="line-height: 1.2;">
+                                                        <span class="small fw-bold text-dark">By Rob D</span>
+                                                        <span class="small text-muted" style="font-size: 0.7rem;">Added
+                                                            Jan
+                                                            02,
+                                                            2026</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="alert bg-primary bg-opacity-10 border-0 d-flex gap-3 align-items-start mb-4">
+                                                <i class="fa-solid fa-circle-question text-primary opacity-50"></i>
+                                                <div>
+                                                    <div class="text-primary fw-bold small text-uppercase mb-1"
+                                                        style="font-size: 0.7rem;">Question</div>
+                                                    <div class="text-dark fw-medium">What are the top 10 products by
+                                                        revenue in the last
+                                                        30 days?</div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <h5 class="fw-bold mb-2">Auto Description</h5>
+                                                <p class="small">This answer identifies your best-selling products by
+                                                    revenue
+                                                    contribution over the last 30 days.
+                                                </p>
+                                                <p class="small">"Revenue" is defined as the sum of <span
+                                                        class="text-primary">product_price</span> from
+                                                    the <span class="text-primary">order_items</span> table.<br />
+                                                    "Last 30 days" is interpreted as the 30-day period immediately
+                                                    preceding the current timestamp when the query is executed... <span
+                                                        class="small text-primary">View More</span></p>
+                                            </div>
+                                            <div class="mb-4">
+                                                <h5 class="fw-bold mb-2">Note</h5>
+                                                <div class="text-secondary small mb-0" style="line-height: 1.6;">
+                                                    <p>Custom Note</p>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer bg-white border-top p-2">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fs-10p text-secondary">More Questions</span>
+                                                    <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer bg-white border-top p-2">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fs-10p text-secondary">SQL Query</span>
+                                                    <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer bg-white border-top p-2">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fs-10p text-secondary">Chart (Code)</span>
+                                                    <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer bg-white border-top p-2">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fs-10p text-secondary">Related Resources (Sigma,
+                                                        Retool,
+                                                        PowerBI)</span>
+                                                    <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-10">
+                                <hr class="text-muted opacity-25">
+                            </div>
+                        </div>
+
+                        <!-- Option B: Seed -->
+                        <div class="row g-5 align-items-center mb-5">
+                            <div class="col-lg-5">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Option B</span>
+                                </div>
+                                <h3 class="fw-bold mb-3">Seed Answers</h3>
+                                <p class="text-secondary">When a new dataset comes online, runQL can automatically
+                                    create questions and answers so the most likely questions are already
+                                    answered, reviewed, and ready before anyone asks. The seed answers are created from
+                                    your schema + automatic semantic definitions,
+                                    and you can also import your existing ticket backlog to kick of a seed answer
+                                    process.</p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="hero-visual-card p-4 bg-white rounded-3">
+                                    <div class="d-flex flex-column gap-3">
+                                        <div class="card border-0 shadow-sm">
+                                            <div class="card-body p-3 d-flex gap-3 align-items-center">
+                                                <div class="text-primary fs-4"><i
+                                                        class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                                <div>
+                                                    <h5 class="fw-bold h6 mb-1">1. AI predicts likely questions</h5>
+                                                    <p class="small text-secondary mb-0">Based on schema structure and
+                                                        definitions.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card border-0 shadow-sm">
+                                            <div class="card-body p-3 d-flex gap-3 align-items-center">
+                                                <div class="text-primary fs-4"><i class="fa-solid fa-file-code"></i>
+                                                </div>
+                                                <div>
+                                                    <h5 class="fw-bold h6 mb-1">2. Drafts are generated</h5>
+                                                    <p class="small text-secondary mb-0">SQL + documentation created
+                                                        automatically.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card border-0 shadow-sm">
+                                            <div class="card-body p-3 d-flex gap-3 align-items-center">
+                                                <div class="text-primary fs-4"><i class="fa-solid fa-user-check"></i>
+                                                </div>
+                                                <div>
+                                                    <h5 class="fw-bold h6 mb-1">3. Review & publish</h5>
+                                                    <p class="small text-secondary mb-0">Expert verifies and makes them
+                                                        reusable.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Use (Search + View) -->
+                <div class="tab-pane fade" id="pills-use" role="tabpanel" aria-labelledby="pills-use-tab" tabindex="0">
+
+                    <!-- Option A: Search -->
+                    <div class="border rounded-3 p-5 mb-5"
+                        style="background-color:#EFF6FF; border-color:rgba(51, 113, 179, 0.2);">
+                        <div class="row g-5 align-items-center mb-5 mt-4">
+                            <div class="col-lg-5 order-lg-last">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Option A</span>
+                                </div>
+                                <h3 class="fw-bold mb-3">Search the Library</h3>
+                                <p class="text-secondary">Your team can find answers by business question or keyword. No
+                                    need to
+                                    know the exact column name, just ask like a human.</p>
+                            </div>
+                            <div class="col-lg-7 order-lg-first">
+                                <div class="hero-visual-card p-4 bg-white rounded-3">
+                                    <img src="/img/features/runQL-data-chat-search.png" alt="Find Data with runQL"
+                                        class="img-fluid rounded-3 shadow-sm border bg-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-10">
+                                <hr class="text-muted opacity-25">
+                            </div>
+                        </div>
+
+                        <!-- Option B: View -->
+                        <div class="row g-5 align-items-center mb-5">
+                            <div class="col-lg-5 order-lg-last">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Option B</span>
+                                </div>
+                                <h3 class="fw-bold mb-3">Use a Saved Answer</h3>
+                                <p class="text-secondary">When someone on your team asks or searches, they will be
+                                    presented
+                                    instantly with a saved answer, if there is one.
+                                </p>
+                            </div>
+                            <div class="col-lg-7 order-lg-first">
+                                <div class="hero-visual-card p-4 bg-white rounded-3">
+                                    <!-- Hero Visual -->
+                                    <div class="d-flex flex-column gap-3">
+                                        <!-- Panel Data Hub -->
+                                        <div class="bg-white p-3 rounded-3 shadow-sm border">
+                                            <div>
+                                                <div class="d-flex align-items-center gap-2 mb-2">
+                                                    <span class="badge bg-light text-black"><small
+                                                            class="text-muted fw-bold text-uppercase"
+                                                            style="font-size: 0.7rem;">Answer</small></span>
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <div class="small text-muted pb-4">
+                                                        <p>This answer identifies your best-selling products by
+                                                            <strong>revenue
+                                                                contribution</strong> over the <strong>last 30
+                                                                days</strong>.
+                                                        </p>
+                                                        <p>"Revenue" is defined as the sum of <span
+                                                                class="text-primary">product_price</span> from
+                                                            the <span class="text-primary">order_items</span>
+                                                            table.<br />
+                                                            "Last 30 days" is interpreted as the 30-day period
+                                                            immediately
+                                                            preceding the current timestamp when the query is
+                                                            executed... <span class="text-primary">View more</span></p>
+                                                    </div>
+                                                    <div class="d-flex gap-2 flex-wrap">
+                                                        <div
+                                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                            <i class="fa-solid fa-file-lines text-secondary"></i>
+                                                            <small class="fw-semibold">order_items</small>
+                                                        </div>
+                                                        <div
+                                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                            <img src="/img/integrations/sigma-icon.png" alt="Sigma"
+                                                                height="20">
+                                                            <small class="fw-semibold">Product Revenue <i
+                                                                    class="fa fa-arrow-up-right-from-square ms-2"></i></small>
+                                                        </div>
+                                                        <div
+                                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill bg-dark text-white">
+                                                            <img src="/img/runQL-logo-only.png" alt="Answer"
+                                                                height="16">
+                                                            <small class="fw-semibold">Saved Answer</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="result-view-controls bg-light mt-4">
+                                                    <div class="dictionary-example">
+                                                        <div class="tab-bar bg-light">
+                                                            <div class="tab-item active">
+                                                                <i class="fa-solid fa-table"></i>
+                                                                Results
+                                                            </div>
+                                                            <div class="tab-item">
+                                                                <i class="fa-solid fa-chart-bar"></i>
+                                                                Chart
+                                                            </div>
+                                                            <div class="tab-item">
+                                                                <i class="fa-solid fa-code"></i>
+                                                                Query
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1"></div>
+                                                    <div class="control-btn border-1"><i class="fa-solid fa-filter"></i>
+                                                    </div>
+                                                    <div class="control-btn border-1"><i
+                                                            class="fa-solid fa-arrow-down-short-wide"></i></div>
+                                                    <div class="control-btn border-1"><i
+                                                            class="fa-solid fa-arrows-rotate"></i>
+                                                    </div>
+                                                    <div class="control-btn border-1"><i
+                                                            class="fa-solid fa-download"></i></div>
+                                                </div>
+
+                                                <div class="dictionary-data-results-example" style="margin-top: 1rem">
+                                                    <table class="data-table">
+                                                        <thead class="bg-light border-bottom">
+                                                            <tr>
+                                                                <th
+                                                                    class="ps-3 py-2 border-bottom-0 text-secondary fw-bold bg-white">
+                                                                    product_id</th>
+                                                                <th
+                                                                    class="py-2 border-bottom-0 text-secondary fw-bold bg-white">
+                                                                    product_name</th>
+                                                                <th
+                                                                    class="text-end py-2 border-bottom-0 text-secondary fw-bold bg-white">
+                                                                    total_revenue</th>
+                                                                <th
+                                                                    class="text-end py-2 pe-3 border-bottom-0 text-secondary fw-bold bg-white">
+                                                                    revenue_rank</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <!-- Filter row simulation -->
+                                                        <tr class="bg-white border-bottom">
+                                                            <td class="ps-3 py-2">
+                                                                <div class="d-flex align-items-center gap-2"><input
+                                                                        type="text"
+                                                                        class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                        disabled></div>
+                                                            </td>
+                                                            <td class="py-2">
+                                                                <div class="d-flex align-items-center gap-2"><input
+                                                                        type="text"
+                                                                        class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                        disabled></div>
+                                                            </td>
+                                                            <td class="py-2">
+                                                                <div class="d-flex align-items-center gap-2"><input
+                                                                        type="text"
+                                                                        class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                        disabled></div>
+                                                            </td>
+                                                            <td class="pe-3 py-2">
+                                                                <div class="d-flex align-items-center gap-2"><input
+                                                                        type="text"
+                                                                        class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                        disabled></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="ps-3">BEV-004</td>
+                                                                <td>for richer or pour</td>
+                                                                <td class="text-end">$8,3447</td>
+                                                                <td class="text-end pe-3">1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="ps-3">JAF-004</td>
+                                                                <td>flame impala</td>
+                                                                <td class="text-end">$7,2436</td>
+                                                                <td class="text-end pe-3">2</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit and Evolve -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-3">Edit anything to customize it as needed</h2>
+                    <p class="text-secondary">You’re not stuck with the automated text. Your team owns the final
+                        definitions.</p>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                    <div class="d-flex gap-3 align-items-start p-3 bg-white border rounded shadow-sm h-100">
+                        <i class="fa-solid fa-pen-to-square text-primary mt-1 fs-5"></i>
+                        <div>
+                            <strong>Edit details</strong>
+                            <p class="small text-secondary mb-0">Edit any documentation, tags, or metadata to match your
+                                business.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex gap-3 align-items-start p-3 bg-white border rounded shadow-sm h-100">
+                        <i class="fa-solid fa-quote-right text-primary mt-1 fs-5"></i>
+                        <div>
+                            <strong>Human overrides</strong>
+                            <p class="small text-secondary mb-0">Your manual edits automatically became the source of
+                                truth over AI versions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex gap-3 align-items-start p-3 bg-white border rounded shadow-sm h-100">
+                        <i class="fa-solid fa-text-height text-primary mt-1 fs-5"></i>
+                        <div>
+                            <strong>Add custom selectors</strong>
+                            <p class="small text-secondary mb-0">Let your team quickly select specific values (e.g.
+                                Region, Segment).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex gap-3 align-items-start p-3 bg-white border rounded shadow-sm h-100">
+                        <i class="fa-solid fa-circle-exclamation text-primary mt-1 fs-5"></i>
+                        <div>
+                            <strong>Add usage notes</strong>
+                            <p class="small text-secondary mb-0">Warn users about specific caveats (e.g., “don’t use
+                                this for revenue reporting”).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Great For Section (Updated) -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Great for ...</h2>
+            <div class="row g-4 justify-content-center">
+                <!-- 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-repeat"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Recurring Questions</h5>
+                            <p class="text-secondary">The same questions come up weekly.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Preventing Rework</h5>
+                            <p class="text-secondary">People rebuild dashboards because they can’t find prior work.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-database"></i></div>
+                        <div>
+                            <h5 class="fw-bold">One Source of Truth</h5>
+                            <p class="text-secondary">You want one place for “how we answer this”.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-stopwatch"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Faster Onboarding</h5>
+                            <p class="text-secondary">You want faster onboarding (“here’s how we measure X”).</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-link"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Full Context</h5>
+                            <p class="text-secondary">You want logic, documentation, and links captured together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time Saved Section -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <h2 class="text-center fw-bold">Stop building duplicate dashboards and apps</h2>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <p class="text-center text-secondary mb-5">Most teams aren’t short on data, they’re short on
+                        reusable answers.</p>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="p-4 bg-white rounded border shadow-sm h-100">
+                        <h4 class="fw-bold mb-4 text-danger"><i class="fa-solid fa-xmark me-2"></i>Manual Reality</h4>
+                        <ul class="list-unstyled d-flex flex-column gap-3">
+                            <li class="d-flex gap-2">
+                                <i class="fa-solid fa-minus text-danger mt-1"></i>
+                                <span class="text-secondary">Teams answer the same question repeatedly in Slack.</span>
+                            </li>
+                            <li class="d-flex gap-2">
+                                <i class="fa-solid fa-minus text-danger mt-1"></i>
+                                <span class="text-secondary">People rebuild “close enough” dashboards because they can't
+                                    find originals.</span>
+                            </li>
+                            <li class="d-flex gap-2">
+                                <i class="fa-solid fa-minus text-danger mt-1"></i>
+                                <span class="text-secondary">Knowledge disappears when someone leaves or changes
+                                    roles.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 bg-primary-subtle rounded border border-primary h-100">
+                        <h4 class="fw-bold mb-4 text-primary"><i class="fa-solid fa-check me-2"></i>With runQL</h4>
+                        <ul class="list-unstyled d-flex flex-column gap-3">
+                            <li class="d-flex gap-2">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span class="text-secondary">The answer becomes a reusable asset instantly.</span>
+                            </li>
+                            <li class="d-flex gap-2">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span class="text-secondary">The SQL and resource links are always attached for
+                                    validation.</span>
+                            </li>
+                            <li class="d-flex gap-2">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span class="text-secondary">New teammates ramp faster because the library is their
+                                    starting point.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Related features</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <a href="/product/automated-data-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                        <h4 class="h6 fw-bold">Automated Data Dictionary</h4>
+                        <p class="small text-secondary mb-0">The foundation for accurate answers.</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/automated-resource-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h4 class="h6 fw-bold">Automated Resource Dictionary</h4>
+                        <p class="small text-secondary mb-0">Index your existing dashboards and reports.</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/data-chat-search/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h4 class="h6 fw-bold">Data Chat & Search</h4>
+                        <p class="small text-secondary mb-0">Ask questions and find answers in the library.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section-padding bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 text-white">Build a library your team actually uses.</h2>
+            <p class="lead text-white-50 mb-4">Save answers once. Reuse them everywhere.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                    class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+                    <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Product</h6>
+                    <a href="/product/automated-data-dictionary/" class="footer-link">Data Dictionary</a>
+                    <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+                    <a href="/product/answers-library/" class="footer-link">Answers Library</a>
+                    <a href="/product/integrations/" class="footer-link">Integrations</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Resources</h6>
+                    <a href="/blog/" class="footer-link">Blog</a>
+                    <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                        class="footer-link">Benchmark Report</a>
+                    <a href="/data-security/" class="footer-link">Security</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="/about/" class="footer-link">About</a>
+
+                    <a href="/privacy/" class="footer-link">Privacy</a>
+                    <a href="/terms-of-service/" class="footer-link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

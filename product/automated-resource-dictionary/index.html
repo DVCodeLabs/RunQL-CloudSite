@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- SEO -->
+    <title>Automated Resource Dictionary | runQL</title>
+    <link rel="canonical" href="https://cloud.runql.com/product/automated-resource-dictionary/" />
+
+    <meta name="description"
+        content="Automatically document and index Sigma dashboards and Retool apps with searchable descriptions and usage context—so teams can find the right resource instantly and avoid rebuilding work." />
+
+    <meta name="author" content="runQL" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+    <!-- Optional: keywords (not used by Google; OK for internal/LLM hints) -->
+    <meta name="keywords"
+        content="automated resource dictionary, resource catalog, Sigma catalog, Retool catalog, dashboard documentation, app documentation, searchable metadata, semantic search, usage signals, data discovery, prevent duplicate dashboards, ops analytics, customer success analytics" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Automated Resource Dictionary | runQL" />
+    <meta property="og:site_name" content="runQL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloud.runql.com/product/automated-resource-dictionary/" />
+    <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta property="og:image:alt" content="runQL" />
+    <meta property="og:description"
+        content="Auto-document Sigma dashboards and Retool apps with searchable descriptions, usage signals, and helpful context so your team finds the right resource fast." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cloud.runql.com/product/automated-resource-dictionary/" />
+    <meta name="twitter:title" content="Automated Resource Dictionary | runQL" />
+    <meta name="twitter:description"
+        content="Auto-document and index Sigma dashboards and Retool apps with searchable descriptions and usage context—so teams find the right resource instantly." />
+    <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta name="twitter:image:alt" content="runQL" />
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Automated Resource Dictionary",
+    "url": "https://cloud.runql.com/product/automated-resource-dictionary/",
+    "description": "Automatically document and index Sigma dashboards and Retool apps with searchable descriptions and usage context so teams can find the right resource instantly and avoid rebuilding work.",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "runQL",
+        "url": "https://cloud.runql.com/"
+    },
+    "about": {
+        "@type": "SoftwareApplication",
+        "name": "runQL",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "featureList": [
+        "Catalog Sigma workbooks, pages, tables, and charts",
+        "Catalog Retool apps, pages, tables, and charts",
+        "Searchable business descriptions (semantic search)",
+        "Usage signals (e.g., last clicked / activity)",
+        "Plain-language 'what this is used for' documentation",
+        "Links to related data definitions and saved answers",
+        "Human overrides and editable descriptions/tags",
+        "Continuous updates when resources change"
+        ],
+        "url": "https://cloud.runql.com/"
+    }
+    }
+    </script>
+
+    <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+    <!-- Navigation (Same as Index) -->
+    <nav class="navbar navbar-expand-lg navbar-floating">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/img/runQL-logo.png" alt="runQL Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                                    Data Dictionary</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                                    Resource Dictionary</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                                    Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                            <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                                    Integrations</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                            <li><a class="dropdown-item py-2"
+                                    href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                                    Report</a></li>
+                            <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                            <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                            <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                            <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                        class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h1 class="display-4 fw-bold mb-4">Automatically document your<br /> dashboards and apps</h1>
+                    <p class="lead text-secondary mb-5 mx-auto" style="max-width: 800px;">
+                        runQL documents and indexes Sigma dashboards and Retool apps with helpful context, so your team
+                        can find the right resource instantly.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 mb-5">
+                        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                            class="btn btn-primary btn-lg plausible-event-name--bookMeetingLink">Request demo</a>
+                        <a href="#learn-more" class="btn btn-outline-secondary btn-lg">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Hero Visual -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <!-- Hero Visual -->
+                        <div class="d-flex flex-column gap-3">
+                            <!-- Panel Data Hub -->
+                            <div class="bg-white p-3 rounded-3 shadow-sm border text-start">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-light text-black text-wrap text-start"><small
+                                            class="text-muted fw-bold text-uppercase" style="font-size: 0.7rem;">Data
+                                            Hub > Jaffle Shop Workbook (Sigma) > Customers Page</small></span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-0 fw-medium">
+                                    <span><i class="fa fa-file"></i> Customers</span>
+                                    <i class="text-muted fs-9p fa fa-pen-to-square opacity-50 me-2"></i>
+                                </div>
+                                <div class="small text-muted pb-3">
+                                    This Sigma page gives us a clear view of who are best customers are and how they
+                                    behave over time. You can compare customer groups, see total orders and total
+                                    spending, and review the top customers by lifetime spend and order history.
+                                </div>
+                                <div class="mb-4 mt-1">
+                                    <!-- Glossary Row -->
+                                    <div class="d-flex align-items-center mb-2 gap-3">
+                                        <div class="text-secondary d-flex align-items-center gap-2 text-nowrap"
+                                            style="min-width: 80px;">
+                                            <i class="fa-solid fa-book-open small"></i>
+                                            <span class="small">Glossary:</span>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-3 small fw-normal text-primary">
+                                            <span>Order Management</span>
+                                            <span>Sales Analysis</span>
+                                            <span>Product Details</span>
+                                            <span>Product Pricing</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Domains Row -->
+                                    <div class="d-flex align-items-center mb-3 gap-3">
+                                        <div class="text-secondary d-flex align-items-center gap-2 text-nowrap"
+                                            style="min-width: 80px;">
+                                            <i class="fa-solid fa-landmark small"></i>
+                                            <span class="small">Domains:</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <span
+                                                class="badge bg-light text-secondary border rounded-pill fw-normal px-3">Retail</span>
+                                            <span
+                                                class="badge bg-light text-secondary border rounded-pill fw-normal px-3">E-commerce</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Search Bar -->
+                                    <div class="position-relative">
+                                        <i
+                                            class="fa-solid fa-magnifying-glass position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary opacity-50"></i>
+                                        <input type="text" class="form-control ps-5 py-2 border rounded-3 bg-white"
+                                            placeholder="Search Sigma dashboards and tables...">
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column flex-xxl-row gap-3 mt-3">
+                                    <!-- Card 1 -->
+                                    <div class="card border rounded-3 shadow-sm w-100 text-start">
+                                        <div class="card-body p-0">
+                                            <div class="p-3 border-bottom">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-solid fa-chart-line small text-secondary"></i>
+                                                        <h6 class="mb-0 text-dark"># Orders by Customer Type
+                                                        </h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="text-muted fs-10p fa fa-pen-to-square opacity-50"></i>
+                                                        <i
+                                                            class="fa-solid fa-arrow-up-right-from-square text-muted fs-10p opacity-50"></i>
+                                                    </div>
+                                                </div>
+                                                <p class="text-secondary mb-0" style="font-size: 0.7rem;">Lifetime
+                                                    Orders by Customer Type</p>
+                                            </div>
+                                            <div class="p-3">
+                                                <p class="fw-medium text-dark mb-2 small">What are the total lifetime
+                                                    orders
+                                                    for customers by type?</p>
+                                                <p class="small text-secondary mb-0"
+                                                    style="font-size: 0.85rem; line-height: 1.5;">
+                                                    This graph gives an overview of customer lifetime orders,
+                                                    categorized by customer type. It includes the total order counts and
+                                                    spend for those orders.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div class="card border rounded-3 shadow-sm w-100 text-start">
+                                        <div class="card-body p-0">
+                                            <div class="p-3 border-bottom">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-solid fa-table small text-secondary"></i>
+                                                        <h6 class="fw-bold mb-0 text-dark">Customer List</h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="text-muted fs-10p fa fa-pen-to-square opacity-50"></i>
+                                                        <i
+                                                            class="fa-solid fa-arrow-up-right-from-square text-muted fs-10p opacity-50"></i>
+                                                    </div>
+                                                </div>
+                                                <p class="text-secondary mb-0" style="font-size: 0.7rem;">A list of
+                                                    Customer Orders and Amounts</p>
+                                            </div>
+                                            <div class="p-3">
+                                                <p class="fw-medium text-dark mb-2 small">What is the order and spending
+                                                    history for a customer?</p>
+                                                <p class="small text-secondary mb-0"
+                                                    style="font-size: 0.85rem; line-height: 1.5;">
+                                                    This data provides the customer order history and spend for each
+                                                    customer. This
+                                                    includes all orders for each customer up to a maximum of 1,000
+                                                    customers.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 3 -->
+                                    <div class="card border rounded-3 shadow-sm w-100 text-start">
+                                        <div class="card-body p-0">
+                                            <div class="p-3 border-bottom">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-solid fa-chart-line small text-secondary"></i>
+                                                        <h6 class="fw-bold mb-0 text-dark">Lifetime Spend for Customers
+                                                        </h6>
+                                                    </div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="text-muted fs-10p fa fa-pen-to-square opacity-50"></i>
+                                                        <i
+                                                            class="fa-solid fa-arrow-up-right-from-square text-muted fs-10p opacity-50"></i>
+                                                    </div>
+                                                </div>
+                                                <p class="text-secondary mb-0" style="font-size: 0.7rem;">Top 1000
+                                                    Customers by Lifetime Spend</p>
+                                            </div>
+                                            <div class="p-3">
+                                                <p class="fw-medium text-dark mb-2 small">Who are the top 1000 customers
+                                                    based on their lifetime spending?</p>
+                                                <p class="small text-secondary mb-0"
+                                                    style="font-size: 0.85rem; line-height: 1.5;">
+                                                    This graph provides details on our top 1000 customers based on their
+                                                    total lifetimes spending. It includes
+                                                    pre-tax and after-tax total spending.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. What you get -->
+    <section id="learn-more" class="section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-3">What gets created automatically?</h2>
+                    <p class="text-secondary lead">Not just links, all the context to find the right resource quickly.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h5 class="fw-bold">Sigma Resources</h5>
+                        <p class="text-secondary mb-0">Catalog workbooks, pages, tables, and charts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h5 class="fw-bold">Retool Resources</h5>
+                        <p class="text-secondary mb-0">Catalog apps, pages, tables, and charts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                        <h5 class="fw-bold">Usage Signals</h5>
+                        <p class="text-secondary mb-0">Usage and last clicked timestamps.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-search"></i></div>
+                        <h5 class="fw-bold">Semantic Search</h5>
+                        <p class="text-secondary mb-0">Business descriptions become fully searchable for easy discovery.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-circle-info"></i></div>
+                        <h5 class="fw-bold">Full Descriptions</h5>
+                        <p class="text-secondary mb-0">"What this is used for" descriptions in plain language.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-link"></i></div>
+                        <h5 class="fw-bold">Related Data</h5>
+                        <p class="text-secondary mb-0">Links to related data definitions and saved answers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. How we do it -->
+    <section id="how-it-works" class="section-padding bg-subtle">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How it works</h2>
+                <p class="text-secondary">One-time setup, continuous updates.</p>
+            </div>
+            <div class="row g-4 text-center justify-content-center">
+                <div class="col-md-3 position-relative">
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-plug"></i></div>
+                        <h6 class="fw-bold mt-2">Connect Resources</h6>
+                        <p class="small text-secondary mb-0">Connect your Sigma or Retool instance.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-layer-group"></i></div>
+                        <h6 class="fw-bold mt-2">Index Metadata</h6>
+                        <p class="small text-secondary mb-0">Automatically create indexes for each resource.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-file-pen"></i></div>
+                        <h6 class="fw-bold mt-2">Create Documentation</h6>
+                        <p class="small text-secondary mb-0">Automatically create rich documentation.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-rotate-right"></i></div>
+                        <h6 class="fw-bold mt-2">Continuous Updates</h6>
+                        <p class="small text-secondary mb-0">Updates instantly when things change.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Editing + curation -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-3">Edit anything to customize it as needed</h2>
+                    <p class="text-secondary mb-4">You’re not stuck with the automated text. Your team owns the final
+                        definitions.</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-pen-to-square text-primary mt-1"></i>
+                            <div><strong>Edit</strong> any workspace/app or page descriptions, glossary terms, or tags.
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-quote-right text-primary mt-1"></i>
+                            <div><strong>Human overrides</strong> - your specific wording automatically becomes the
+                                source of truth.
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-circle-exclamation text-primary mt-1"></i>
+                            <div><strong>Add usage notes</strong> (e.g., “don’t use this for revenue reporting”).</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <div class="p-3 bg-white border rounded shadow-sm">
+                            <!-- Toolbar -->
+                            <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+                                <div class="d-flex align-items-center gap-3 text-secondary">
+                                    <div class="dropdown d-none d-sm-block">
+                                        <button
+                                            class="btn btn-sm btn-link text-decoration-none text-dark fw-medium dropdown-toggle p-0"
+                                            type="button">
+                                            Normal
+                                        </button>
+                                    </div>
+                                    <div class="vr mx-1 d-none d-sm-block"></div>
+                                    <i class="fa-solid fa-bold small cursor-pointer"></i>
+                                    <i class="fa-solid fa-italic small cursor-pointer"></i>
+                                    <i class="fa-solid fa-underline small cursor-pointer"></i>
+                                    <i class="fa-solid fa-circle small text-primary cursor-pointer d-none d-sm-block"
+                                        style="font-size: 0.6rem;"></i>
+                                    <i class="fa-solid fa-list-ul small cursor-pointer"></i>
+                                    <i class="fa-solid fa-list-ol small cursor-pointer d-none d-sm-block"></i>
+                                    <i class="fa-regular fa-check-circle small cursor-pointer d-none d-sm-block"></i>
+                                    <i class="fa-solid fa-link small cursor-pointer"></i>
+                                    <i class="fa-solid fa-code small cursor-pointer d-none d-sm-block"></i>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button
+                                        class="btn btn-sm btn-light border text-secondary fw-medium px-3">Edit</button>
+                                    <button
+                                        class="btn btn-sm btn-light border text-secondary fw-medium px-3">Preview</button>
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="px-2">
+                                <h2 class="fw-bold mb-3">Lifetime Spend for Customers</h2>
+
+                                <!-- Meta -->
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center overflow-hidden"
+                                            style="width: 32px; height: 32px;">
+                                            <img src="/img/team/rob3.jpg" alt="Rob D" class="img-fluid"
+                                                style="width: 100%; height: 100%; object-fit: cover;">
+                                        </div>
+                                        <div class="d-flex flex-column" style="line-height: 1.2;">
+                                            <span class="small fw-bold text-dark">By Rob D</span>
+                                            <span class="small text-muted" style="font-size: 0.7rem;">Updated Jan 02,
+                                                2026</span>
+                                        </div>
+                                        <div class="ms-3 d-flex align-items-center gap-1">
+                                            <span class="bg-success rounded-circle d-inline-block"
+                                                style="width: 8px; height: 8px;"></span>
+                                            <span class="small text-muted">Published</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-3 text-muted small">
+                                        <span><i class="fa-regular fa-eye me-1"></i> 320</span>
+                                        <span><i class="fa-regular fa-heart me-1"></i> 24</span>
+                                    </div>
+                                </div>
+
+                                <!-- Alert Box -->
+                                <div
+                                    class="alert bg-primary bg-opacity-10 border-0 d-flex gap-3 align-items-start mb-4">
+                                    <i class="fa-solid fa-circle-question text-primary opacity-50"></i>
+                                    <div>
+                                        <div class="text-primary fw-bold small text-uppercase mb-1"
+                                            style="letter-spacing: 0.5px; font-size: 0.7rem;">Example Question
+                                        </div>
+                                        <div class="text-dark fw-medium">Who are the top 1000 customers based on their
+                                            lifetime spending?</div>
+                                    </div>
+                                </div>
+
+                                <!-- Summary Section -->
+                                <div class="mb-4">
+                                    <h5 class="fw-bold mb-2">Definition</h5>
+                                    <p class="text-secondary small mb-0" style="line-height: 1.6;">
+                                        This graph provides details on our top 1000 customers based on their total
+                                        lifetimes spending. It includes pre-tax and after-tax total spending.
+                                    </p>
+                                </div>
+
+                                <!-- Tags Section (New) -->
+                                <div class="mt-4 pt-3 border-top">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="fa-solid fa-tags text-muted small"></i>
+                                        <h6 class="fw-bold mb-0 small text-uppercase text-muted">Tags</h6>
+                                    </div>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-light text-secondary border fw-normal px-2 py-1">Order
+                                            Totals
+                                            <i class="fa-solid fa-xmark ms-1 opacity-50 cursor-pointer"></i></span>
+                                        <button
+                                            class="btn btn-sm btn-outline-secondary py-0 px-2 small bg-white text-muted border-dashed"
+                                            style="font-size: 0.75rem;">+ Add Tag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Maintenance -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <div class="card border rounded-3 shadow-sm overflow-hidden">
+                            <div
+                                class="card-header bg-white border-bottom p-3 d-flex justify-content-between align-items-center">
+                                <h6 class="fw-bold mb-0 text-dark">Recent Activity</h6>
+                                <span class="badge bg-light text-secondary border fw-normal">Last 24h</span>
+                            </div>
+                            <div class="list-group list-group-flush">
+                                <!-- Item 1: New Resource -->
+                                <div class="list-group-item p-3 bg-white">
+                                    <div class="d-flex gap-3">
+                                        <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 36px; height: 36px;">
+                                            <img src="/img/integrations/sigma-icon.png" alt="Sigma"
+                                                style="height: 20px;">
+                                        </div>
+                                        <div class="w-100">
+                                            <div class="d-flex justify-content-between align-items-start w-100">
+                                                <h6 class="fw-medium text-dark mb-1">New Dashboard Indexed</h6>
+                                                <small class="text-muted" style="font-size: 0.7rem;">2m ago</small>
+                                            </div>
+                                            <p class="small text-secondary mb-0">"Q4 Sales Performance" was added from
+                                                Sigma
+                                                Production.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 2: Update -->
+                                <div class="list-group-item p-3 bg-white">
+                                    <div class="d-flex gap-3">
+                                        <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 36px; height: 36px;">
+                                            <img src="/img/integrations/retool-icon.svg" alt="Retool"
+                                                style="height: 20px;">
+                                        </div>
+                                        <div class="w-100">
+                                            <div class="d-flex justify-content-between align-items-start w-100">
+                                                <h6 class="fw-medium text-dark mb-1">New App Indexed</h6>
+                                                <small class="text-muted" style="font-size: 0.7rem;">1h ago</small>
+                                            </div>
+                                            <p class="small text-secondary mb-0">"New Customers" was added from
+                                                Retool.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 3: Alert/Move -->
+                                <div class="list-group-item p-3 bg-white">
+                                    <div class="d-flex gap-3">
+                                        <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                            style="width: 36px; height: 36px;">
+                                            <img src="/img/integrations/salesforce.svg" alt="Retool"
+                                                style="height: 20px;">
+                                        </div>
+                                        <div class="w-100">
+                                            <div class="d-flex justify-content-between align-items-start w-100">
+                                                <h6 class="fw-medium text-dark mb-1">New Column Added</h6>
+                                                <small class="text-muted" style="font-size: 0.7rem;">3h ago</small>
+                                            </div>
+                                            <p class="small text-secondary mb-0">Column `user_mapping` was added
+                                                in Salesforce.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light p-2 text-center">
+                                <small class="text-muted cursor-pointer">View all activity</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-lg-1">
+                    <h2 class="fw-bold mb-3">It stays current as dashboards and apps change</h2>
+                    <p class="text-secondary mb-4">No more ‘the dashboard moved’ or ‘I can’t find it anymore.’</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-bolt text-warning mt-1"></i>
+                            <div><strong>New dashboards & apps</strong> get indexed automatically.</div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-shuffle text-warning mt-1"></i>
+                            <div><strong>Renames and moves</strong> don’t break discovery.</div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-location-arrow text-warning mt-1"></i>
+                            <div><strong>Find the right resource</strong> even if you don’t know the folder path.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Time Saved -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <h2 class="text-center mb-5">Remove hours of hunting and duplicate work</h2>
+            <p class="text-center text-secondary lead mb-5">Most teams lose time because they can’t find the right thing
+                fast, not because it doesn't exist.</p>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-danger mb-4"><i class="fa-solid fa-xmark me-2"></i>Manual Reality
+                            </h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li class="text-secondary"><i class="fa-regular fa-clock me-2 opacity-50"></i>Spend
+                                    months manually creating and maintaining documents that describe workspaces,
+                                    dashboards and apps.</li>
+                                <li class="text-secondary"><i class="fa-regular fa-clock me-2 opacity-50"></i>Team
+                                    members and new hires
+                                    spend hours trying to find resources, clicking through navigation folders.</li>
+                                <li class="text-secondary"><i class="fa-solid fa-clone me-2 opacity-50"></i>Teams build
+                                    near-duplicates because they didn’t know something already existed.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card h-100 border-primary border-2 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-primary mb-4"><i class="fa-solid fa-check me-2"></i>With runQL</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li class="text-dark"><i
+                                        class="fa-solid fa-file-lines me-2 text-primary"></i>Automatically created and
+                                    maintained descriptions, you just edit as needed.</li>
+                                <li class="text-dark"><i
+                                        class="fa-solid fa-magnifying-glass me-2 text-primary"></i>Search by business
+                                    question or keywords, not folder structure.</li>
+                                <li class="text-dark"><i class="fa-solid fa-recycle me-2 text-primary"></i>Reuse what
+                                    exists instead of rebuilding something new from scratch.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 10. Related Features -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Related features</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <a href="/product/automated-data-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-book"></i></div>
+                        <h4 class="h6 fw-bold">Automated Data Dictionary</h4>
+                        <p class="small text-secondary mb-0">Automatically document schemas so everyone knows what
+                            fields mean.</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/data-chat-search/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h4 class="h6 fw-bold">Data Chat & Search</h4>
+                        <p class="small text-secondary mb-0">Ask questions in plain English and get pointed to the right
+                            place.</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/integrations/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-plug"></i></div>
+                        <h4 class="h6 fw-bold">One-Click Integrations</h4>
+                        <p class="small text-secondary mb-0">Connect your stack (database, Snowflake, Salesforce, Sigma,
+                            Slack) in minutes.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section-padding bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 text-white">Help your team find what already exists—fast.</h2>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                    class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+                    <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Product</h6>
+                    <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+                    <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+                    <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+                        Dictionary</a>
+                    <a href="/product/integrations/" class="footer-link">Integrations</a>
+                </div>
+                <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Resources</h6>
+                    <a href="/blog/" class="footer-link">Blog</a>
+                    <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                        class="footer-link">Benchmark Report</a>
+                    <a href="/data-security/" class="footer-link">Security</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="/about/" class="footer-link">About</a>
+
+                    <a href="/privacy/" class="footer-link">Privacy</a>
+                    <a href="/terms-of-service/" class="footer-link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

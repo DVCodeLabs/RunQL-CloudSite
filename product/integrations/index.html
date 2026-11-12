@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- SEO -->
+    <title>Integrations | runQL</title>
+    <link rel="canonical" href="https://cloud.runql.com/product/integrations/" />
+
+    <meta name="description"
+    content="Connect your data and app stack in minutes. runQL integrates with warehouses, databases, BI tools, and communication platforms like Snowflake, BigQuery, Databricks, Sigma, Retool, Slack, and Microsoft Teams." />
+
+    <meta name="author" content="runQL" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+    <!-- Optional: keywords (not used by Google; OK for internal/LLM hints) -->
+    <meta name="keywords"
+    content="runQL integrations, data integrations, Snowflake, BigQuery, Databricks, Redshift, Postgres, MySQL, SQL Server, Oracle, MariaDB, Salesforce, Microsoft Fabric, Trino, Neo4j, Sigma, Retool, dbt, Cube, Slack, Microsoft Teams" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Integrations | runQL" />
+    <meta property="og:site_name" content="runQL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloud.runql.com/product/integrations/" />
+    <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta property="og:image:alt" content="runQL" />
+    <meta property="og:description"
+    content="One-click connections to your warehouses, databases, BI tools, and communication platforms—including Snowflake, BigQuery, Databricks, Sigma, Retool, Slack, and Teams." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cloud.runql.com/product/integrations/" />
+    <meta name="twitter:title" content="Integrations | runQL" />
+    <meta name="twitter:description"
+    content="Connect your data and app stack in minutes with runQL integrations for warehouses, BI tools, and Slack/Teams." />
+    <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta name="twitter:image:alt" content="runQL" />
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Integrations",
+    "url": "https://cloud.runql.com/product/integrations/",
+    "description": "Integrations for runQL across data sources, BI tools, semantic layers, and communication platforms.",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "runQL",
+        "url": "https://cloud.runql.com/"
+    },
+    "about": {
+        "@type": "SoftwareApplication",
+        "name": "runQL",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://cloud.runql.com/",
+        "featureList": [
+        "One-click connections to warehouses and databases",
+        "Integrations with BI tools and app platforms",
+        "Integrations with communication platforms (Slack, Microsoft Teams)"
+        ]
+    },
+    "mentions": [
+        "Snowflake",
+        "BigQuery",
+        "Databricks",
+        "Amazon Redshift",
+        "PostgreSQL",
+        "MySQL",
+        "SQL Server",
+        "Oracle",
+        "MariaDB",
+        "Salesforce CRM",
+        "Neo4j",
+        "Trino",
+        "Microsoft Fabric",
+        "Sigma",
+        "Retool",
+        "dbt",
+        "Cube",
+        "Slack",
+        "Microsoft Teams",
+        "Microsoft Dynamics 365"
+    ]
+    }
+    </script>
+
+
+   <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+    <!-- Navigation (Same as Index) -->
+    <nav class="navbar navbar-expand-lg navbar-floating">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/img/runQL-logo.png" alt="runQL Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                                    Data Dictionary</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                                    Resource Dictionary</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                                    Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                            <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                                    Integrations</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                            <li><a class="dropdown-item py-2"
+                                    href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                                    Report</a></li>
+                            <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                            <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                            <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                            <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                        class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-4 fw-bold mb-4">Connect your data and app stack in minutes.</h1>
+                    <p class="lead text-secondary mb-5">Seamlessly integrate with your existing data warehouse, BI
+                        tools, and communication platforms. No complex setup, just one-click connections.</p>
+                    <div class="d-flex justify-content-center gap-3 mb-5">
+                        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                            class="btn btn-primary btn-lg plausible-event-name--bookMeetingLink">Request demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Grid -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <!-- Data Warehouses -->
+            <div class="fw-semibold mb-4 text-muted text-uppercase small">Data Sources, Databases and Warehouses</div>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4 mb-5">
+                <div class="col text-center">
+                    <a href="https://snowflake.com" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/partners/Snowflake_Logo.svg" alt="Snowflake" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Snowflake</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="https://cloud.google.com/bigquery" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/google-logo-icon.svg" alt="Google BigQuery" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Google BigQuery</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Databricks -->
+                <div class="col text-center">
+                    <a href="https://www.databricks.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/databricks-logo.svg" alt="Databricks" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Databricks</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="https://aws.amazon.com/redshift/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/amazon.svg" alt="Redshift" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Redshift</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/postgres.svg" alt="PostgreSQL" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">PostgreSQL</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- MySQL -->
+                <div class="col text-center">
+                    <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/mysql.svg" alt="MySQL" class="img-fluid"
+                                    style="max-height:90px;">
+                                <div class="mb-0 mt-1 text-muted fs-10p">MySQL</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- SQL Server -->
+                <div class="col text-center">
+                    <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/mssql.svg" alt="SQL Server" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">SQL Server</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Oracle -->
+                <div class="col text-center">
+                    <a href="https://www.oracle.com/database/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/oracle.png" alt="Oracle" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Oracle</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- MariaDB -->
+                <div class="col text-center">
+                    <a href="https://mariadb.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/mariadb.svg" alt="MariaDB" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">MariaDB</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Salesforce CRM -->
+                <div class="col text-center">
+                    <a href="https://www.salesforce.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/salesforce.svg" alt="Salesforce" class="img-fluid"
+                                    style="max-height:60px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Salesforce CRM</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Neo4j -->
+                <div class="col text-center">
+                    <a href="https://neo4j.com/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/neo4j.png" alt="Neo4j" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Neo4j</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Trino -->
+                <div class="col text-center">
+                    <a href="https://trino.io/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/trino.png" alt="Trino" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Trino</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Microsoft Fabric -->
+                <div class="col text-center">
+                    <a href="https://www.microsoft.com/en-us/microsoft-fabric" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/microsoft-fabric.png" alt="Microsoft Fabric"
+                                    class="img-fluid" style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Microsoft Fabric</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BI & Apps -->
+            <div class="fw-semibold mb-4 pt-4 text-muted text-uppercase small">BI, Apps, and Semantic Layers</div>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4 mb-5">
+                <div class="col text-center">
+                    <a href="https://www.sigmacomputing.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/sigma.png" alt="Sigma" class="img-fluid"
+                                    style="max-height:30px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Sigma</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="https://retool.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/retool.svg" alt="Retool" class="img-fluid"
+                                    style="max-height:30px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Retool</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="https://www.getdbt.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/dbt-labs-logo.svg" alt="dbt" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">dbt</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="https://cube.dev/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/cube.png" alt="Cube" class="img-fluid"
+                                    style="max-height:30px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Cube</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pre-Defined Semantic Documentation -->
+            <div class="fw-semibold mb-4 pt-4 text-muted text-uppercase small">Instant Semantic Documentation</div>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4 mb-5">
+                <div class="col text-center">
+                    <a href="https://www.salesforce.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/salesforce.svg" alt="Salesforce" class="img-fluid"
+                                    style="max-height:60px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Salesforce CRM</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="https://dynamics.microsoft.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <!-- Placeholder for Dynamics 365 -->
+                                <i class="fa-brands fa-microsoft fa-2x text-muted mb-2"></i>
+                                <div class="mb-0 mt-2 text-muted fs-10p">Microsoft Dynamics 365</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Communication -->
+            <div class="fw-semibold mb-4 pt-4 text-muted text-uppercase small">Communication</div>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4">
+                <div class="col text-center">
+                    <a href="https://slack.com/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/Slack_logo.png" alt="Slack" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">Slack</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="https://www.microsoft.com/en-us/microsoft-teams/group-chat-software" target="_blank"
+                        rel="noopener noreferrer" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 py-4 integration-card">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <img src="/img/integrations/microsoft-teams-logo.png" alt="Teams" class="img-fluid"
+                                    style="max-height:40px;">
+                                <div class="mb-0 mt-2 text-muted fs-10p">MS Teams</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 10. Related Features -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Related features</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <a href="/product/automated-data-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-book"></i></div>
+                        <h4 class="h6 fw-bold">Automated Data Dictionary</h4>
+                        <p class="small text-secondary mb-0">Automatically document schemas so everyone knows what
+                            fields mean.</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/automated-resource-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h4 class="h6 fw-bold">Automated Resource Dictionary</h4>
+                        <p class="small text-secondary mb-0">Index Sigma and Retool resources to prevent duplicate work.
+                        </p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/data-chat-search/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h4 class="h6 fw-bold">Data Chat & Search</h4>
+                        <p class="small text-secondary mb-0">Ask questions in plain English and get pointed to the right
+                            place.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section-padding bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 text-white">Get connected.</h2>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                    class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+                    <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Product</h6>
+                    <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+                    <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+                    <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+                        Dictionary</a>
+                    <a href="/product/integrations/" class="footer-link">Integrations</a>
+                </div>
+                <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Resources</h6>
+                    <a href="/blog/" class="footer-link">Blog</a>
+                    <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                        class="footer-link">Benchmark Report</a>
+                    <a href="/data-security/" class="footer-link">Security</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="/about/" class="footer-link">About</a>
+
+                    <a href="/privacy/" class="footer-link">Privacy</a>
+                    <a href="/terms-of-service/" class="footer-link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

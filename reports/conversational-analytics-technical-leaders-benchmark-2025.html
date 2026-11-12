@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="canonical" href="https://cloud.runql.com/" />
+    <!-- Favicon icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>2025 Conversational Analytics Benchmark Report | AI Accuracy, Consistency & BI Trust | runQL</title>
+
+    <meta name="title" content="2025 Conversational Analytics Benchmark Report | AI Accuracy, Consistency & BI Trust">
+    <meta name="description"
+        content="New 2025 benchmark: Snowflake Cortex Analyst, Databricks Genie, ThoughtSpot Spotter, and runQL tested for accuracy, consistency, and trust. Discover why AI struggles with structured data and how to fix it for reliable BI decisions.">
+    <meta name="keywords"
+        content="conversational analytics benchmark 2025, AI accuracy report, Snowflake Cortex Analyst accuracy, Databricks Genie accuracy, ThoughtSpot Spotter benchmark, structured data AI, business intelligence report, runQL research, AI error rates, LLM accuracy BI">
+    <meta name="author" content="runQL">
+
+    <meta property="og:title"
+        content="2025 Conversational Analytics Benchmark Report | Accuracy, Consistency & AI Trust">
+    <meta property="og:site_name" content="runQL.com">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cloud.runql.com/reports/conversational-analytics-technical-leaders-benchmark-2025.html">
+    <meta property="og:image" content="/img/blog/report-cover.png">
+    <meta property="og:description"
+        content="Independent 2025 benchmark comparing Snowflake Cortex Analyst, Databricks Genie, ThoughtSpot Spotter, and runQL. See why accuracy ranges from 54–92%, where AI fails, and how to close the BI trust gap.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url"
+        content="https://cloud.runql.com/reports/conversational-analytics-technical-leaders-benchmark-2025.html">
+    <meta name="twitter:title" content="2025 Conversational Analytics Benchmark Report | AI Accuracy & BI Trust">
+    <meta name="twitter:description"
+        content="New research reveals accuracy gaps in top GenAI BI tools and how to fix them with governance, guardrails, and deterministic workflows.">
+    <meta name="twitter:image" content="/img/blog/report-cover.png">
+    <meta name="twitter:image:alt" content="runQL Conversational Analytics Benchmark Report 2025 Cover">
+
+    <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+    <style>
+        html {
+            scroll-padding-top: 120px;
+        }
+
+        .section-index {
+            position: fixed;
+            right: 1.5rem;
+            bottom: 5.5rem;
+            /* just above .btn-scroll-top */
+            z-index: 1200;
+            /* higher than .btn-scroll-top and header */
+            font-size: 13px;
+        }
+
+        .section-index-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid #3371B3;
+            background: rgb(243, 244, 246);
+            color: #3371B3;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.4);
+        }
+
+        .section-index-toggle i {
+            font-size: 14px;
+        }
+
+        .section-index-panel {
+            position: absolute;
+            right: 0;
+            bottom: 110%;
+            margin-bottom: 8px;
+            min-width: 220px;
+            max-height: 50vh;
+            overflow-y: auto;
+            background: rgb(243, 244, 246);
+            color: #3371B3;
+            border: 1px solid #3371B3;
+            border-radius: 12px;
+            padding: 8px 10px;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.4);
+            display: none;
+        }
+
+        .section-index.open .section-index-panel {
+            display: block;
+        }
+
+        .section-index-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-index-list li+li {
+            margin-top: 6px;
+        }
+
+        .section-index-link {
+            display: block;
+            color: #3371B3;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .section-index-link:hover {
+            color: rgb(244, 93, 12);
+        }
+
+        /*.section-index-link.is-active {
+            color: rgb(244, 120, 81);
+            font-weight: 600;
+        }*/
+
+        .report-page-hero-art {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 2;
+            background-image: url('/img/report/bg-art.svg');
+            background-repeat: no-repeat;
+            background-position: top right;
+            /* image sizing with min and max */
+            background-size: clamp(420px, 48vw, 720px) auto;
+            min-height: clamp(560px, 60vw, 960px);
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #3371B3;
+            line-height: 1.2;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #3371B3;
+            line-height: 1.3;
+            margin-top: 48px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #3371B3;
+            line-height: 1.4;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #444;
+            line-height: 1.4;
+            margin-top: 32px;
+            margin-bottom: 8px;
+        }
+
+        /* Executive Summary Box */
+        .executive-summary {
+            background-color: rgba(243, 244, 246, 0.7);
+            padding: 32px;
+            /*margin: 32px 0;*/
+            border-radius: 8px;
+        }
+
+        /*h2.subtitle {
+            font-size: 30px;
+            font-weight: 500;
+            color: #222222;
+            line-height: 1.3;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }*/
+
+        .text-focus {
+            color: #f47851;
+        }
+
+        .executive-summary h2 {
+            color: #f47851;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-top: 0;
+        }
+
+
+        /*.quote-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-card::before {
+            content: "“";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: Georgia, serif;
+            font-size: 100px;
+            color: rgba(0, 0, 0, 0.06);
+            z-index: 0;
+        }
+
+        .quote-card .card-body {
+            position: relative;
+            z-index: 1;
+            color: #3371B3;
+            font-weight: 500;
+            font-style: italic;
+        }*/
+
+        /* Callout Boxes */
+        /*.callout-box {
+            background-color: #FFFBEB;
+            border: 2px solid #FCD34D;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }*/
+
+        .callout-box h3 {
+            color: #f47851;
+            margin-top: 0;
+        }
+
+        /* Highlighted Text Boxes */
+        .highlight-box {
+            background-color: #F0F9FF;
+            /*border-left: 4px solid #0EA5E9;*/
+            padding: 20px 24px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        /* Result Summary Box */
+        /*.result-summary {
+            background-color: #ECFDF5;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 32px 0;
+        }*/
+
+        .result-summary h3 {
+            color: #065F46;
+            margin-top: 0;
+        }
+
+        .plain-list-spacing li {
+            margin-bottom: 12px;
+        }
+
+        /* Key Findings / Arrows */
+        .arrow-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .arrow-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 12px;
+        }
+
+        .arrow-list li::before {
+            content: '→';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #f47851;
+            line-height: 1;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* Statistics / Numbers */
+        .stat-highlight-summary {
+            color: rgb(100, 116, 139);
+            font-weight: 600;
+        }
+
+        .stat-highlight {
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            border-top: 2px solid #3371B3;
+            margin: 48px 0;
+        }
+
+        /* Emphasis Text */
+        .emphasis-text {
+            background-color: #F0F9FF;
+            padding: 20px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            color: rgb(100, 116, 139);
+        }
+
+        .green-check {
+            color: #065F46;
+            font-weight: 500;
+        }
+
+        .red-check {
+            color: #DC2626;
+            font-weight: 700;
+        }
+
+        .small {
+            font-size: 0.85em;
+            line-height: 1.2;
+        }
+
+        /* Appendix Styling */
+        /*.appendix-section {
+            background-color: #F9FAFB;
+            padding: 32px;
+            margin-top: 48px;
+            border-radius: 8px;
+        }*/
+
+        .appendix-section h2 {
+            color: #374151;
+        }
+
+        /* Base Table Styling */
+        table {
+            border-collapse: collapse;
+            /* Removes space between borders */
+            width: 100%;
+            /*font-family: Arial, sans-serif; /* Common, clean font */
+            /*color: #333;*/
+            border: 1px solid #eee;
+            /* Subtle border around the whole table */
+        }
+
+        /* Header Row Styling */
+        thead tr {
+            background-color: #3371B3;
+            /* Dark blue background */
+            color: white;
+            /* White text for contrast */
+            text-align: left;
+        }
+
+        /* Header Cell Styling */
+        th {
+            padding: 12px 15px;
+            font-weight: bold;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            /* Light separator lines for headers */
+        }
+
+        /*.bold {
+            font-weight: bold;
+        }*/
+
+        /* Remove right border from the last header cell */
+        th:last-child {
+            border-right: none;
+        }
+
+        /* Body Cell Styling */
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+            /* Light separator between rows */
+            vertical-align: top;
+        }
+
+        /* Alternating Row Colors (for the light blue/white effect) */
+        tbody tr:nth-child(even) {
+            background-color: #f0f8ff;
+            /* Very light blue for even rows */
+        }
+
+        .scores-table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+            /* White for odd rows */
+        }
+
+        /* Hover effect (optional, but a nice touch) */
+        tbody tr:hover {
+            background-color: #e6f3ff !important;
+        }
+
+        /*.inconsistency-table tbody tr.bg-danger-subtle:hover {
+            background-color: #f8d0d7 !important;
+        }*/
+
+        .fs-14p {
+            font-size: 14px;
+        }
+
+        .fs-13p {
+            font-size: 13px;
+        }
+
+        .fs-12p {
+            font-size: 12px;
+        }
+
+        .fs-11p {
+            font-size: 11px;
+        }
+
+        .fs-10p {
+            font-size: 10px;
+        }
+
+        .fs-9p {
+            font-size: 9px;
+        }
+
+        .fs-8p {
+            font-size: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-floating">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/img/runQL-logo.png" alt="runQL Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                                    Data Dictionary</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                                    Resource Dictionary</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                                    Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                            <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                                    Integrations</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                            <li><a class="dropdown-item py-2"
+                                    href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                                    Report</a></li>
+                            <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                            <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                            <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                            <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                        class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero-section bg-white">
+
+        <section class="overflow-hidden report-page-bg-hero pb-3">
+            <div class="container pt-5 mt-5 mt-md-4">
+                <div class="row align-items-center align-items-lg-stretch mb-2 mb-sm-3">
+                    <div class="report-page-hero-art opacity-25"></div>
+                    <div style="max-width:1000px; margin:0 auto; z-index:3;">
+                        <div class="fs-10p">Nov 19, 2025 - Rob Darling</div>
+                        <h1>Bridging the AI Gap in Business Intelligence</h1>
+                        <p class="fw-bold mb-1">Everything leaders need to know about Conversational Analytics and how
+                            to get the most out of AI to ensure faster, trusted decisions.</p>
+                        <p class="fs-14p text-muted mb-3">
+                            This is the <span class="fw-semibold">data and technical leader</span> version of our 2025
+                            Conversational Analytics Report.
+                            Business leader? <a href="conversational-analytics-business-leaders-report-2025.html">View
+                                the business edition here</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="max-width:1000px; margin:0 auto;">
+            <div class="container">
+                <div class="executive-summary z-3 position-relative">
+                    <h2 id="executive-summary">Executive Summary</h2>
+                    <p>Businesses everywhere are racing to unlock a new frontier of productivity to empower every
+                        employee to make faster, accurate
+                        decisions. Lost productivity costs U.S. businesses an estimated $1.8 trillion annually, and
+                        knowledge workers waste 5.3 hours every week waiting for information that should be immediately
+                        accessible. To solve this, organizations are projected to
+                        spend <span class="stat-highlight-summary">$644 billion this year on Generative AI, with $37
+                            billion allocated to software tools alone</span>.
+                    </p>
+                    <p>Yet a major challenge persists: BI dashboards and data teams can’t keep pace with the speed of
+                        modern
+                        business. Traditional dashboards were built for a slower era. They rely on static definitions
+                        and rigid reports, leaving employees waiting for insights and data teams buried in requests. In
+                        reality,
+                        employees don’t want dashboards, they want answers. Meanwhile, new Conversational Analytics
+                        solutions often look impressive in demos but fall short in production because they lack the
+                        system-level architecture needed for accuracy and consistency.</p>
+
+                    <p>This report asks two practical questions:</p>
+                    <ul class="plain-list-spacing">
+                        <li><span class="fw-bold">How accurate and <span
+                                    class="text-decoration-underline">consistent</span> are today’s leading AI
+                                Conversational Analytics tools?</span></li>
+                        <li><span class="fw-bold">What’s actually required to make these tools reliable enough for
+                                real-world, self-serve analytics?</span></li>
+                    </ul>
+
+                    <p class="pt-2">To evaluate the current state of the space, we first tested Snowflake Cortex
+                        Analyst, Databricks Genie,
+                        ThoughtSpot Spotter, and runQL (in Basic Test Mode) across 50 business questions, two realistic
+                        datasets, and three independent
+                        test cycles. In an &quot;apples-to-apples&quot; configuration, using each platform’s recommended
+                        setup, accuracy ranged from
+                        <span class="stat-highlight-summary">54.67%</span> to <span
+                            class="stat-highlight-summary">92%</span>, and inconsistency rates ranged from
+                        <span class="stat-highlight-summary">0%</span> to <span
+                            class="stat-highlight-summary">12%</span>. These findings, consistent with Snowflake's <a
+                            href="https://www.snowflake.com/en/engineering-blog/snowflake-cortex-analyst-behind-the-scenes/"
+                            target="_blank">published accuracy results</a> of 90%, demonstrate that base AI
+                        Conversational Analytics architectures are not yet reliable enough for self-serve analytics at
+                        scale.
+                    </p>
+
+                    <p>Next, we evaluated what happens when additional system components like intent classification,
+                        deterministic checks, ranking,
+                        and answer caching are enabled in runQL. With these components active (runQL in Smart Test
+                        Mode), accuracy and consistency
+                        reached <span class="fw-bold">100%</span> across all datasets and all test runs.</p>
+
+                    <p>Finally, as a third evaluation, we layered runQL in Smart Test Mode on top of Snowflake Cortex
+                        Analyst and Databricks Genie. In this augmented
+                        configuration, their accuracy improved (in some cases to 100%), inconsistencies were eliminated,
+                        and incorrect or low-confidence
+                        queries were intercepted, rewritten, or blocked before reaching end users.</p>
+
+                    <p>The key finding is architectural: achieving reliable Conversational Analytics requires
+                        <span class="fw-bold">architecture and process layers</span> that provide deterministic
+                        guardrails,
+                        semantic grounding, reusable answers, ranking, and Expert-in-the-Loop workflows.
+                    </p>
+                    <p>This report breaks down the current capabilities and limitations of AI Conversational Analytics,
+                        examining accuracy, consistency, user expectations, and the system design required to make
+                        AI-driven analytics production-ready.</p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="business-insights-bottleneck">The Business Insights Bottleneck</h2>
+                    <p>Today's business users expect fast, self-serve answers, yet business decisions now move faster
+                        than
+                        traditional analytics can support. Most organizations face a growing backlog between business
+                        questions and answers from data stored in their databases. Traditional BI dashboards were built
+                        for a
+                        slower era, relying on the same questions and rigid report cycles. As priorities shift,
+                        employees wait for new reports while data teams become overextended.
+                        As a result, most organizations find themselves constrained by:</p>
+                    <ul class="arrow-list">
+                        <li>BI teams overwhelmed by the backlog of requests from the business</li>
+                        <li>Exploding data volumes (<span class="fw-bold">168B terabytes</span> expected this year)
+                        </li>
+                        <li>Business needs that move faster than traditional BI tools</li>
+                        <li>Dashboards that can’t keep pace with changing business user needs and questions</li>
+                    </ul>
+                    <p>A Sigma Computing survey<sup>1</sup> found that 76 percent of data experts spend 49 percent of
+                        their time on adhoc data reports/requests, with turnaround times ranging from one to four weeks.
+                        Respondents cited the shortage of available data analysts as the primary cause of the backlog.
+                        Similarly, a Veritas survey<sup>2</sup> of 1500 IT leaders found that 97 percent of the global
+                        organizations surveyed believe they have missed valuable opportunities as a result of
+                        ineffective data management.
+                        In fact, 35 percent admit to losing out on new revenue opportunities, while 39 percent say their
+                        data challenges have caused an increase in operating costs, and organizations estimated more
+                        than $2 million in annual losses are tied to these challenges. </p>
+                    <p class="emphasis-text">The result? Slower decision-making, missed revenue opportunities, higher
+                        operational costs, and difficulty
+                        keeping pace with evolving business demands.</p>
+
+                    <div>
+                        <p class="fs-10p">
+                            1. Sigma Computing, Data Language Survey. <a
+                                href="https://www.sigmacomputing.com/blog/breaking-down-the-data-language-barrier"
+                                target="_blank">https://www.sigmacomputing.com/blog/breaking-down-the-data-language-barrier</a><br>
+                            2. Veritas, Value of Data Study. <a
+                                href="https://www.veritas.com/news-releases/2019-03-12-data-management-challenges-cost-millions-a-year-reveals-veritas-research"
+                                target="_blank">https://www.veritas.com/news-releases/2019-03-12-data-management-challenges-cost-millions-a-year-reveals-veritas-research</a><br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="promise-of-ai">The Promise of AI for Business Intelligence</h2>
+                    <p>AI promises to revolutionize BI by enabling:</p>
+                    <ul class="arrow-list">
+                        <li>Natural language questions</li>
+                        <li>Instant insights for business users</li>
+                        <li>Democratized data access</li>
+                    </ul>
+                    <div class="mt-5">
+                        <p>But in real-world use, there is a gap for both standalone AI and most AI Conversational
+                            Analytics
+                            systems. These solutions struggle with:</p>
+                        <ul class="arrow-list">
+                            <li>Inconsistent answers on the same repeat questions</li>
+                            <li>Wrong answers that business users often can’t identify as wrong</li>
+                            <li>Maintaining trust due to wrong and inconsistent answers
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="emphasis-text">In BI, wrong answers are more than a tech issue, they are a trust issue.
+                    </p>
+                    <div class="mt-5">
+                        <p>External studies highlight this gap clearly:</p>
+                        <ul class="arrow-list">
+                            <li>Without schema or context, AI averages 16 percent accuracy on structured database
+                                queries, according to a study by data.world<sup>3</sup>.
+                            </li>
+                            <li>With schema and context, accuracy can rise to 67 percent on the Spider
+                                2.0 Enterprise Data Evaluation<sup>4</sup>, a benchmark developed by researchers from
+                                Google DeepMind, Google Cloud AI Research, University of Waterloo, Salesforce Research,
+                                and
+                                the University of Hong Kong.
+                            </li>
+                        </ul>
+                        <p class="emphasis-text">However, like most accuracy studies, these benchmarks only measure
+                            one-time accuracy, not the ability to consistently produce the same correct result.
+                            Consistency is critical for business users and data teams alike.</p>
+                        <!--<p class="emphasis-text">In BI, one-time accuracy isn't enough, consistent accuracy is critical.</p>-->
+                        <p>To address these gaps, leading AI Conversational Analytics platforms now combine AI with
+                            deterministic processes, semantic layers, context grounding, and expert oversight to deliver
+                            faster, more accurate, and more reliable insights. Before diving deeper, it’s important to
+                            understand where organizations are in the process of adopting AI.</p>
+                        <!--<p class="emphasis-text">Benchmarking one-time accuracy isn't enough as business users and data teams need consistent accuracy.</p>-->
+                    </div>
+                    <div>
+                        <p class="fs-10p">
+                            3. data.world, Generative AI - Accuracy in the Enterprise.
+                            <a href="https://data.world/blog/generative-ai-benchmark-increasing-the-accuracy-of-llms-in-the-enterprise-with-a-knowledge-graph/"
+                                target="_blank">https://data.world/blog/generative-ai-benchmark-increasing-the-accuracy-of-llms-in-the-enterprise-with-a-knowledge-graph/</a><br>
+                            4. Spider 2.0, Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows
+                            with
+                            researchers from Google DeepMind, Google Cloud AI Research, University of Waterloo,
+                            Salesforce
+                            Research, and the University of Hong Kong. <a href="https://spider2-sql.github.io/"
+                                target="_blank">https://spider2-sql.github.io/</a><br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="ai-adoption-curve">Where Are We in the AI Adoption Curve?</h2>
+                    <p>According to Gartner’s <span class="stat-highlight">2025 Hype Cycle for Emerging
+                            Technologies</span>,
+                        GenAI is entering the &quot;Trough of Disillusionment&quot; where early
+                        excitement gives way to practical results. For many organizations, this is the most exciting
+                        phase,
+                        when experimentation transitions into measurable impact. As adoption matures, leaders are
+                        shifting their focus towards accuracy,
+                        governance, and ROI.</p>
+
+                    <p>Across industries, leaders are shifting from asking if they should adopt AI to asking how they
+                        can
+                        use it responsibly and effectively. This shift signals a growing maturity in AI adoption, one
+                        that
+                        centers on delivering reliable outcomes and real business value.
+                    </p>
+
+                    <div class="mb-1">&nbsp;</div>
+                    <img class="border-1 img-fluid"
+                        style="border: 1px solid #EEE; padding:30px; border-radius: 8px; max-width:98%;"
+                        src="/img/report/gartner-hype-cycle-2025.png" alt="gartner-hype-cycle">
+                    <div class="mb-3">&nbsp;</div>
+
+                    <p>A recent MIT report<sup>5</sup> found that organizations who successfully achieve ROI on their AI
+                        implementations share four common practices:</p>
+                    <ul class="arrow-list">
+                        <li>Selecting systems that learn automatically by retaining feedback, providing context, and
+                            improving
+                            over time
+                        </li>
+                        <li>Leveraging vendor solutions, which show twice the success rate (<span
+                                class="stat-highlight">66%</span>) over internal builds (<span
+                                class="stat-highlight">33%</span>)
+                        </li>
+                        <li>Focusing on operational use cases, which deliver stronger ROI</li>
+                        <li>Targeting specific, high-value, well-defined use cases</li>
+                    </ul>
+                    <p class="mt-6">Complementing this, research by Google and the National Research Group<sup>6</sup>
+                        has found that:</p>
+                    <ul class="arrow-list">
+                        <li><span class="stat-highlight">74%</span> of executives see ROI on at least one GenAI use case
+                        </li>
+                        <li><span class="stat-highlight">70%</span> of executives have seen measurable productivity
+                            gains
+                            from AI solutions
+                        </li>
+                    </ul>
+
+                    <div class="emphasis-text mt-5 pb-2">
+                        <div style="margin-bottom:6px;margin-top:6px;"><span class="fw-bold">Armed with this new data,
+                                smart leaders are shifting their thinking to:</span>
+                        </div>
+                        <ul class="plain-list-spacing">
+                            <li>Prioritize oversight, governance, and measurable ROI rather than one-off demos or
+                                generic LLM integrations.</li>
+                            <li>Choose platforms that retain feedback, maintain up-to-date context, and improve over
+                                time, characteristics that consistently outperform LLM wrappers or conversational tools
+                                without these system-level processes.</li>
+                            <li>Adopt architectures designed to learn continuously and incorporating Expert-in-the-Loop
+                                workflows where needed, an approach shown to drive higher success rates in AI-human
+                                collaboration<sup>7</sup>.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="fs-10p mt-4">
+                            5. MIT NANDA (2025, July). The GenAI Divide—State of AI in Business
+                            2025. <a
+                                href="https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf"
+                                target="_blank">https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf</a><br>
+                            6. Google Cloud, with research by National Research Group (2025, September). The ROI of AI
+                            2025—How agents are unlocking the next wave of AI-driven business value.
+                            <a href="https://services.google.com/fh/files/misc/google_cloud_roi_of_ai_2025.pdf"
+                                target="_blank">https://services.google.com/fh/files/misc/google_cloud_roi_of_ai_2025.pdf</a><br>
+                            7. Capgemini Research Institute. (2025, July). Rise of agentic AI—How trust is the key to
+                            human-AI collaboration. Capgemini.
+                            <a href="https://www.capgemini.com/wp-content/uploads/2025/07/Final-Web-Version-Report-AI-Agents.pdf"
+                                target="_blank">https://www.capgemini.com/wp-content/uploads/2025/07/Final-Web-Version-Report-AI-Agents.pdf</a><br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="platform-configuration">Platform Configuration</h2>
+                    <p>In this benchmark we evaluated Snowflake Cortex Analyst (also used by Snowflake Intelligence),
+                        Databricks Genie, ThoughtSpot Spotter, and runQL. For each vendor we followed the official setup
+                        documentation to configure the required data connections and semantic information, including
+                        data models, and data relationships.<br />
+                        <span class="fs-12p">See <a href="#appendix-b">Appendix B</a> for the datasets and ERD
+                            diagrams.</span>
+                    </p>
+                    <table class="fs-14p">
+                        <thead>
+                            <tr>
+                                <th>Vendor</th>
+                                <th>Semantic &amp; Relationship Configuration</th>
+                                <th>LLM Model Provider</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">Snowflake Cortex Analyst</td>
+                                <td><span class="green-check">✔︎</span> Manually Created</td>
+                                <td>Anthropic</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Databricks Genie</td>
+                                <td><span class="green-check">✔︎</span> Manually Created</td>
+                                <td>OpenAI</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">ThoughtSpot Spotter</td>
+                                <td><span class="green-check">✔︎</span> Manually Created</td>
+                                <td>OpenAI</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">runQL</td>
+                                <td><span class="green-check">✔︎</span> Automatically Generated</td>
+                                <td>Google &amp; OpenAI</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="mt-4">There are a variety of Large Language Models (LLMs) used by these solutions,
+                        including OpenAI’s
+                        GPT-4.1 and 4o, Anthropic’s Claude Sonnet 4 and 3.5, and Google’s Gemini 2.5 Flash. All of these
+                        AI
+                        Conversational Analytics solutions offer a semantic layer (models, metadata, etc.) and
+                        processes, in conjunction with the LLM to get more accurate results than a standalone LLM.</p>
+
+                    <p>While each platform offers different features and database backends, we designed this as an equal
+                        "apples-to-apples" test for the first evaluation. For runQL, this meant deliberately disabling
+                        several proprietary capabilities that extend beyond what the other platforms provide. As a
+                        result, runQL was not tested in its normal production setup, but instead in a Basic Test Mode
+                        configuration:</p>
+                    <ol class="plain-list-spacing">
+                        <li>
+                            <strong>Basic Test Mode</strong> (baseline used for this evaluation)
+                            <ul>
+                                <li>Provides automatically generated semantic information, schema metadata, synthetic
+                                    data, and the deterministic guardrail engine to support SQL answer generation
+                                </li>
+                                <li>Intentionally excludes the intent engine, ranking engine, answer caching, answers
+                                    context engine, and Expert-in-the-Loop review
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <p>We did not create certified queries, saved queries, or define metrics for any of the platforms.
+                    </p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="benchmark-methodology">Benchmark Methodology</h2>
+                    <p>To evaluate accuracy, consistency, and reliability, we designed a benchmark using
+                        50 unique business questions across two separate datasets.</p>
+                    <p>The first dataset is Jaffle Shop from dbt Labs, which contains fictional food and beverage
+                        transactions. The second, more complex dataset, BitThreads, includes marketing spend, sales
+                        transactions, and human resources data for a fictional clothing retail chain. <span
+                            class="fs-12p">(See <a href="#appendix-b">Appendix B</a> for more details.)</span>
+                    </p>
+                    <p>For each dataset, we selected unique business questions aligned to themes such as sales
+                        performance and customer behavior.
+                        <span class="fs-12p">(See &quot;How The Questions Were Created&quot; in <a
+                                href="#appendix-b">Appendix B</a>.)</span>
+                    </p>
+                    <ul class="plain-list-spacing">
+                        <li><strong>Batching:</strong> The 50 questions were split into two batches of 25, one batch per
+                            dataset.
+                        </li>
+                        <li><strong>Cycling:</strong> For each cycle, we submitted the 25 Jaffle Shop questions,
+                            followed by the 25 BitThreads questions. This process was repeated twice more (Cycle 1 →
+                            Cycle 2 → Cycle 3).
+                        </li>
+                        <li><strong>Total Volume:</strong> This resulted in 150 questions per platform, with each of the
+                            50 questions submitted three separate times across multiple cycles.
+                        </li>
+                    </ul>
+                    <p>This approach ensured that each question was re-evaluated freshly in every round, minimizing the
+                        risk of cached responses and delivering a more accurate measure of both first-time accuracy and
+                        consistency across sessions.</p>
+                    <p>This study was designed to explore the practical limits of AI Conversational Analytics, not to
+                        compare
+                        platforms competitively, but to highlight current capabilities and common challenges. It is
+                        intended
+                        to inform business and technology leaders (CEOs, CIOs, COOs, and CTOs) on where these tools
+                        deliver value
+                        today, where gaps remain, and what solutions are necessary to ensure responsible and
+                        effective use.</p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="accuracy">Results: Evaluation 1 - Accuracy, Inaccuracy, and Error Rates</h2>
+                    <p>After running 50 structured business questions across the two datasets and repeating this process
+                        three times,
+                        clear patterns emerged in the accuracy and consistency of these solutions. While Snowflake
+                        Cortex Analyst (also used by Snowflake Intelligence), ThoughtSpot Spotter, Databricks
+                        Genie, and runQL in Basic Test Mode all showed promise, they also revealed notable limitations
+                        in
+                        accuracy and consistency. <span class="fs-12p">(For the full test scores, see <a
+                                href="#appendix-a">Appendix A</a>.)</span>
+                    </p>
+                    <h3>Average Accuracy</h3>
+                    <ul class="plain-list-spacing">
+                        <li>runQL in Basic Test Mode achieved the highest average
+                            accuracy at <span class="stat-highlight">92%</span>, followed by Snowflake Cortex Analyst at
+                            <span class="stat-highlight">88.67%</span>, Databricks Genie at <span
+                                class="stat-highlight">84.67%</span>,
+                            and ThoughtSpot Spotter at <span class="stat-highlight">54.67%</span>.
+                        </li>
+                        <li>While a 92% average accuracy rate is strong, it still means that <span
+                                class="stat-highlight">8%</span> of the answers were incorrect, a significant inaccuracy
+                            rate in decision-making environments that breaks trust.
+                        </li>
+                    </ul>
+                    <h3>Average Inaccuracy <span class="fs-14p fw-normal">(Wrong Answers)</span></h3>
+                    <ul class="plain-list-spacing">
+                        <li>ThoughtSpot Spotter had an average inaccuracy rate of <span
+                                class="stat-highlight">45.33%</span>, Databricks Genie at <span
+                                class="stat-highlight">8%</span> (plus 7% in SQL errors), Snowflake Cortex Analyst at
+                            <span class="stat-highlight">11.33%</span>, and runQL in Basic Test Mode at <span
+                                class="stat-highlight">8%</span>.
+                        </li>
+                        <li>Databricks Genie also failed to generate executable SQL in <span
+                                class="stat-highlight">7%</span> of
+                            cases.
+                        </li>
+                        <li>Across platforms, inaccurate answers ranged from incorrect aggregations to misleading or
+                            incomplete outputs.
+                        </li>
+                    </ul>
+                    <h3>Sample Question: Jaffle Shop</h3>
+                    <p class="highlight-box fs-18p">Which customer had the
+                        highest number of orders during the calendar year 2024?
+                        Please show the customer name and their total number of orders.</p>
+                    <table class="fs-12p">
+                        <thead>
+                            <tr>
+                                <th>Vendor</th>
+                                <th class="text-center">Answered Correctly?</th>
+                                <th>Answer Provided</th>
+                                <th>What they did</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold text-black">Snowflake Cortex Analyst</td>
+                                <td class="text-center red-check">✕</td>
+                                <td>Thomas Jones, 115</td>
+                                <td class="fs-12p">Grouped by customer_name and there are multiple customers with the
+                                    same
+                                    name.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-black">Databricks Genie</td>
+                                <td class="text-center green-check">✔︎</td>
+                                <td>Tracy Nunez, 70</td>
+                                <td class="fs-12p">Grouped correctly by customer_id</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-black">ThoughtSpot Spotter</td>
+                                <td class="text-center red-check">✕</td>
+                                <td>Thomas Jones, 115</td>
+                                <td class="fs-12p">Grouped by customer_name and there are multiple customers with the
+                                    same
+                                    name.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-black">runQL (Basic Test Mode)</td>
+                                <td class="text-center green-check">✔︎</td>
+                                <td>Tracy Nunez, 70</td>
+                                <td class="fs-12p">Grouped correctly by customer_id</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Jaffle Shop Charts -->
+                    <h4>Chart: Jaffle Shop Test Results <span class="fs-14p fw-normal">(Grouped by test run)</span></h4>
+                    <p class="small">In the following chart we show the results of the three Jaffle Shop dataset
+                        test runs. Each bar represents the % of questions answered correctly and
+                        incorrectly by each platform for the test run.</p>
+                    <img class="img-fluid" style="border-radius: 8px; border: 1px solid #F0F9FF;"
+                        src="/img/report/charts/chart-runql-jaffle-by-test-run-no-smart.svg"
+                        alt="jaffle-shop-chart-by-test-run">
+                    <div class="mb-3">&nbsp;</div>
+
+                    <h4>Chart: Jaffle Shop Test Results <span class="fs-14p fw-normal">(Grouped by platform)</span></h4>
+                    <p class="small">In the following chart we see the performance of each platform across test runs.
+                        Snowflake, Databricks, and ThoughtSpot show variability in
+                        the % of accurate answers even though the questions are the same in each test.</p>
+                    <img class="img-fluid" style="border-radius: 8px; border: 1px solid #F0F9FF;"
+                        src="/img/report/charts/chart-runql-jaffle-by-platform-no-smart.svg"
+                        alt="jaffle-shop-chart-by-platform">
+                    <div class="mb-3">&nbsp;</div>
+
+                    <!-- BitThreads Charts -->
+                    <h4>Chart: BitThreads Test Results <span class="fs-14p fw-normal">(Grouped by test run)</span></h4>
+                    <p class="small">In the following chart we show the results of the three BitThreads dataset test
+                        runs.
+                        Each bar
+                        represents the % of questions answered correctly and incorrectly by each platform for
+                        the test run.</p>
+                    <img class="pb-1 img-fluid" style="border-radius: 8px; border: 1px solid #F0F9FF;"
+                        src="/img/report/charts/chart-runql-bitThreads-by-test-run-no-smart.svg"
+                        alt="bitThreads-chart-by-test-run">
+                    <div class="mb-3">&nbsp;</div>
+
+
+                    <h4>Chart: BitThreads Test Results <span class="fs-14p fw-normal">(Grouped by platform)</span></h4>
+                    <p class="small">In the following chart we see the performance of each platform across test runs.
+                        Snowflake, Databricks, and ThoughtSpot show variability in the
+                        % of accurate answers even though the questions are the same in each test.</p>
+                    <img class="pt-2 pb-2 img-fluid" style="border-radius: 8px; border: 1px solid #F0F9FF;"
+                        src="/img/report/charts/chart-runql-bitThreads-by-platform-no-smart.svg"
+                        alt="bitThreads-chart-by-platform">
+                    <div class="mb-3">&nbsp;</div>
+
+                    <!-- Average Accuracy Charts -->
+                    <h4>Chart: Combined Average Inaccuracy & Error Rates</h4>
+                    <p class="small">Across all questions in the test cycles, runQL in Basic Test Mode averaged an 8%
+                        incorrect answer rate, Snowflake averaged 11%, Databricks averaged 8%, and ThoughtSpot averaged
+                        45%.
+                        Databricks was the only platform generating SQL syntax errors, occurring 7% on average.</p>
+                    <img class="pt-4 pb-2 img-fluid" style="border-radius: 8px; border: 1px solid #F0F9FF;"
+                        src="/img/report/charts/chart-runql-average-benchmark-inaccuracy-by-platform-no-smart.svg"
+                        alt="chart-average-inaccuracy">
+                    <div class="mb-3">&nbsp;</div>
+                </div>
+                <div class="section-divider"></div>
+                <div>
+                    <h2 id="consistency">Results: Evaluation 1 - Consistency &amp; Inconsistency</h2>
+                    <p>Most accuracy benchmarks only measure one-time performance. Because LLMs are probabilistic, the
+                        same question can produce different answers (queries) across runs, even when the underlying
+                        data, schema, and context remain unchanged. To understand how Conversational Analytics systems
+                        behave under real-world conditions, we tested repeatability (consistency), not just one-time
+                        accuracy.</p>
+                    <p>In this benchmark, we asked the same 50 questions three times on each platform to measure how
+                        often
+                        they produced the same answer versus a different one. This consistency test reveals whether a
+                        system
+                        is stable enough for real-world decision-making, not just one-time demo-level performance. <span
+                            class="fs-12p">(For the full test scores, see <a href="#appendix-a">Appendix A</a>.)</span>
+                    </p>
+                    <h3>Inconsistency Rates</h3>
+                    <p>Across the 150 questions in the evaluation:</p>
+                    <ul class="plain-list-spacing">
+                        <li><span class="stat-highlight">Snowflake Cortex Analyst: 6%</span> of questions had an
+                            inconsistent answer
+                        </li>
+                        <li><span class="stat-highlight">Databricks Genie: 10%</span> of questions had an inconsistent
+                            answer
+                        </li>
+                        <li><span class="stat-highlight">ThoughtSpot Spotter: 12%</span> of questions had an
+                            inconsistent
+                            answer
+                        </li>
+                        <li><span class="stat-highlight">runQL (Basic Test Mode): 0%</span> (perfect consistency*)</li>
+                    </ul>
+
+                    <p class="fs-12p">*Although runQL in Basic Test Mode showed perfect consistency in this benchmark,
+                        we have seen
+                        inconsistent answers for this mode in other tests. Basic Test Mode does not include the
+                        guardrails needed to ensure consistency in production environments.</p>
+                    <p class="emphasis-text">These inconsistency rates reflect the non-deterministic behavior of the
+                        underlying LLMs and highlight the challenge of finding Conversational Analytics solutions that
+                        deliver both consistency and accuracy.</p>
+
+                    <h3>Sample Question: Jaffle Shop</h3>
+                    <p class="highlight-box fs-18p">Which customer had the highest
+                        order total on their 2nd order, excluding the price of
+                        any drink items in the order? Please show the customer name and the total amount without the
+                        drinks.
+                    </p>
+
+                    <table class="inconsistency-table fs-12p">
+                        <tr>
+                            <th>Vendor</th>
+                            <th class="text-center">1st Try</th>
+                            <th class="text-center">2nd Try</th>
+                            <th class="text-center">3rd Try</th>
+                        </tr>
+                        <tr class="bg-danger-subtle">
+                            <td class="fw-bold">Snowflake Cortex Analyst</td>
+                            <td class="text-center green-check">✔︎</td>
+                            <td class="text-center red-check">✕</td>
+                            <td class="text-center green-check">✔︎</td>
+                        </tr>
+                        <tr class="bg-danger-subtle">
+                            <td class="fw-bold">Databricks Genie</td>
+                            <td class="text-center red-check">✕</td>
+                            <td class="text-center green-check">✔︎</td>
+                            <td class="text-center green-check">✔︎</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">ThoughtSpot Spotter</td>
+                            <td class="text-center red-check">✕</td>
+                            <td class="text-center red-check">✕</td>
+                            <td class="text-center red-check">✕</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">runQL (Basic Test Mode)</td>
+                            <td class="text-center green-check">✔︎</td>
+                            <td class="text-center green-check">✔︎</td>
+                            <td class="text-center green-check">✔︎</td>
+                        </tr>
+                    </table>
+                    <p class="mt-2">The above question from the benchmark shows how some platforms struggle with
+                        consistency even on
+                        simple datasets.</p>
+                    <!-- Inconsistency Chart -->
+                    <h4>Chart: Inconsistency Rates <span class="fs-14p fw-normal">(Grouped by platform)</span></h4>
+                    <p class="small">In the following chart we see the inconsistency rate for each platform. This is the
+                        rate in which the platform answers the same question differently, answering a question correctly
+                        sometimes and incorrectly other times.</p>
+                    <img class="pt-4 pb-2 img-fluid" style="border-radius: 8px; border: 1px solid #F0F9FF;"
+                        src="/img/report/charts/chart-runql-average-benchmark-inconsistency-by-platform-no-smart.svg"
+                        alt="chart-inconsistency-rate">
+                    <div class="mb-3">&nbsp;</div>
+
+                </div>
+
+                <div class="section-divider"></div>
+                <div>
+                    <h2 id="summary">Results: Evaluation 1 - Summary</h2>
+                    <ul class="arrow-list">
+                        <li>As the test results show, even with the progress made in AI and these solutions, the rate of
+                            incorrect answers and inconsistent results remains a significant business risk, even with
+                            smaller schemas and controlled datasets.
+                        </li>
+                        <li>Most business users are not equipped to identify or validate incorrect answers, which means
+                            they may unknowingly rely on flawed insights. (see the sample questions above)
+                        </li>
+                        <li>This underscores the need for safeguards such as deterministic guardrails, systems that
+                            learn and improve over time, Expert-in-the-Loop processes when needed, and transparency in
+                            how AI-generated answers are produced.
+                        </li>
+                    </ul>
+                    <div class="emphasis-text">
+                        <p class="fw-bold">Platforms in the first evaluation:</p>
+                        <ul class="plain-list-spacing">
+                            <li>Failed to provide correct answers 8% to 45% of the time.</li>
+                            <li>Produced different answers to the same question across runs, correct sometimes and
+                                incorrect other times.
+                            </li>
+                            <li>Left users with no clear way to identify incorrect answers unless they were experts in
+                                the data.
+                                (see sample questions above)
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="smart-test-mode">Evaluation 2: runQL in Smart Test Mode </h2>
+                    <div>
+                        <p>For the second evaluation, we ran the same benchmark again: 50 questions, two datasets, and
+                            three independent runs using runQL in Smart Test Mode. This configuration enables additional
+                            system components including the intent engine, ranking engine, and deterministic answer
+                            caching. As with the first evaluation, we started from a blank slate and did not
+                            pre-populate the answer cache.</p>
+                        <h3>Results: Evaluation 2 - Summary</h3>
+                        <p>runQL in Smart Test Mode, achieved <span class="fw-bold">100% accuracy</span> and <span
+                                class="fw-bold">100% consistency</span> across all questions, datasets, and runs.</p>
+                        <p>While this configuration performed well in the benchmark conditions, real enterprise
+                            environments can involve more complex schemas, edge cases, and ambiguous business logic. For
+                            this reason, we recommend systems that extend beyond these components when deployed in
+                            production.</p>
+                    </div>
+                </div>
+                <p>
+                    <span class="fw-bold">Note: We did not enable runQL’s full production setup</span> for any
+                    evaluation in this report. In production, runQL's proprietary system includes all Smart Test Mode
+                    features plus answer feedback, certified answer caching, ranking rerouting, Expert-in-the-Loop
+                    workflows, and more. Organizations may also optionally use the dbt Metrics Layer or Cube Semantic
+                    Layer with runQL. The table below summarizes the differences between production and the
+                    configurations used in these evaluations.
+                </p>
+                <table class="fs-14p">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th class="text-center">Basic Test Mode</th>
+                            <th class="text-center">Smart Test Mode</th>
+                            <th class="text-center">
+                                <div class="mb-0 pb-0">Production</div>
+                                <div class="fs-10p pt-0 mt-0 fw-normal">(not used in these tests)</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">Automatic Semantic Descriptions &amp; Schema Metadata</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Automatic Synthetic Data</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Deterministic Guardrail Engine</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Intent Engine</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Ranking Engine</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Answer Caching Engine*</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Answer Feedback</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Certified Answer Caching Engine</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Ranking Rerouting Engine</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Automatic Data Dictionary &amp; Glossary</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Cube/dbt Labs Semantic Layer Integration <span
+                                    class="fs-10p">(optional)</span>
+                            </td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Answers Context Engine <span class="fs-10p">(existing answers + query +
+                                    query meta data)</span>
+                            </td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Expert-in-the-Loop <span class="fs-10p">(ticketing workflow - when
+                                    needed)</span></td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center text-muted">N</td>
+                            <td class="text-center fw-bold">Y</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="fs-12p mt-1">*The Answer Caching Engine was never pre-populated for any evaluations.</p>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="enhancing-existing-platforms">Evaluation 3: Enhancing Snowflake &amp; Databricks with runQL
+                    </h2>
+                    <p>While runQL can be used as a standalone product, its proprietary system can also operate as a
+                        layer on top of Snowflake Cortex Analyst or Databricks Genie, allowing organizations to improve
+                        their existing investments.
+                        In follow-up testing, we evaluated how runQL in Smart Test Mode performs in this augmentation
+                        role by assessing and improving AI-generated queries before they reach business users.
+                    </p>
+                    <p>These follow-up tests were not part of the original study, and the questions and schemas had
+                        changed slightly since the first and second evaluation. For clarity, the BitThreads schema has
+                        been normalized more and the questions have been refined as we continue to update our evaluation
+                        suite. Still, the results were clear:</p>
+                    <h3>Results: Evaluation 3 - Improved Accuracy &amp; Consistency</h3>
+                    <p>When SQL generated by Snowflake Cortex Analyst or Databricks Genie were passed through runQL’s
+                        proprietary system, the following improvements were observed:</p>
+                    <ul class="plain-list-spacing">
+                        <li class="mt-4">
+                            <span class="fw-bold text-black">Databricks Genie (Jaffle Shop Dataset):</span>
+                            <ul class="arrow-list mt-3">
+                                <li>
+                                    Accuracy improved to <span class="stat-highlight">100%</span>
+                                </li>
+                                <li>
+                                    Consistency improved to <span class="stat-highlight">100%</span>
+                                </li>
+                                <li>
+                                    Low-confidence or incorrect queries were intercepted and rewritten before reaching
+                                    users.
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mt-4">
+                            <span class="fw-bold text-black">Databricks Genie (BitThreads Dataset):</span>
+                            <ul class="arrow-list mt-3">
+                                <li>
+                                    Accuracy improved by <span class="stat-highlight">4%</span>
+                                </li>
+                                <li>
+                                    Consistency improved to <span class="stat-highlight">100%</span>
+                                </li>
+                                <li>
+                                    Incorrect answers were caught and blocked, preventing user-facing errors even when a
+                                    perfect fix was not possible
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mt-4">
+                            <span class="fw-bold text-black">Snowflake Cortex Analyst (Jaffle Shop Dataset):</span>
+                            <ul class="arrow-list mt-3">
+                                <li>
+                                    Accuracy improved to <span class="stat-highlight">100%</span>
+                                </li>
+                                <li>
+                                    Consistency improved to <span class="stat-highlight">100%</span>
+                                </li>
+                                <li>
+                                    Low-confidence or incorrect queries were intercepted and rewritten before reaching
+                                    users.
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mt-4">
+                            <span class="fw-bold text-black">Snowflake Cortex Analyst (BitThreads Dataset):</span>
+                            <ul class="arrow-list mt-3">
+                                <li>
+                                    Accuracy improved by <span class="stat-highlight">8%</span>
+                                </li>
+                                <li>
+                                    Consistency improved to <span class="stat-highlight">100%</span>
+                                </li>
+                                <li>
+                                    All but one of the incorrect answers were stopped before reaching business users.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Why This Matters</h3>
+                    <div>
+                        <p>Many organizations have already invested in platforms like Snowflake Cortex Analyst and
+                            Databricks Genie. For teams
+                            looking to bridge the gap between AI-generated speed and analyst-level trust, runQL offers a
+                            complementary layer that:</p>
+                        <ul class="plain-list-spacing">
+                            <li><span class="fw-bold text-black">Intercepts low-confidence answers (queries)</span>
+                                before they cause harm</li>
+                            <li><span class="fw-bold text-black">Improves answer accuracy</span> using semantic context
+                                and judging workflows</li>
+                            <li><span class="fw-bold text-black">Provides transparency</span> around why queries were
+                                accepted, modified, or blocked</li>
+                            <li><span class="fw-bold text-black">Reduces analyst burden</span> by helping AI get closer
+                                to the right answer, more often</li>
+                            <li><span class="fw-bold text-black">Enable organizations to easily build a library of
+                                    approved queries</span>, making the system
+                                smarter while increasing trust and saving on inference costs.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div>
+                    <h2 id="why-guardrails">Why Guardrails + Expert-in-the-Loop <span class="text-focus">&gt;</span>
+                        AI-Only + Human-in-the-Loop</h2>
+                    <div>
+                        <p>In a production system, Human-in-the-Loop alone is not enough for structured data. A
+                            combination of guardrails and Expert-in-the-Loop oversight (when needed) are required, for
+                            the same reason business users (humans) already turn to data analysts (experts) today: Data
+                            can be nuanced, and analysts have the deep context needed to interpret that nuance, both in
+                            the data itself and the surrounding business context.</p>
+                        <ul class="plain-list-spacing">
+                            <li><span class="fw-bold text-black">Context Matters:</span> AI by itself lacks a deep
+                                understanding of your business and data model.
+                            </li>
+                            <li><span class="fw-bold text-black">Oversight Reduces Risk:</span> Expert review catches
+                                what AI misses.</li>
+                            <li><span class="fw-bold text-black">Consistency Builds Trust:</span> Business teams need
+                                reliable answers every time.</li>
+                        </ul>
+                        <p>Our testing showed that AI-only approaches, even those with semantic information, still
+                            produced
+                            incorrect answers ranging from <span class="stat-highlight">8%</span> to <span
+                                class="stat-highlight">45%</span> of the time and inconsistent results up to <span
+                                class="stat-highlight">12%</span> of the time. These incorrect and inconsistent answers
+                            will increase as usage scales, exposing your organization to higher risk.</p>
+                        <p>In contrast, runQL Smart Test Mode improved performance through proprietary capabilities such
+                            as the Deterministic Guardrail Engine, Ranking Engine, and Answer Caching Engine. However,
+                            Smart Test Mode still excluded Expert-in-the-Loop workflows, Certified Answers, and the
+                            Context Engine used in full production. These tools introduce additional layers of
+                            assurance, strengthening both accuracy and consistency in real-world production. </p>
+                        <div class="emphasis-text">In practice, the most trusted and accurate insights come from
+                            combining AI capabilities with guardrails and Expert-in-the-Loop processes which are core
+                            elements of runQL’s production setup. This combined approach delivers not only faster
+                            insights, but verifiable, repeatable, and context-aware answers at scale in a system that
+                            gets smarter over time.</div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+                <div>
+                    <h2 id="bridging-gap">How runQL Bridges the Gap Between Speed and Trust</h2>
+                    <h3 class="mb-0">1. Start with Deterministic Queries and Processes</h3>
+                    <h3 class="fw-normal mt-0">Leverage existing, validated answers first.</h3>
+                    <div>
+                        <p>runQL begins with deterministic answers from the certified answer library and defined metrics
+                            before generating anything new with AI. These deterministic answers, vetted by data experts
+                            and
+                            grounded in known business logic, provide fast, reliable insights that users can trust. This
+                            reduces the need to &quot;reinvent the wheel&quot; with every question, speeds up
+                            time-to-answer, and minimizes the risk of
+                            AI-generated mistakes.</p>
+                        <ul class="arrow-list">
+                            <li><strong>Speed:</strong> Reusing validated queries (answers) or defined metrics wherever
+                                possible, business users get
+                                instant responses to common questions, no need to wait for query generation (inference),
+                                debugging, or
+                                analysts.
+                            </li>
+                            <li><strong>Trust:</strong> Because these answers and metrics are approved and auditable,
+                                stakeholders can
+                                rely on the results with confidence, knowing the logic has already been vetted and
+                                aligned
+                                with the business context.
+                            </li>
+                            <li><strong>Scalability:</strong> Your certified answer library grows over time,
+                                becoming smarter and more comprehensive as more questions are answered.
+                            </li>
+                            <li><strong>Governance:</strong> Questions that fall outside the answer library or return
+                                low-confidence results are automatically routed to analysts, ensuring expert oversight
+                                where and when needed.
+                            </li>
+                        </ul>
+                        <p>With this approach, runQL doesn’t just promise fast answers; it ensures they’re the right
+                            answers. That’s how it delivers both the speed business users demand and the trust data
+                            leaders
+                            require.</p>
+                    </div>
+                    <h3 class="mb-0">2. Clarify Ambiguity</h3>
+                    <h3 class="fw-normal mt-0">AI asks follow-up questions instead of guessing.</h3>
+                    <p>runQL prompts for clarification when a request is vague rather than guessing. If an assumption
+                        must be made, it is clearly stated. This prevents misleading queries and ensures the output
+                        aligns with the user's actual intent.</p>
+                    <h3 class="mb-0">3. Control AI Confidence Levels</h3>
+                    <h3 class="fw-normal mt-0">Set thresholds for when AI can answer and when a human should
+                        step in.</h3>
+                    <p>Not every query is suited for AI to handle alone. runQL allows teams to set confidence thresholds
+                        that determine when AI can answer and when a human expert should step in. Only AI answers that
+                        meet or exceed the confidence threshold are delivered to business users; all others are routed
+                        to analysts for review.</p>
+                    <h3 class="mb-0">4. Governance Built In</h3>
+                    <h3 class="fw-normal mt-0">Audit, log, and document every query.</h3>
+                    <p>runQL automatically audits, logs, and documents every AI-generated query, whether answered
+                        automatically or reviewed by an expert. This ensures full traceability and supports compliance,
+                        accountability, and ongoing improvement to your data governance processes.</p>
+                    <h3 class="mb-0">5. Data Privacy First</h3>
+                    <h3 class="fw-normal mt-0">Ensure your data stays secure.</h3>
+                    <p>runQL ensures your data stays secure: raw data is never sent to external LLMs, and sensitive
+                        information never leaves your environment. This protects against privacy risks, supports
+                        regulatory compliance, and builds organizational trust in AI use.</p>
+                </div>
+                <div class="section-divider"></div>
+                <div class="highlight-box p-7 bg-primary">
+                    <div class="text-white">
+                        <h1 class="mb-0 text-white">Ready to Close the Gap?</h1>
+                        <h2 class="mt-0 text-white fw-normal">We’d love to show you how we’re approaching this challenge
+                            differently.</h2>
+                        <p class="mt-5">If you’re tired of data-request backlogs, AI solutions that erode trust, and
+                            lost productivity, runQL enables fast, accurate, and trusted insights at scale.</p>
+                        <p>Contact us today to learn more.</p>
+                        <p class="fw-semibold">Rob Darling, Founder & CEO</p>
+                        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                            class="btn btn-orange plausible-event-name--bookMeetingLink me-2" target="_blank">Chat With
+                            Us
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+                <!--<div>
+                        <h2 id="buyers-guide">What to Look for in an AI-Based Conversational Analytics Platform</h2>
+                        <p>C-level executives looking to reduce the backlog of insight requests face a pivotal decision: how to evaluate and select an AI-based conversational analytics platform that genuinely delivers on its promises. The right platform retains feedback, adapts to context, and improves over time. It empowers faster, self-service insights, offers low configuration overhead, and provides immediate value, while the wrong choice erodes trust and wastes resources.</p>
+                        <div class="emphasis-text">
+                            The right platform doesn’t just generate answers; it delivers consistency, control, transparency, and confidence in how AI interacts with your data, your teams, and your business.
+                        </div>
+                        <h3>Build vs Buy</h3>
+                        <div>
+                            <p>Even highly technical organizations like Intuit and Uber encountered roadblocks when trying to build accurate, consistent solutions in-house. This aligns with findings from the MIT study referenced earlier: vendor solutions and partnerships have more than twice the success rate of internal builds. Internal efforts succeed only <span class="stat-highlight">33%</span> of the
+                                time; this is an important factor for leaders evaluating potential approaches.</p>
+                            <div class="card shadow-sm quote-card mt-4" style="min-height:100px;"><div class="card-body">Query Kickstart [Intuit’s internal built tool] showed great promise, and we thought it would improve speed to insight. But in user testing and automated benchmarks, we uncovered a disappointing number of mistakes and hallucinations.<div class="d-flex justify-content-end"><img src="/img/report/Intuit_Logo.png" class="mt-3" style="max-width:40px;"  alt="Intuit Logo"/></div></div></div>
+                            <div class="card shadow-sm quote-card mt-4" style="min-height:100px;"><div class="card-body">This remains an area that we are constantly working on, but in a nutshell, we do see instances where the LLM [in Uber’s internal built tool] would generate a query with tables that don’t exist or with columns that don’t exist on those tables.<div class="d-flex justify-content-end"><img src="/img/report/uber-logo.png" class="mt-3" style="max-width:40px;"  alt="Uber Logo"/></div></div></div>
+                        </div>
+
+                        <h3>Buyers Guide Checklist</h3>
+                        <p>Key criteria to consider when evaluating AI-based conversational analytics platforms:</p>
+                        <table class="fs-14p">
+                            <thead>
+                            <tr>
+                                <th>Criterion</th>
+                                <th>What to Look For</th>
+                                <th>Why It Matters</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="bold">Accuracy & Consistency</td>
+                                <td>Proven high accuracy (verified through vendor benchmarks or pilot results) and mechanisms to ensure repeatable
+                                    results (e.g., reuse of validated queries).
+                                </td>
+                                <td>Decisions are only as good as the data insights. Reliable, correct answers every time are
+                                    essential for trust.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Expert-in-the-Loop Workflows</td>
+                                <td>Workflows for expert (analyst) review when needed; escalation; confidence levels for expert escalation;
+                                    integration with the business user chat thread via the UI; integrated ticketing and analyst
+                                    IDE for the analyst.
+                                </td>
+                                <td>Domain experts catch nuances and errors that AI may miss. An expert-in-the-loop approach
+                                    provides oversight, ensuring that when the AI confidence ranking is not high, a qualified
+                                    human reviews the answer. This significantly reduces risk and builds stakeholder trust.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Trust & Transparency</td>
+                                <td>Explainable AI outputs; ability to verify how results are generated; consistent answers for
+                                    identical queries.
+                                </td>
+                                <td>Builds user confidence and prevents 'black box' decisions. In AI, unexplained or inconsistent
+                                    errors erode faith in both the tool and the data team. Transparency and consistency are
+                                    foundational for widespread adoption.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Governance & Auditability</td>
+                                <td>Full audit logs of AI-generated queries and decisions; ability to trace and reproduce
+                                    results; role-based access controls; adjustable AI risk settings (thresholds, permissions).
+                                </td>
+                                <td>Enabling accountability and compliance. Every AI-generated query should be logged and
+                                    auditable, a must for CFOs (financial accuracy) and CISOs (data governance). Strong
+                                    governance tools let you deploy AI insights responsibly, avoiding regulatory or security
+                                    pitfalls.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Data Privacy & Security</td>
+                                <td>No raw data sent to external LLMs; TLS encryption; Secure credential storage.</td>
+                                <td>Protects proprietary and customer data. For highly sensitive data, ensure the platform’s use of LLMs does not expose raw data externally. Credentials should be securely stored to minimize risk. CxOs must safeguard data assets while leveraging AI, and the platform should help, not hinder, that responsibility.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Integration & Scalability</td>
+                                <td>Compatibility with multiple databases and cloud data warehouses; support for large schemas;
+                                    connectors/APIs to existing data tools; ability to work with or without a predefined
+                                    semantic model; Setup time to value.
+                                </td>
+                                <td>Fits into your enterprise architecture without extensive re-work. A platform that supports
+                                    multi-database and large-schema environments can scale with your business growth.
+                                    Integration flexibility (e.g., leveraging an existing metadata layer if present, or
+                                    functioning without one) means faster deployment and lower total cost of ownership.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Performance & Cost Efficiency</td>
+                                <td>Optimized query generation and cost-control mechanisms (e.g., not needing to go to AI inference
+                                    if a question has been previously answered).
+                                </td>
+                                <td>Ensures timely insights and prevents budget surprises. Inefficient AI queries can spike
+                                    compute costs, so the platform should be able to optimize queries for performance as
+                                    it directly affects user satisfaction and CFO concerns about cloud bills. If a question has
+                                    already been asked, then save on inference costs.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Semantic Understanding & Clarity</td>
+                                <td>Ability to recognize business terminology (including company-specific metrics); ability to
+                                    disambiguate vague questions; prompts for clarification rather than guessing.
+                                </td>
+                                <td>Measures how &quot;smart&quot; the AI is with your data context. A platform with strong
+                                    semantic modeling will interpret user intent correctly more often, yielding relevant
+                                    answers. If a question is unclear, the system should ask clarifying questions to avoid
+                                    misinterpretations and wrong results.
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="section-divider"></div>-->
+
+                <div id="appendix-a">
+                    <h2 id="appendix">Appendix A: Research Test Scores</h2>
+                    <p>This table summarizes the test results for each platform and dataset. The columns appear in the
+                        order the tests were run: Jaffle 1 was executed across all platforms first, followed by
+                        BitThreads 1 across all platforms, and so on for the remaining cycles.</p>
+                    <div>
+                        <table class="fs-12p scores-table"
+                            style="border: 2px solid rgba(92,97,101,0.5) !important;border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #5C6165;">
+                                    <th>Platform</th>
+                                    <th>Result Category</th>
+                                    <th>Jaffle 1</th>
+                                    <th>BitThreads 1</th>
+                                    <th>Jaffle 2</th>
+                                    <th>BitThreads 2</th>
+                                    <th>Jaffle 3</th>
+                                    <th>BitThreads 3</th>
+                                    <th>Average</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3" class="fs-18p align-middle"
+                                        style="background-color:#6196D1; color: #FFF; border-right:1px solid rgba(92,97,101,0.5);">
+                                        runQL <br><span class="fs-16p">(Basic Test Mode)</span></td>
+                                    <td style="background-color:#E0E3E8;">Correct</td>
+                                    <td>24</td>
+                                    <td>22</td>
+                                    <td>24</td>
+                                    <td>22</td>
+                                    <td>24</td>
+                                    <td>22</td>
+                                    <td class="fw-bold text-black">92.0%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">Wrong</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td class="fw-bold text-black">8.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">SQL Error</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td class="fw-bold text-black">0%</td>
+                                </tr>
+                                <tr style="border-top: 2px solid rgba(92,97,101,0.5) !important;">
+                                    <td rowspan="3" class="fs-18p align-middle"
+                                        style="background-color:#AEDBF3; color: #000; border-right:1px solid rgba(92,97,101,0.5);">
+                                        Snowflake<br><span class="fs-16p">Cortex Analyst</span></td>
+                                    <td style="background-color:#E0E3E8;">Correct</td>
+                                    <td>22</td>
+                                    <td>23</td>
+                                    <td>23</td>
+                                    <td>22</td>
+                                    <td>22</td>
+                                    <td>21</td>
+                                    <td class="fw-bold text-black">88.67%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">Wrong</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td class="fw-bold text-black">11.33%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">SQL Error</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td class="fw-bold text-black">0%</td>
+                                </tr>
+                                <tr style="border-top: 2px solid rgba(92,97,101,0.5) !important;">
+                                    <td rowspan="3" class="fs-18p align-middle"
+                                        style="background-color:#B04F3D; color: #FFF; border-right:1px solid rgba(92,97,101,0.5);">
+                                        Databricks<br><span class="fs-16p">Genie</span></td>
+                                    <td style="background-color:#E0E3E8;">Correct</td>
+                                    <td>22</td>
+                                    <td>21</td>
+                                    <td>23</td>
+                                    <td>19</td>
+                                    <td>23</td>
+                                    <td>19</td>
+                                    <td class="fw-bold text-black">84.67%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">Wrong</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td class="fw-bold text-black">8.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">SQL Error</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>0</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td class="fw-bold text-black">7.33%</td>
+                                </tr>
+                                <tr style="border-top: 2px solid rgba(92,97,101,0.5) !important;">
+                                    <td rowspan="3" class="fs-18p align-middle"
+                                        style="background-color:#7D858A; color: #FFF; border-right:1px solid rgba(92,97,101,0.5);">
+                                        ThoughtSpot<br><span class="fs-16p">Spotter</span></td>
+                                    <td style="background-color:#E0E3E8;">Correct</td>
+                                    <td>13</td>
+                                    <td>-</td>
+                                    <td>14</td>
+                                    <td>-</td>
+                                    <td>14</td>
+                                    <td>-</td>
+                                    <td class="fw-bold text-black">54.6%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">Wrong</td>
+                                    <td>12</td>
+                                    <td>-</td>
+                                    <td>11</td>
+                                    <td>-</td>
+                                    <td>11</td>
+                                    <td>-</td>
+                                    <td class="fw-bold text-black">45.33%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">SQL Error</td>
+                                    <td>0</td>
+                                    <td>-</td>
+                                    <td>0</td>
+                                    <td>-</td>
+                                    <td>0</td>
+                                    <td>-</td>
+                                    <td class="fw-bold text-black">0%</td>
+                                </tr>
+                                <tr style="border-top: 2px solid rgba(92,97,101,0.5) !important;">
+                                    <td rowspan="3" class="fs-18p align-middle"
+                                        style="background-color:#2666A1; color: #FFF; border-right:1px solid rgba(92,97,101,0.5);">
+                                        runQL<br><span class="fs-16p">(Smart Test Mode)</span></td>
+                                    <td style="background-color:#E0E3E8;">Correct</td>
+                                    <td>25</td>
+                                    <td>25</td>
+                                    <td>25</td>
+                                    <td>25</td>
+                                    <td>25</td>
+                                    <td>25</td>
+                                    <td class="fw-bold text-black">100%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">Wrong</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td class="fw-bold text-black">0%</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color:#E0E3E8;">SQL Error</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td class="fw-bold text-black">0%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="section-divider"></div>
+                <div id="appendix-b">
+                    <h2>Appendix B: Research Datasets</h2>
+                    <h3>Datasets</h3>
+                    <p><span class="fw-bold">Dataset One</span> was based on the well-known dbt Labs Jaffle Shop project
+                        and included data automatically
+                        generated using dbt Labs’ official scripts.</p>
+                    <p><span class="fw-bold">Dataset Two</span> was a custom-built fictional retail dataset for a
+                        company called BitThreads. It contains data and structures that would not have been available in
+                        any public LLM training corpus.</p>
+                    <p>Each platform generated a SQL query based on the user’s question, executed it against the
+                        database, and returned both the query and results for evaluation.</p>
+                    <p class="fst-italic">Note: None of the tested platforms had seen this data or these questions prior
+                        to running the tests. runQL, Snowflake, and ThoughtSpot did not store raw sample data as part of
+                        their semantic information, while Databricks stored raw sample data alongside the semantic
+                        information. For clarity, runQL creates and uses synthetic data for semantic enrichment but
+                        never uses raw sample data.</p>
+                    <h3>How the Questions Were Created</h3>
+                    <ol class="plain-list-spacing">
+                        <li><span class="fw-bold text-black">Generation:</span> We provided ChatGPT 4o with the schema,
+                            high-level business context (e.g., “This is for a retail chain that sells clothing”), and
+                            available metadata from each dataset, then instructed it to generate business-user questions
+                            aligned to themes such as sales performance and customer behavior.
+                        </li>
+                        <li><span class="fw-bold text-black">Volume:</span> We requested 50 questions per dataset.</li>
+                        <li><span class="fw-bold text-black">Curation:</span> We reviewed the outputs and selected 25
+                            questions per dataset that had clear intent
+                            and could be objectively evaluated for correctness.
+                        </li>
+                    </ol>
+                    <p>This approach ensured a mix of simple and complex questions across domains, allowing us to fairly
+                        assess how well each platform handled structured business queries.</p>
+                    <h3>Jaffle Shop Entity Relationship Diagram (ERD)</h3>
+                    <p>The Jaffle Shop database tracks food and drink sales using six tables and 258,637 rows of data.
+                    </p>
+                    <img src="/img/report/jaffle-shop-erd.svg" class="px-4 py-4 img-fluid"
+                        style="border-radius: 8px; border: 1px solid #F0F9FF;" alt="Jaffle Shop ERD Diagram" />
+                    <h3>Data: Jaffle Shop Sample</h3>
+                    <p>This is a small sample of Jaffle Shop data used for Sample Question 1 in the report.</p>
+                    <h4>Customers Table</h4>
+                    <table class="fs-10p">
+                        <thead>
+                            <tr>
+                                <th>customer_id</th>
+                                <th>customer_name</th>
+                                <th>count_lifetime_orders</th>
+                                <th>first_ordered_at</th>
+                                <th>last_ordered_at</th>
+                                <th>lifetime_spend</th>
+                                <th>customer_type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-black">0f66b255-1b57-4e5f-a78e-9ff612859c94</td>
+                                <td>Thomas Garcia</td>
+                                <td>92</td>
+                                <td>2022-10-06 0:00:00</td>
+                                <td>2022-10-06 0:00:00</td>
+                                <td>1207</td>
+                                <td>returning</td>
+                            </tr>
+                            <tr>
+                                <td class="text-black">b237d5b9-56e9-4710-b7cd-8b472425f2a4</td>
+                                <td>Thomas Hamilton</td>
+                                <td>5</td>
+                                <td>2024-03-01 0:00:00</td>
+                                <td>2025-01-03 0:00:00</td>
+                                <td>31</td>
+                                <td>returning</td>
+                            </tr>
+                            <tr>
+                                <td class="text-black">006f4fdc-8d23-4269-bddf-6d05fa886347</td>
+                                <td>Thomas Johnson</td>
+                                <td>9</td>
+                                <td>2024-08-15 0:00:00</td>
+                                <td>2025-04-22 0:00:00</td>
+                                <td>95</td>
+                                <td>returning</td>
+                            </tr>
+                            <tr>
+                                <td class="text-black">1d2f11a3-83ae-44c3-98b2-4527e4ad1e75</td>
+                                <td>Thomas Johnson</td>
+                                <td>84</td>
+                                <td>2023-10-24 0:00:00</td>
+                                <td>2025-05-12 0:00:00</td>
+                                <td>1156</td>
+                                <td>returning</td>
+                            </tr>
+                            <tr>
+                                <td class="text-black">8b667f5a-e991-4096-a057-7eb506928c07</td>
+                                <td>Thomas Jones</td>
+                                <td>90</td>
+                                <td>2023-09-20 0:00:00</td>
+                                <td>2025-05-02 0:00:00</td>
+                                <td>1153</td>
+                                <td>returning</td>
+                            </tr>
+                            <tr>
+                                <td class="text-black">9537ddf2-9408-4324-a9bb-e60bfbe6fb8b</td>
+                                <td>Thomas Jones</td>
+                                <td>25</td>
+                                <td>2023-12-05 0:00:00</td>
+                                <td>2025-05-09 0:00:00</td>
+                                <td>1135</td>
+                                <td>returning</td>
+                            </tr>
+                            <tr>
+                                <td class="text-black">ee99c556-a6cd-41c5-bdfb-9f17038509af</td>
+                                <td>Thomas Morris</td>
+                                <td>1</td>
+                                <td>2024-07-12 0:00:00</td>
+                                <td>2024-07-12 0:00:00</td>
+                                <td>10</td>
+                                <td>new</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Orders Table</h4>
+                    <table class="fs-10p">
+                        <thead>
+                            <tr>
+                                <th>order_id</th>
+                                <th>location_id</th>
+                                <th>customer_id</th>
+                                <th>order_total</th>
+                                <th>ordered_at</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4369ee22-289c-4e48-b2b2-8cca472d3a7</td>
+                                <td>25241dcc-6646-48d2-a012-d97dc9e43b43</td>
+                                <td class="text-black">006f4fdc-8d23-4269-bddf-6d05fa886347</td>
+                                <td>8</td>
+                                <td>2024-08-15 0:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>541f0d24-a763-42f3-b15c-f0e3e103cf54</td>
+                                <td>25241dcc-6646-48d2-a012-d97dc9e43b43</td>
+                                <td class="text-black">006f4fdc-8d23-4269-bddf-6d05fa886347</td>
+                                <td>23</td>
+                                <td>2024-08-20 0:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>6a45995d-daef-4f95-b8c5-47d358e80841</td>
+                                <td>25241dcc-6646-48d2-a012-d97dc9e43b43</td>
+                                <td class="text-black">006f4fdc-8d23-4269-bddf-6d05fa886347</td>
+                                <td>5</td>
+                                <td>2024-09-10 0:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>7f902677-0497-41a9-bffe-77d01443feec</td>
+                                <td>25241dcc-6646-48d2-a012-d97dc9e43b43</td>
+                                <td class="text-black">006f4fdc-8d23-4269-bddf-6d05fa886347</td>
+                                <td>8</td>
+                                <td>2024-09-25 0:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>0c164a94-60a2-4ce4-9e82-8ad8f8f8c531</td>
+                                <td>25241dcc-6646-48d2-a012-d97dc9e43b43</td>
+                                <td class="text-black">006f4fdc-8d23-4269-bddf-6d05fa886347</td>
+                                <td>6</td>
+                                <td>2024-11-15 0:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>d87e4419-219f-40b5-a630-671dbe6c4187</td>
+                                <td>25241dcc-6646-48d2-a012-d97dc9e43b43</td>
+                                <td class="text-black">006f4fdc-8d23-4269-bddf-6d05fa886347</td>
+                                <td>25</td>
+                                <td>2025-01-03 0:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>aa806a8d-14ee-485d-a72f-d35a7020b8f5</td>
+                                <td>25241dcc-6646-48d2-a012-d97dc9e43b43</td>
+                                <td class="text-black">006f4fdc-8d23-4269-bddf-6d05fa886347</td>
+                                <td>5</td>
+                                <td>2025-02-07 0:00:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <h3>BitThreads Entity Relationship Diagram (ERD)</h3>
+                    <p>The BitThreads database supports the operations of a fictional clothing retail chain and contains
+                        twenty-six tables and 27,160 rows of data.</p>
+                    <img src="/img/report/BitThreads-erd.svg" class="px-4 py-4 img-fluid"
+                        style="border-radius: 8px; border: 1px solid #F0F9FF;" alt="Jaffle Shop ERD Diagram" />
+                </div>
+                <div class="mt-9"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom CTA -->
+    <section class="section-padding bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 text-white">When time-to-decision matters.</h2>
+            <p class="lead text-white-50 mb-5">Find where data is, understand how to use it, and get answers fast.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                    class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+                    <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Product</h6>
+                    <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+                    <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+                    <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+                        Dictionary</a>
+                    <a href="/product/integrations/" class="footer-link">Integrations</a>
+                </div>
+                <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Resources</h6>
+                    <a href="/blog/" class="footer-link">Blog</a>
+                    <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                        class="footer-link">Benchmark Report</a>
+                    <a href="/data-security/" class="footer-link">Security</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="/about/" class="footer-link">About</a>
+
+                    <a href="/privacy/" class="footer-link">Privacy</a>
+                    <a href="/terms-of-service/" class="footer-link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll top -->
+    <div class="btn-scroll-top">
+        <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+            <path
+                d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+        </svg>
+    </div>
+
+    <nav class="section-index">
+        <button class="section-index-toggle" type="button">
+            <i class="bi bi-list"></i> Sections
+        </button>
+        <div class="section-index-panel">
+            <ul class="section-index-list">
+                <li><a class="section-index-link" href="#executive-summary">Executive Summary</a></li>
+                <li><a class="section-index-link" href="#business-insights-bottleneck">The Business Insights
+                        Bottleneck</a></li>
+                <li><a class="section-index-link" href="#promise-of-ai">The Promise of AI</a></li>
+                <li><a class="section-index-link" href="#ai-adoption-curve">AI Adoption Curve</a></li>
+                <li><a class="section-index-link" href="#platform-configuration">Platform Configuration</a></li>
+                <li><a class="section-index-link" href="#benchmark-methodology">Benchmark Methodology</a></li>
+                <li><a class="section-index-link" href="#accuracy">Eval 1 Results: Accuracy</a></li>
+                <li><a class="section-index-link" href="#consistency">Results: Consistency</a></li>
+                <li><a class="section-index-link" href="#smart-test-mode">Eval 2 - runQL in Smart Test Mode</a></li>
+                <li><a class="section-index-link" href="#enhancing-existing-platforms">Eval 3 - Enhancing Snowflake
+                        &amp; Databricks</a></li>
+                <li><a class="section-index-link" href="#why-guardrails">Why Guardrails &amp; Experts Matter</a></li>
+                <li><a class="section-index-link" href="#bridging-gap">Bridging Speed &amp; Trust</a></li>
+                <!--<li><a class="section-index-link" href="#buyers-guide">Buyers Guide</a></li>-->
+                <li><a class="section-index-link" href="#appendix">Appendix</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toc = document.getElementById('section-index');
+            // If you used id="section-index" in the <nav>, otherwise:
+            const sectionIndex = document.querySelector('.section-index');
+            const toggle = sectionIndex.querySelector('.section-index-toggle');
+            const links = sectionIndex.querySelectorAll('.section-index-link');
+
+            // Toggle panel open/close
+            toggle.addEventListener('click', function () {
+                sectionIndex.classList.toggle('open');
+            });
+
+            // Smooth scroll for each link
+            links.forEach(link => {
+                link.addListener = link.addEventListener || link.attachEvent;
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').replace('#', '');
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    sectionIndex.classList.remove('open');
+                });
+            });
+
+            // OPTIONAL: highlight active section as you scroll
+            const headingIds = Array.from(links).map(link => link.getAttribute('href').substring(1));
+            const headings = headingIds
+                .map(id => document.getElementById(id))
+                .filter(Boolean);
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        const id = entry.target.id;
+                        const link = sectionIndex.querySelector('.section-index-link[href="#' + id + '"]');
+                        if (!link) return;
+                        if (entry.isIntersecting) {
+                            links.forEach(l => l.classList.remove('is-active'));
+                            link.classList.add('is-active');
+                        }
+                    });
+                },
+                {
+                    root: null,
+                    rootMargin: '0px 0px -65% 0px', // adjust for when the heading enters upper viewport
+                    threshold: 0.1
+                }
+            );
+
+            headings.forEach(h => observer.observe(h));
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="canonical" href="https://cloud.runql.com/" />
+  <!-- Favicon icon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/img/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>July + August 2024 Product Updates | runQL</title>
+  <!-- SEO Meta Tags -->
+  <meta name="title" content="July + August 2024 Product Updates | runQL">
+  <meta name="description"
+    content="Federated queries, Python + MongoDB support, query sharing updates, onboarding improvements, and more — see what shipped in July and August at runQL.">
+  <meta name="keywords"
+    content="runQL, SQL IDE, Python, MongoDB, Federated Queries, Certified Queries, Data Teams, Query Sharing, Query Versioning, Data Workflows, Business Analytics">
+  <meta name="author" content="runQL">
+  <meta property="og:title" content="July + August 2024 Product Updates | runQL">
+  <meta property="og:site_name" content="runQL.com">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cloud.runql.com/blog/runql-update-2024-08.html">
+  <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+  <meta property="og:description"
+    content="Federated queries, Python + MongoDB support, query sharing updates, onboarding improvements, and more — see what shipped in July and August at runQL.">
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://cloud.runql.com/blog/runql-update-2024-08.html">
+  <meta name="twitter:title" content="July + August 2024 Product Updates | runQL">
+  <meta name="twitter:description"
+    content="Federated queries, Python + MongoDB support, query sharing updates, onboarding improvements, and more — see what shipped in July and August at runQL.">
+  <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "July + August 2024 Product Updates",
+    "datePublished": "2024-08-31",
+    "author": {
+      "@type": "Organization",
+      "name": "runQL"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "runQL",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cloud.runql.com/img/logo.png"
+      }
+    },
+    "description": "Federated queries, Python + MongoDB support, query sharing updates, onboarding improvements, and more — see what shipped in July and August at runQL."
+  }
+  </script>
+
+
+  <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-floating">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/img/runQL-logo.png" alt="runQL Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+            <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+              <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                  Data Dictionary</a></li>
+              <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                  Resource Dictionary</a>
+              </li>
+              <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                  Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+              <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                  Integrations</a></li>
+            </ul>
+          </li>
+          <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+            <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+              <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+              <li><a class="dropdown-item py-2"
+                  href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark Report</a>
+              </li>
+              <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+              <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+              <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+              <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+            class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="">
+    <section class="hero-section">
+      <div class="container blog-wrapper">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="blog-post">
+
+
+              <div class="text-center mb-5 mt-5">
+                <!-- <span class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small" style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span> -->
+                <h1 class="display-5 fw-bold mb-3"> July + August 2024 Product Updates</h1>
+
+                <div
+                  class="d-flex justify-content-center align-items-center gap-3 text-muted small text-uppercase fw-bold"
+                  style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                  <span>runQL Team</span>
+                  <span>•</span>
+                  <span>August 31, 2024</span>
+                </div>
+              </div>
+
+              <p class="mb-4">
+                Federated queries without having to build your own infrastructure, Python workflows, MongoDB support, a
+                new approach to sharing queries, smoother onboarding, and API changes to prepare for our upcoming
+                desktop client. Here's everything that shipped across the last two months!
+              </p>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Built-in Federated Queries <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>Federated queries allow you to query across multiple databases and database types in one query.
+                  Traditionally you would have to set up, host and manage your own query engine to support federated
+                  queries but not when using runQL. We make this easy. Simply add multiple data connections inside one
+                  workspace, and in your query window select federated as the data connection. Start typing your query
+                  and click run. We handle the rest!</p>
+                <ul>
+                  <li>Query across multiple databases without hosting your own engine</li>
+                  <li>Simple setup — just add connections and select federated</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Python Support <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>Data teams can now work with data in python. Just select python from the dropdown of data sources in
+                  a query window and start coding. You can combine SQL, Cypher (Neo4j) and Python in one workflow.</p>
+                <ul>
+                  <li>Write and execute Python directly inside runQL</li>
+                  <li>Mix SQL, Cypher, and Python in workflows</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">MongoDB Support <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>You can now query mongoDB.</p>
+                <ul>
+                  <li>MongoDB now available as a supported data source</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Comments and Discussions for Certified Query Requests <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>You can now comment and have a discussion on certified query requests.</p>
+                <ul>
+                  <li>Built-in commenting to collaborate on certifications</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Stored Procedures and Triggers <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>Stored procedures and triggers now show up in the navigator.</p>
+                <ul>
+                  <li>Procedures and triggers easily accessible from the navigator</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Private vs Shared Queries <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>By default a query you save is private, until you explicitly share it via the share button. This is a
+                  change from our old default of everything being shared automatically.</p>
+                <ul>
+                  <li>Saved queries are private by default now</li>
+                  <li>Explicit sharing through the share button</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Execute Multi-line Statements <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>We now support running multi-line sql statements inside one query window.</p>
+                <ul>
+                  <li>Run multiple SQL commands in a single query execution</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Answer Page Charts <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>Business users can now view both data results from approved queries as well as the approved chart.
+                </p>
+                <ul>
+                  <li>Approved data results and charts shown together for business users</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Search Improvements <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>We have made several changes to search and auto suggestions to make it even better!</p>
+                <ul>
+                  <li>Better matching, faster suggestions across queries</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Query Management - Versioning <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>We have made versioned queries and non-saved queries more clear in the UI.</p>
+                <ul>
+                  <li>Clearer UI separation for saved vs. draft query versions</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">View and Edit Query Question <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>You can now view and edit the query question generated for a saved query.</p>
+                <ul>
+                  <li>Full control to tweak the natural language question</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Run Each Workflow Step Separately <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>You can now run each step in a workflow separately.</p>
+                <ul>
+                  <li>Test and run workflow steps independently</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Custom CA Certificate Support <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>We now support uploading your own CA certificates for SSL database connections.</p>
+                <ul>
+                  <li>Custom CA cert upload for secured database connections</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Invite, Onboarding and Sign In <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Multiple updates to make the process for inviting new users to your organization clear and make first
+                  time onboarding smooth.</p>
+                <ul>
+                  <li>Improved clarity and guidance for new users</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Query Result Messaging <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Add messaging to queries with no results.</p>
+                <ul>
+                  <li>Clear message when queries return no data</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">API Updates <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>We made changes to the API which will be invisible to you. We've done this in preparation for our
+                  desktop application.</p>
+                <ul>
+                  <li>Prepares runQL for local desktop app connectivity</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">UI and Bug Fixes <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Sign in/Sign up pages have been updated.<br>
+                  Highlighting text in the query window has been updated.<br>
+                  Postgres queries failing bug has been fixed.<br>
+                  Info card for query metadata getting cut off has been fixed.<br>
+                  Long query titles cut off in the UI has been fixed.<br>
+                  Move delete saved query to the admin tab.<br>
+                  Fix results when two fields with the same column name are used in federated queries or multi-table
+                  joins.<br>
+                  Change to use OpenAI structured JSON.<br>
+                  Bug fix for handling large queries in saved queries and suggestions.<br>
+                  Bug fix for running large queries.</p>
+                <ul>
+                  <li>Dozens of UX and reliability improvements across runQL</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">What We're Working On </h2>
+                <ul>
+                  <li>UI for editing data, structures, indexes, and foreign keys</li>
+                  <li>Tracking edits to data/structures — who, when, what</li>
+                  <li>Desktop client for local network data access</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <p>— The runQL Team</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+
+
+
+  <!-- Bottom CTA -->
+  <section class="section-padding bg-dark text-white text-center">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-3 text-white">When time-to-decision matters.</h2>
+      <p class="lead text-white-50 mb-5">Find where data is, understand how to use it, and get answers fast.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+          class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-3">
+          <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+          <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Product</h6>
+          <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+          <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+          <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+            Dictionary</a>
+          <a href="/product/integrations/" class="footer-link">Integrations</a>
+        </div>
+        <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Resources</h6>
+          <a href="/blog/" class="footer-link">Blog</a>
+          <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+            class="footer-link">Benchmark Report</a>
+          <a href="/data-security/" class="footer-link">Security</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Company</h6>
+          <a href="/about/" class="footer-link">About</a>
+
+          <a href="/privacy/" class="footer-link">Privacy</a>
+          <a href="/terms-of-service/" class="footer-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="/js/main.js"></script>
+
+
+  <!-- Scroll top -->
+  <div class="btn-scroll-top">
+    <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+      <path
+        d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+    </svg>
+  </div>
+</body>
+
+</html>

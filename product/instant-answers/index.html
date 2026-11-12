@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Specific Styles for Instant Answers Visuals */
+        .result-view-table th {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 12px 16px;
+            background-color: #F9FAFB;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-view-table td {
+            font-size: 0.85rem;
+            padding: 12px 16px;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-view-controls {
+            display: flex;
+            gap: 8px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fff;
+            align-items: center;
+        }
+
+        .control-btn {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: #fff;
+            border: 1px solid #E5E7EB;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            cursor: default;
+            /* Mock UI */
+        }
+
+        .control-btn:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            background-color: #EFF6FF;
+        }
+
+        .control-btn.active {
+            background-color: #EFF6FF;
+            color: var(--primary-blue);
+            border-color: var(--primary-blue-hover);
+        }
+
+        /* Tabbed Interface */
+        .nav-pills .nav-link {
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #EFF6FF;
+            color: var(--primary-blue);
+            border-color: rgba(51, 113, 179, 0.2);
+            position: relative;
+            /* For arrow */
+        }
+
+        /* Arrow for active tab */
+        .nav-pills .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px 8px 0;
+            border-style: solid;
+            border-color: #EFF6FF transparent transparent transparent;
+            z-index: 2;
+        }
+
+        /* Optional: Border outline for the arrow */
+        .nav-pills .nav-link.active::before {
+            content: "";
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px 8px 0;
+            border-style: solid;
+            border-color: rgba(51, 113, 179, 0.2) transparent transparent transparent;
+            z-index: 1;
+        }
+
+        .nav-pills .nav-link:hover:not(.active) {
+            background-color: #F9FAFB;
+            color: var(--text-dark);
+            border-color: #E5E7EB;
+        }
+
+        .tab-visual-container {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Comparison Section */
+        .comparison-card {
+            height: 100%;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .comparison-header {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .comparison-body {
+            padding: 2rem;
+            background-color: #fff;
+        }
+
+        .resource-found-tile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            max-width: 250px;
+            margin: 0 auto 1.5rem auto;
+            transition: transform 0.2s;
+        }
+
+        .resource-found-tile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-blue);
+        }
+    </style>
+
+    <!-- SEO -->
+    <title>Instant Answers | runQL</title>
+    <link rel="canonical" href="https://cloud.runql.com/product/instant-answers/" />
+
+    <meta name="description"
+          content="Get answers via Sigma or Retool—or get instant answers in runQL. Ask in plain English, pivot, filter, and export results instantly, then save the answer for your team when it’s worth reusing." />
+
+    <meta name="author" content="runQL" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+    <!-- Optional: keywords (not used by Google; OK for internal/LLM hints) -->
+    <meta name="keywords"
+          content="instant answers, ad hoc analytics, self serve analytics, ask questions in plain English, pivot filter export, Sigma, Retool, SQL results, fast answers, ops analytics, customer success analytics, answers library" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Instant Answers | runQL" />
+    <meta property="og:site_name" content="runQL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloud.runql.com/product/instant-answers/" />
+    <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta property="og:image:alt" content="runQL" />
+    <meta property="og:description"
+          content="Ask a question and get results instantly. Pivot, filter, and export in runQL, or use Sigma/Retool when the answer already exists—then save answers for reuse." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cloud.runql.com/product/instant-answers/" />
+    <meta name="twitter:title" content="Instant Answers | runQL" />
+    <meta name="twitter:description"
+          content="Get answers via Sigma or Retool—or get instant answers in runQL. Pivot, filter, export, then save for reuse when it matters." />
+    <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta name="twitter:image:alt" content="runQL" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Instant Answers",
+            "url": "https://cloud.runql.com/product/instant-answers/",
+            "description": "Ask questions in plain English and get instant results you can pivot, filter, and export. Save answers for reuse when they become recurring.",
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "runQL",
+                "url": "https://cloud.runql.com/"
+            },
+            "about": {
+                "@type": "SoftwareApplication",
+                "name": "runQL",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "url": "https://cloud.runql.com/",
+                "featureList": [
+                    "Instant results (tables/charts) from plain-English questions",
+                    "Pivot, filter, sort, and export results",
+                    "Show SQL behind the answer (optional)",
+                    "Use Sigma/Retool when a resource already exists",
+                    "Save answers to the Answers Library for reuse"
+                ]
+            }
+        }
+    </script>
+
+    <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-floating">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/img/runQL-logo.png" alt="runQL Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                                    Data Dictionary</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                                    Resource Dictionary</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                                    Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                            <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                                    Integrations</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                            <li><a class="dropdown-item py-2"
+                                    href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                                    Report</a></li>
+                            <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                            <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                            <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                            <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                        class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold mb-4">Instant answers, on demand.</h1>
+                    <p class="lead text-secondary mb-5">
+                        Get answers via Sigma or Retool, or get instant answers in runQL. Pivot, filter, and export
+                        results instantly, then save the answer for your team when it’s worth reusing.
+                    </p>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 mb-5">
+                        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                            class="btn btn-primary btn-lg plausible-event-name--bookMeetingLink">Request demo</a>
+                        <a href="#learn-more" class="btn btn-outline-secondary btn-lg">Learn more</a>
+                    </div>
+                </div>
+                <!-- Hero Visual: Instant Answer Result View -->
+                <div class="col-lg-7">
+                    <div class="hero-visual-card p-0 bg-white border shadow-sm overflow-hidden"
+                        style="font-family: 'Inter', sans-serif;">
+                        <!-- Top Bar: Question -->
+                        <div
+                            class="px-4 py-3 border-bottom bg-subtle d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-3 w-100">
+                                <div class="bg-white p-2 rounded border text-muted small"><i
+                                        class="fa-solid fa-magnifying-glass"></i></div>
+                                <div class="flex-grow-1 fw-medium text-dark">What were the refunds last week by reason?
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-primary ms-3 text-nowrap">Get Answer</button>
+                        </div>
+
+                        <!-- Middle Bar: Controls -->
+                        <div class="result-view-controls bg-light">
+                            <div class="dictionary-example">
+                                <div class="tab-bar bg-light">
+                                    <div class="tab-item active">
+                                        <i class="fa-solid fa-table"></i>
+                                        Results
+                                    </div>
+                                    <div class="tab-item">
+                                        <i class="fa-solid fa-chart-bar"></i>
+                                        Chart
+                                    </div>
+                                    <div class="tab-item">
+                                        <i class="fa-solid fa-code"></i>
+                                        Query
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1"></div>
+                            <div class="control-btn border-1 d-none d-sm-block"><i class="fa-solid fa-filter"></i> </div>
+                            <div class="control-btn border-1 d-none d-sm-block"><i class="fa-solid fa-arrow-down-short-wide"></i></div>
+                            <div class="control-btn border-1 d-none d-sm-block"><i class="fa-solid fa-arrows-rotate"></i></div>
+                            <div class="control-btn border-1 d-none d-sm-block"><i class="fa-solid fa-floppy-disk"></i></div>
+                            <div class="control-btn border-1 d-none d-sm-block"><i class="fa-solid fa-download"></i></div>
+                        </div>
+
+                        <!-- Data Table Mockup -->
+                        <div class="table-responsive" style="max-height: 350px;">
+                            <table class="table mb-0 result-view-table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>refund_reason</th>
+                                        <th class="text-end">refund_count</th>
+                                        <th class="text-end">total_amount</th>
+                                        <th>avg_processing_time</th>
+                                    </tr>
+                                </thead>
+                                <tr class="bg-white border-bottom">
+                                    <td class="ps-3 py-2">
+                                        <div class="d-flex align-items-center gap-2"><input type="text"
+                                                class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                disabled></div>
+                                    </td>
+                                    <td class="py-2">
+                                        <div class="d-flex align-items-center gap-2"><input type="text"
+                                                class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                disabled> </div>
+                                    </td>
+                                    <td class="py-2">
+                                        <div class="d-flex align-items-center gap-2"><input type="text"
+                                                class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                disabled></div>
+                                    </td>
+                                    <td class="pe-3 py-2">
+                                        <div class="d-flex align-items-center gap-2"><input type="text"
+                                                class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                disabled> </div>
+                                    </td>
+                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>Defective Item</td>
+                                        <td class="text-end">142</td>
+                                        <td class="text-end">$4,260.00</td>
+                                        <td>1.2 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Late Delivery</td>
+                                        <td class="text-end">89</td>
+                                        <td class="text-end">$2,670.00</td>
+                                        <td>0.8 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wrong Item Sent</td>
+                                        <td class="text-end">56</td>
+                                        <td class="text-end">$1,680.00</td>
+                                        <td>1.5 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No Longer Needed</td>
+                                        <td class="text-end">45</td>
+                                        <td class="text-end">$1,350.00</td>
+                                        <td>0.5 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Card Fraud</td>
+                                        <td class="text-end">12</td>
+                                        <td class="text-end">$860.00</td>
+                                        <td>0.1 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Double Charge</td>
+                                        <td class="text-end">8</td>
+                                        <td class="text-end">$240.00</td>
+                                        <td>2.1 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other</td>
+                                        <td class="text-end">3</td>
+                                        <td class="text-end">$90.00</td>
+                                        <td>3.0 days</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Footer of Card -->
+                        <div class="bg-light p-2 border-top text-end small text-secondary">
+                            7 rows • Generated in 0.4s
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What you get Section -->
+    <section id="learn-more" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5 pb-2">
+                <h2 class="fw-bold">What you can do with Instant Answers</h2>
+                <p class="text-secondary">Everything you need to get the answer, explore it, and move.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-comment-dots"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Ask in plain English</h5>
+                            <p class="text-secondary">Get results instantly without writing a single line of SQL.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-sliders"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Pivot, Filter & Sort</h5>
+                            <p class="text-secondary">Drill down and explore the data directly in the browser.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-file-csv"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Export to CSV</h5>
+                            <p class="text-secondary">Take the data with you or share a link with your team.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-code"></i></div>
+                        <div>
+                            <h5 class="fw-bold">SQL Optional</h5>
+                            <p class="text-secondary">Optionally inspect the generated query to see the logic or learn.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Existing Resources</h5>
+                            <p class="text-secondary">Jump to the related Sigma/Retool resource when it exists.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex gap-3">
+                        <div class="icon-box flex-shrink-0"><i class="fa-solid fa-bookmark"></i></div>
+                        <div>
+                            <h5 class="fw-bold">Save for Reuse</h5>
+                            <p class="text-secondary">Turn a one-off answer into a permanent asset in the Library.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How it works</h2>
+                <p class="text-secondary">Ask → Click Instant Answer → Explore.</p>
+            </div>
+
+            <div class="row g-4 text-center justify-content-center">
+                <!-- Step 1 -->
+                <div class="col-md-4 position-relative">
+                    <div class="step-card">
+                        
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h6 class="fw-bold mt-2">Ask a question</h6>
+                        <p class="small text-secondary mb-0">Ask in runQL, or from Slack/Teams/Chrome if enabled.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="col-md-4 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-route"></i></div>
+                        <h6 class="fw-bold mt-2">Click Instant Answer</h6>
+                        <p class="small text-secondary mb-0">A query is created, validated, and run on your
+                            data instantly.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="col-md-4 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-bolt"></i></div>
+                        <h6 class="fw-bold mt-2">Instant Results</h6>
+                        <p class="small text-secondary mb-0">See a table or chart you can use and explore immediately.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What it looks like -->
+    <section id="what-it-looks-like" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">What it looks like for your team</h2>
+                <p class="text-secondary">From question to reusable answer in seconds.</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <ul class="nav nav-pills justify-content-center mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-ask-tab" data-bs-toggle="pill" data-bs-target="#pills-ask"
+                        type="button" role="tab" aria-controls="pills-ask" aria-selected="true">Step 1. Ask a
+                        question</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-explore-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-explore" type="button" role="tab" aria-controls="pills-explore"
+                        aria-selected="false">Step 2. Explore results</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-save-tab" data-bs-toggle="pill" data-bs-target="#pills-save"
+                        type="button" role="tab" aria-controls="pills-save" aria-selected="false">Step 3. Save for
+                        reuse</button>
+                </li>
+            </ul>
+
+            <!-- Tabs Content -->
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Tab 1: Ask -->
+                <div class="tab-pane fade show active" id="pills-ask" role="tabpanel" aria-labelledby="pills-ask-tab"
+                    tabindex="0">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center mb-2 mt-4">
+                            <p class="text-secondary">Enter your question in plain language and get a result table or
+                                create a chart instantly.</p>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="d-flex flex-wrap justify-content-center">
+                                <button class="btn btn-link text-decoration-none text-primary fw-medium"
+                                    onclick="document.getElementById('pills-explore-tab').click()">
+                                    Next: Explore Results <i class="fa-solid fa-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                            <div class="tab-visual-container py-5"
+                                style="background-color:#EFF6FF; border-color:rgba(51, 113, 179, 0.2);">
+                                <div class="bg-white p-4 rounded shadow-sm border mx-auto" style="max-width: 600px;">
+                                    <label class="small text-muted mb-2 text-uppercase fw-bold"
+                                        style="font-size: 0.7rem;">New Question</label>
+                                    <div class="d-flex gap-2">
+                                        <input type="text" class="form-control form-control-lg fs-6"
+                                            value="What are the top 10 products by revenue in the last 30 days?"
+                                            style="border-color: #3371B3; box-shadow: 0 0 0 4px rgba(51, 113, 179, 0.1);">
+                                        <button class="btn btn-primary px-3"><i
+                                                class="fa-solid fa-arrow-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Explore -->
+                <div class="tab-pane fade" id="pills-explore" role="tabpanel" aria-labelledby="pills-explore-tab"
+                    tabindex="0">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center mb-2 mt-4">
+                            <p class="text-secondary">Click "Instant Answer" and you can instantly pivot, filter, and export data without needing to build a new
+                                dashboard.</p>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="d-flex flex-wrap justify-content-center">
+                                <button class="btn btn-link text-decoration-none text-primary fw-medium"
+                                    onclick="document.getElementById('pills-save-tab').click()">
+                                    Next: Save for reuse <i class="fa-solid fa-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                            <div class="tab-visual-container p-4"
+                                style="background-color:#EFF6FF; border-color:rgba(51, 113, 179, 0.2);">
+                                <!-- Hero Visual -->
+                                <div class="bg-white p-3 rounded-3 shadow-sm border text-start">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span class="badge bg-light text-black"><small
+                                                    class="text-muted fw-bold text-uppercase"
+                                                    style="font-size: 0.7rem;">Answer</small></span>
+                                        </div>
+
+                                        <div class="mt-2">
+                                            <div class="small text-muted pb-2">
+                                                <p>This answer identifies your best-selling products by <strong>revenue
+                                                        contribution</strong> over the <strong>last 30 days</strong>.
+                                                <p>"Revenue" is defined as the sum of <span
+                                                        class="text-primary">product_price</span> from
+                                                    the <span class="text-primary">order_items</span> table.<br />
+                                                    "Last 30 days" is interpreted as the 30-day period immediately
+                                                    preceding the current timestamp when the query is executed.</p>
+                                                <p>You may find the Sigma
+                                                    <span class="text-primary">Monthly Product Revenue</span> dashboard
+                                                    useful, it has a bar chart for Revenue by Month.
+                                                </p>
+                                            </div>
+                                            <div class="d-flex gap-2 flex-wrap">
+                                                <div
+                                                    class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                    <i class="fa-solid fa-file-lines text-secondary"></i>
+                                                    <small class="fw-semibold">activation_date</small>
+                                                </div>
+                                                <div
+                                                    class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                    <img src="/img/integrations/sigma-icon.png" alt="Sigma" height="20">
+                                                    <small class="fw-semibold">Monthly Product Revenue <i
+                                                            class="fa fa-arrow-up-right-from-square ms-2"></i></small>
+                                                </div>
+                                                <div
+                                                    class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill bg-dark text-white">
+                                                    <img src="/img/runQL-logo-only.png" alt="Answer" height="16">
+                                                    <small class="fw-semibold">Instant Answer</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="result-view-controls bg-light mt-4">
+                                            <div class="dictionary-example">
+                                                <div class="tab-bar bg-light">
+                                                    <div class="tab-item active">
+                                                        <i class="fa-solid fa-table"></i>
+                                                        Results
+                                                    </div>
+                                                    <div class="tab-item">
+                                                        <i class="fa-solid fa-chart-bar"></i>
+                                                        Chart
+                                                    </div>
+                                                    <div class="tab-item">
+                                                        <i class="fa-solid fa-code"></i>
+                                                        Query
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1"></div>
+                                            <div class="control-btn border-1"><i class="fa-solid fa-filter"></i> </div>
+                                            <div class="control-btn border-1"><i
+                                                    class="fa-solid fa-arrow-down-short-wide"></i></div>
+                                            <div class="control-btn border-1"><i class="fa-solid fa-arrows-rotate"></i>
+                                            </div>
+                                            <div class="control-btn border-1"><i class="fa-solid fa-floppy-disk"></i>
+                                            </div>
+                                            <div class="control-btn border-1"><i class="fa-solid fa-download"></i></div>
+                                        </div>
+
+                                        <div class="dictionary-data-results-example" style="margin-top:0 !important;">
+                                            <table class="data-table table-sm" style="font-size: 0.8rem;">
+                                                <thead>
+                                                    <tr class="bg-light">
+                                                        <th class="ps-3">Product ID</th>
+                                                        <th class="ps-3">Product</th>
+                                                        <th class="text-end pe-3">Revenue</th>
+                                                    </tr>
+                                                </thead>
+                                                <tr class="bg-white border-bottom">
+                                                    <td class="ps-3 py-2">
+                                                        <div class="d-flex align-items-center gap-2"><input type="text"
+                                                                class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                disabled></div>
+                                                    </td>
+                                                    <td class="py-2 ps-3">
+                                                        <div class="d-flex align-items-center gap-2"><input type="text"
+                                                                class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                disabled> </div>
+                                                    </td>
+                                                    <td class="pe-2 py-2">
+                                                        <div class="d-flex align-items-center gap-2"><input type="text"
+                                                                class="form-control form-control-sm border-secondary-subtle bg-light"
+                                                                disabled> </div>
+                                                    </td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="ps-3">6</td>
+                                                        <td class="ps-3">Pro Plan (Monthly)</td>
+                                                        <td class="text-end pe-3">$12,450</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="ps-3">2</td>
+                                                        <td class="ps-3">Enterprise License</td>
+                                                        <td class="text-end pe-3">$8,200</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="ps-3">7</td>
+                                                        <td class="ps-3">Pro Plan (Annual)</td>
+                                                        <td class="text-end pe-3">$5,100</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="3"
+                                                            class="text-center text-muted small py-2 bg-light">...
+                                                            8 more rows</td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Save -->
+                <div class="tab-pane fade" id="pills-save" role="tabpanel" aria-labelledby="pills-save-tab"
+                    tabindex="0">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center mb-2 mt-4">
+                            <p class="text-secondary">Optionally save the answer for reuse. When you do, the question,
+                                description, notes, SQL, chart code, and related
+                                resources are automatically created and saved together.</p>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="hero-visual-card p-4"
+                                style="background-color:#EFF6FF; border-color:rgba(51, 113, 179, 0.2);">
+                                <div class="p-3 bg-white border rounded shadow-sm">
+                                    <!-- Toolbar -->
+                                    <div
+                                        class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+                                        <div class="d-flex align-items-center gap-3 text-secondary">
+                                            <div class="dropdown">
+                                                <button
+                                                    class="btn btn-sm btn-link text-decoration-none text-dark fw-medium dropdown-toggle p-0"
+                                                    type="button">
+                                                    Normal
+                                                </button>
+                                            </div>
+                                            <div class="vr mx-1"></div>
+                                            <i class="fa-solid fa-bold small cursor-pointer"></i>
+                                            <i class="fa-solid fa-italic small cursor-pointer"></i>
+                                            <i class="fa-solid fa-underline small cursor-pointer"></i>
+                                            <i class="fa-solid fa-circle small text-primary cursor-pointer"
+                                                style="font-size: 0.6rem;"></i>
+                                            <i class="fa-solid fa-list-ul small cursor-pointer"></i>
+                                            <i class="fa-solid fa-list-ol small cursor-pointer"></i>
+                                            <i class="fa-regular fa-check-circle small cursor-pointer"></i>
+                                            <i class="fa-solid fa-link small cursor-pointer"></i>
+                                            <i class="fa-solid fa-code small cursor-pointer"></i>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button
+                                                class="btn btn-sm btn-light border text-secondary fw-medium px-3">Edit</button>
+                                            <button
+                                                class="btn btn-sm btn-light border text-secondary fw-medium px-3">Preview</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="px-2">
+                                        <h4 class="fw-bold mb-3">Top 10 products by revenue in the past 30 days</h4>
+
+                                        <!-- Meta -->
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center overflow-hidden"
+                                                    style="width: 32px; height: 32px;">
+                                                    <img src="/img/team/rob3.jpg" alt="Rob D" class="img-fluid"
+                                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <div class="d-flex flex-column" style="line-height: 1.2;">
+                                                    <span class="small fw-bold text-dark">By Rob D</span>
+                                                    <span class="small text-muted" style="font-size: 0.7rem;">Added Jan
+                                                        02,
+                                                        2026</span>
+                                                </div>
+                                                <div class="ms-3 d-flex align-items-center gap-1">
+                                                    <span class="bg-success rounded-circle d-inline-block"
+                                                        style="width: 8px; height: 8px;"></span>
+                                                    <span class="small text-muted">Published</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex gap-3 text-muted small">
+                                                <span><i class="fa-regular fa-eye me-1"></i> 320</span>
+                                                <span><i class="fa-regular fa-heart me-1"></i> 24</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Alert Box -->
+                                        <div
+                                            class="alert bg-primary bg-opacity-10 border-0 d-flex gap-3 align-items-start mb-4">
+                                            <i class="fa-solid fa-circle-question text-primary opacity-50"></i>
+                                            <div>
+                                                <div class="text-primary fw-bold small text-uppercase mb-1"
+                                                    style="letter-spacing: 0.5px; font-size: 0.7rem;">Question
+                                                </div>
+                                                <div class="text-dark fw-medium">What are the top 10 products by revenue
+                                                    in the last 30 days?</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Summary Section -->
+                                        <div class="mb-4">
+                                            <h5 class="fw-bold mb-2">Auto Description</h5>
+                                            <div class="text-secondary small mb-0" style="line-height: 1.6;">
+                                                <p>This answer identifies your best-selling products by <strong>revenue
+                                                        contribution</strong> over the <strong>last 30 days</strong>.
+                                                </p>
+                                                <p>"Revenue" is defined as the sum of <code>product_price</code> from
+                                                    the <code>order_items</code> table.<br />
+                                                    "Last 30 days" is interpreted as the 30-day period immediately
+                                                    preceding the current timestamp when the query is executed.</p>
+                                                <p class="mb-2">This answer:</p>
+                                                <ul class="mb-3 ps-3">
+                                                    <li>Looks at all order line items placed in the past <strong>30
+                                                            days</strong>.</li>
+                                                    <li>Groups those sales by <strong>product</strong>.</li>
+                                                    <li>Calculates <strong>total revenue per product</strong> as the
+                                                        <strong>sum of <code>product_price</code></strong> across all
+                                                        qualifying order items.
+                                                    </li>
+                                                    <li>Ranks products from highest to lowest revenue.</li>
+                                                    <li>Returns the <strong>top 10 revenue ranks, including
+                                                            ties</strong> (so if multiple products share the same
+                                                        revenue as the 10th-ranked product, they will all be included).
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <h5 class="fw-bold mb-2">Note</h5>
+                                            <div class="text-secondary small mb-0" style="line-height: 1.6;">
+                                                <p>Custom Note</p>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-white border-top p-2">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fs-10p text-secondary">More Questions</span>
+                                                <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-white border-top p-2">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fs-10p text-secondary">SQL Query</span>
+                                                <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-white border-top p-2">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fs-10p text-secondary">Chart (Code)</span>
+                                                <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-white border-top p-2">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fs-10p text-secondary">Related Resources (Sigma, Retool,
+                                                    PowerBI)</span>
+                                                <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-5">
+                                <a href="/product/answers-library/" class="btn btn-outline-secondary">Explore Answers
+                                    Library <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Use what already exists or get the answer instantly</h2>
+                <p class="text-secondary">If the answer already lives in Sigma/Retool, runQL can point you there. If
+                    not, you get an instant table.</p>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Left: Sigma/Retool -->
+                <div class="col-md-6">
+                    <div class="comparison-card bg-white h-100">
+                        <div class="comparison-header bg-light-subtle">
+                            <div class="resource-found-tile">
+                                <img src="/img/integrations/sigma-icon.png" height="20" alt="Sigma">
+                                <div class="d-flex flex-column align-items-start lh-1">
+                                    <small class="fw-bold text-dark" style="font-size: 0.75rem;">Revenue
+                                        Dashboard</small>
+                                    <small class="text-muted" style="font-size: 0.65rem;">Sigma Computing</small>
+                                </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square ms-auto text-muted small"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-0 text-muted">When to use Sigma/Retool</h4>
+                        </div>
+                        <div class="comparison-body">
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li class="d-flex gap-3">
+                                    <i class="fa-solid fa-check text-secondary mt-1"></i>
+                                    <span class="text-secondary">You need an existing dashboard/app with filters and
+                                        workflows</span>
+                                </li>
+                                <li class="d-flex gap-3">
+                                    <i class="fa-solid fa-check text-secondary mt-1"></i>
+                                    <span class="text-secondary">The team already has a “standard” view they rely
+                                        on</span>
+                                </li>
+                                <li class="d-flex gap-3">
+                                    <i class="fa-solid fa-check text-secondary mt-1"></i>
+                                    <span class="text-secondary">You want to drill into pre-built exploration
+                                        paths</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Instant Answers -->
+                <div class="col-md-6">
+                    <div class="comparison-card border-primary h-100"
+                        style="background: #fff; box-shadow: 0 4px 20px rgba(51, 113, 179, 0.08);">
+                        <div class="comparison-header bg-primary text-white">
+                            <div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 40px; height: 40px; color: var(--primary-blue);">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-0 text-white">When to use Instant Answers</h4>
+                        </div>
+                        <div class="comparison-body">
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li class="d-flex gap-3">
+                                    <i class="fa-solid fa-check text-primary mt-1"></i>
+                                    <span class="text-dark">You need the answer <strong>now</strong></span>
+                                </li>
+                                <li class="d-flex gap-3">
+                                    <i class="fa-solid fa-check text-primary mt-1"></i>
+                                    <span class="text-dark">The dashboard doesn’t exist yet</span>
+                                </li>
+                                <li class="d-flex gap-3">
+                                    <i class="fa-solid fa-check text-primary mt-1"></i>
+                                    <span class="text-dark">You’re exploring a one-off question</span>
+                                </li>
+                                <li class="d-flex gap-3">
+                                    <i class="fa-solid fa-check text-primary mt-1"></i>
+                                    <span class="text-dark">You want a quick export or a query as a starting point for a brand-new
+                                        dashboard</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Save to Answers Library -->
+    <!-- Save to Answers Library -->
+    <!--<section class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5 mx-auto" style="max-width: 700px;">
+                <h2 class="fw-bold mb-3">Save answers when they matter</h2>
+                <p class="lead text-secondary">When a question becomes recurring, save it once so everyone can reuse it.
+                </p>
+            </div>
+
+            <div class="row g-4 text-center mb-5">
+                <div class="col-md-4">
+                    <div class="h-100 p-4 rounded bg-subtle">
+                        <div class="icon-box mx-auto p-3 rounded-circle bg-white text-primary mb-3 shadow-sm"
+                            style="width:56px; height:56px; display:flex; align-items:center; justify-content:center;">
+                            <i class="fa-solid fa-floppy-disk fs-5"></i>
+                        </div>
+                        <h4 class="h5 fw-bold">Save the full artifact</h4>
+                        <p class="text-secondary small mb-0">The question, description, notes, SQL, and chart settings
+                            are saved together so the next person has everything they need.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="h-100 p-4 rounded bg-subtle">
+                        <div class="icon-box mx-auto p-3 rounded-circle bg-white text-primary mb-3 shadow-sm"
+                            style="width:56px; height:56px; display:flex; align-items:center; justify-content:center;">
+                            <i class="fa-solid fa-link fs-5"></i>
+                        </div>
+                        <h4 class="h5 fw-bold">Related Resources</h4>
+                        <p class="text-secondary small mb-0">Automatic links to related Sigma dashboards or Retool apps
+                            are added if relevant.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="h-100 p-4 rounded bg-subtle">
+                        <div class="icon-box mx-auto p-3 rounded-circle bg-white text-primary mb-3 shadow-sm"
+                            style="width:56px; height:56px; display:flex; align-items:center; justify-content:center;">
+                            <i class="fa-solid fa-tags fs-5"></i>
+                        </div>
+                        <h4 class="h5 fw-bold">Add your context</h4>
+                        <p class="text-secondary small mb-0">Edit the description and notes in your team’s language. Add
+                            caveats, definitions, and “how to use this” guidance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="/product/answers-library/" class="btn btn-outline-secondary">Explore Answers Library <i
+                        class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Great For Section -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <h2 class="text-center mb-5">Great for when you need to...</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-white rounded border h-100 shadow-sm">
+                        <i class="fa-solid fa-bolt text-primary fs-4 mb-3"></i>
+                        <h5 class="fw-bold">Get an answer right now</h5>
+                        <p class="text-secondary small mb-0">No waiting in the data team backlog. Just ask and get a
+                            result.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-white rounded border h-100 shadow-sm">
+                        <i class="fa-solid fa-magnifying-glass-chart text-primary fs-4 mb-3"></i>
+                        <h5 class="fw-bold">Explore a one-off question</h5>
+                        <p class="text-secondary small mb-0">Perfect for ad-hoc analysis where building a dashboard is
+                            overkill.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-white rounded border h-100 shadow-sm">
+                        <i class="fa-solid fa-code-branch text-primary fs-4 mb-3"></i>
+                        <h5 class="fw-bold">Validate what you’re seeing</h5>
+                        <p class="text-secondary small mb-0">Check the SQL and definitions to trust the data completely.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-white rounded border h-100 shadow-sm">
+                        <i class="fa-solid fa-share-nodes text-primary fs-4 mb-3"></i>
+                        <h5 class="fw-bold">Move from question to action</h5>
+                        <p class="text-secondary small mb-0">Share, export, or pivot your results instantly.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-white rounded border h-100 shadow-sm">
+                        <i class="fa-solid fa-recycle text-primary fs-4 mb-3"></i>
+                        <h5 class="fw-bold">Turn repeats into assets</h5>
+                        <p class="text-secondary small mb-0">Save anything useful to the library so it’s never lost.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Questions -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Common questions teams ask</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light d-flex align-items-center gap-3">
+                                <i class="fa-regular fa-message text-muted"></i>
+                                <span class="text-dark fw-medium">“How many customers activated last week?”</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light d-flex align-items-center gap-3">
+                                <i class="fa-regular fa-message text-muted"></i>
+                                <span class="text-dark fw-medium">“What’s revenue by segment this month?”</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light d-flex align-items-center gap-3">
+                                <i class="fa-regular fa-message text-muted"></i>
+                                <span class="text-dark fw-medium">“Which appointments were canceled within 24
+                                    hours?”</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light d-flex align-items-center gap-3">
+                                <i class="fa-regular fa-message text-muted"></i>
+                                <span class="text-dark fw-medium">“What’s the refund rate broken down by reason over the
+                                    past year?”</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light d-flex align-items-center gap-3">
+                                <i class="fa-regular fa-message text-muted"></i>
+                                <span class="text-dark fw-medium">“How long from signup to first payment?”</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light d-flex align-items-center gap-3">
+                                <i class="fa-regular fa-message text-muted"></i>
+                                <span class="text-dark fw-medium">“Top 20 products by order count last month?”</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <h2 class="text-center mb-5">Related features</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-3">
+                    <a href="/product/data-chat-search/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h4 class="h6 fw-bold">Data Chat & Search</h4>
+                        <p class="small text-secondary mb-0">Ask questions and find answers in the library.</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/product/answers-library/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                        <h4 class="h6 fw-bold">Answers Library</h4>
+                        <p class="small text-secondary mb-0">Store and organize your team's knowledge.</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/product/automated-data-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-book-open"></i></div>
+                        <h4 class="h6 fw-bold">Automated Data Dictionary</h4>
+                        <p class="small text-secondary mb-0">Definitions that make your answers accurate.</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/product/automated-resource-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h4 class="h6 fw-bold">Resource Dictionary</h4>
+                        <p class="small text-secondary mb-0">Catalog your Sigma and Retool assets.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section-padding bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 text-white">Get answers in seconds.</h2>
+            <p class="lead text-white-50 mb-4">Ask a question, explore results, and save what matters for your team.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                    class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+                    <p class="text-secondary small mt-2">
+                        runQL helps teams unify their data knowledge, automate documentation, and get answers faster.
+                    </p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-secondary"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-secondary"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Product</h5>
+                    <a href="/product/instant-answers/" class="footer-link">Instant Answers</a>
+                    <a href="/product/answers-library/" class="footer-link">Answers Library</a>
+                    <a href="/product/automated-data-dictionary/" class="footer-link">Data Dictionary</a>
+                    <a href="/product/automated-resource-dictionary/" class="footer-link">Resource Dictionary</a>
+                    <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+                    <a href="/product/erd/" class="footer-link">ERDs</a>
+                    <a href="/product/request-management/" class="footer-link">Request Management</a>
+                    <a href="/product/sql-assistance/" class="footer-link">SQL Assistance</a>
+                    <a href="/product/integrations/" class="footer-link">Integrations</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Solutions</h5>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/semantic-model-generation/" class="footer-link">Semantic Model Generation</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Data Democratization</a>
+                    <a href="/solutions/change-management/" class="footer-link">Change Management</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Resources</h5>
+                    <a href="/blog/" class="footer-link">Blog</a>
+                    <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                        class="footer-link">Benchmark Report</a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h5 class="footer-heading">Company</h5>
+                    <a href="/about/" class="footer-link">About Us</a>
+                    <a href="/data-security/" class="footer-link">Data & Security</a>
+                    <a href="/terms-of-service/" class="footer-link">Terms of Service</a>
+                    <a href="/privacy/" class="footer-link">Privacy Policy</a>
+                    <a href="/acceptable-use/" class="footer-link">Acceptable Use</a>
+                </div>
+            </div>
+            <div class="row mt-5 pt-4 border-top">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-secondary small mb-0">&copy; 2026 runQL Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        // Simple script to handle navbar scroll style
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar-floating');
+            if (window.scrollY > 10) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

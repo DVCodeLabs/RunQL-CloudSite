@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+   <link rel="canonical" href="https://cloud.runql.com/" />
+   <!-- Favicon icon-->
+   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+   <link rel="manifest" href="/img/favicon/site.webmanifest" />
+   <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+   <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+   <meta name="msapplication-TileColor" content="#080032">
+   <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap 5 CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="/css/styles.css">
+   <title>October 2024 Product Updates | runQL</title>
+   <!-- SEO Meta Tags -->
+   <meta name="title" content="October 2024 Product Updates | runQL">
+   <meta name="description"
+      content="Meet runQL AI, edit schemas in the UI, manage smarter tabs, revert queries, and explore new updates across charting, security, and proxy support.">
+   <meta name="keywords"
+      content="runQL, SQL IDE, AI Queries, Query Chat, Schema Editor, Chart Dark Mode, runSource Proxy, Business Analytics, Data Teams, Query Tab UX">
+   <meta name="author" content="runQL">
+   <meta property="og:title" content="October 2024 Product Updates | runQL">
+   <meta property="og:site_name" content="runQL.com">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://cloud.runql.com/blog/runql-update-2024-10.html">
+   <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+   <meta property="og:description"
+      content="Meet runQL AI, edit schemas in the UI, manage smarter tabs, revert queries, and explore new updates across charting, security, and proxy support.">
+   <meta name="twitter:card" content="summary">
+   <meta property="twitter:url" content="https://cloud.runql.com/blog/runql-update-2024-10.html">
+   <meta name="twitter:title" content="October 2024 Product Updates | runQL">
+   <meta name="twitter:description"
+      content="Meet runQL AI, edit schemas in the UI, manage smarter tabs, revert queries, and explore new updates across charting, security, and proxy support.">
+   <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+
+   <!-- Schema.org JSON-LD -->
+   <script type="application/ld+json">
+   {
+   "@context": "https://schema.org",
+   "@type": "BlogPosting",
+   "headline": "October 2024 Product Updates",
+   "datePublished": "2024-10-31",
+   "author": {
+      "@type": "Organization",
+      "name": "runQL"
+   },
+   "publisher": {
+      "@type": "Organization",
+      "name": "runQL",
+      "logo": {
+         "@type": "ImageObject",
+         "url": "https://cloud.runql.com/img/logo.png"
+      }
+   },
+   "description": "Meet runQL AI, edit schemas in the UI, manage smarter tabs, revert queries, and explore new updates across charting, security, and proxy support."
+   }
+   </script>
+
+
+   <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-floating">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="/">
+            <img src="/img/runQL-logo.png" alt="runQL Logo">
+         </a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                     aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                  <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                     <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                           Data Dictionary</a></li>
+                     <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                           Resource Dictionary</a>
+                     </li>
+                     <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                           Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                     <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                           Integrations</a></li>
+                  </ul>
+               </li>
+               <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+               <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                     aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                  <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                     <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                     <li><a class="dropdown-item py-2"
+                           href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                           Report</a></li>
+                     <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                     <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                     <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                     <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+            </ul>
+            <div class="d-flex gap-2">
+               <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                  class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <main class="">
+      <section class="hero-section">
+         <div class="container blog-wrapper">
+            <div class="row justify-content-center">
+               <div class="col-12 col-lg-8">
+                  <div class="blog-post">
+
+
+                     <div class="text-center mb-5 mt-5">
+                        <!-- <span class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small" style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span> -->
+                        <h1 class="display-5 fw-bold mb-3"> October 2024 Product Updates</h1>
+
+                        <div
+                           class="d-flex justify-content-center align-items-center gap-3 text-muted small text-uppercase fw-bold"
+                           style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                           <span>runQL Team</span>
+                           <span>•</span>
+                           <span>October 31, 2024</span>
+                        </div>
+                     </div>
+
+                     <p class="mb-4">
+                        From conversational AI to schema editing, smarter tabs, and dark mode charts — here's everything
+                        new in runQL this month.
+                     </p>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Meet runQL AI <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>Beyond having our AI generate queries, you can now have a conversation with runQL AI
+                           specifically on your queries to get suggestions for query modifications or fixes. Can't
+                           remember how to do something? Ask runQL AI.</p>
+                        <ul>
+                           <li>Chat with runQL AI about your specific queries</li>
+                           <li>Get modification suggestions or SQL help on demand</li>
+                        </ul>
+                        <div><img src="/img/blog/oct-runql-ai.png" style="max-width:80%; border:1px solid #eee;"
+                              class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Editing Schemas, Indexes & Relations <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>Developing a new application or model? You can edit the schema, indexes and relations for
+                           MySQL databases. We are working on other data sources this week. All changes you make to your
+                           schema are logged via the queries that get run.</p>
+                        <ul>
+                           <li>MySQL schema, index, and relationship editing via UI</li>
+                           <li>All edits are logged with SQL audit trails</li>
+                        </ul>
+                        <div><img src="/img/blog/oct-editing-schemas.png" style="max-width:80%; border:1px solid #eee;"
+                              class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Expand Data Panel <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>You can now fully expand the data panel to give yourself more room to work and filter data.
+                        </p>
+                        <ul>
+                           <li>Improved workspace for exploring and filtering results</li>
+                        </ul>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Tab Names <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>Unsaved queries now have the tab name auto generated based on the tables you are querying. As
+                           always if the query is saved then the tab name is the title given to the query.</p>
+                        <ul>
+                           <li>Auto-generated tab titles improve tab clarity</li>
+                        </ul>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Tab Names Hover <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>Have a lot of query tabs open in runQL? Now on hover you see the title/tab name and the first
+                           line of the query. This is to help you find the right tab without clicking each one - just
+                           like a web browser.</p>
+                        <ul>
+                           <li>Hover previews help identify the right tab faster</li>
+                        </ul>
+                        <div><img src="/img/blog/oct-tab-names-hover.png" style="max-width:80%; border:1px solid #eee;"
+                              class="rounded-4"></div>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Revert <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>Started changing a query and want to go back to its original state? Click on revert.</p>
+                        <ul>
+                           <li>Restore original query state instantly</li>
+                        </ul>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Dark Mode for Generated Charts <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                        </h2>
+                        <p>Charts now support dark mode!</p>
+                        <ul>
+                           <li>Consistent visual experience across dark/light themes</li>
+                        </ul>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">runSource Proxy <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                        </h2>
+                        <p>runSource proxy allows you to reference your one source of truth query from external
+                           platforms. We have updated it with some fixes for Amazon Quicksight with SSL and Redshift.
+                        </p>
+                        <ul>
+                           <li>Improved SSL handling and Redshift support for Quicksight</li>
+                        </ul>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Other Items <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                        </h2>
+                        <ul>
+                           <li>Resizable left panel added to review pages</li>
+                           <li>Prevent saving duplicate queries (even with different comments)</li>
+                           <li>Pagination added to data review pages</li>
+                           <li>Duplicate query messages moved to action bar</li>
+                        </ul>
+                     </div>
+
+                     <div class="mb-5">
+                        <h2 class="h3 fw-bold mb-3">Fixes <span
+                              class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                              style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Fix</span>
+                        </h2>
+                        <ul>
+                           <li>Schema change suggestion logic fixed</li>
+                           <li>Scrolling issue on review pages resolved</li>
+                           <li>runSource Proxy text encoding bug fixed</li>
+                           <li>Certified query suggestions display properly now</li>
+                           <li>Fix to prevent filter resets after data edit</li>
+                        </ul>
+                     </div>
+
+                     <div class="mb-5">
+                        <p>— The runQL Team</p>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <!-- Bottom CTA -->
+   <section class="section-padding bg-dark text-white text-center">
+      <div class="container">
+         <h2 class="display-5 fw-bold mb-3 text-white">When time-to-decision matters.</h2>
+         <p class="lead text-white-50 mb-5">Find where data is, understand how to use it, and get answers fast.</p>
+         <div class="d-flex justify-content-center gap-3">
+            <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+               class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+         </div>
+      </div>
+   </section>
+
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <div class="row g-5">
+            <div class="col-lg-3">
+               <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+               <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+            </div>
+            <div class="col-6 col-lg-2">
+               <h6 class="footer-heading">Product</h6>
+               <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+               <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+               <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+                  Dictionary</a>
+               <a href="/product/integrations/" class="footer-link">Integrations</a>
+            </div>
+            <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+            <div class="col-6 col-lg-2">
+               <h6 class="footer-heading">Resources</h6>
+               <a href="/blog/" class="footer-link">Blog</a>
+               <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                  class="footer-link">Benchmark Report</a>
+               <a href="/data-security/" class="footer-link">Security</a>
+            </div>
+            <div class="col-6 col-lg-2">
+               <h6 class="footer-heading">Company</h6>
+               <a href="/about/" class="footer-link">About</a>
+
+               <a href="/privacy/" class="footer-link">Privacy</a>
+               <a href="/terms-of-service/" class="footer-link">Terms</a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Bootstrap Bundle JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Custom JS -->
+   <script src="/js/main.js"></script>
+
+
+   <!-- Scroll top -->
+   <div class="btn-scroll-top">
+      <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+         <path
+            d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+      </svg>
+   </div>
+</body>
+
+</html>

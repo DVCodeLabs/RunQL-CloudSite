@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="canonical" href="https://cloud.runql.com/" />
+  <!-- Favicon icon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/img/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- SEO Meta Tags -->
+  <title>Blog | runQL</title>
+  <link rel="canonical" href="https://cloud.runql.com/blog/" />
+
+  <meta name="title" content="Blog | runQL" />
+  <meta name="description"
+    content="Product updates and guides from runQL. Learn how teams find where data lives, understand definitions, and get answers fast across databases, Sigma, Retool, and Power BI." />
+
+  <meta name="author" content="runQL" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+  <!-- Optional: keywords (not used by Google, OK for internal/LLM hints) -->
+  <meta name="keywords"
+    content="runQL blog, product updates, data discovery, data definitions, data dictionary, resource catalog, Sigma, Retool, Power BI, Slack, Microsoft Teams, answers library, ops analytics, customer success analytics" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog | runQL" />
+  <meta property="og:site_name" content="runQL" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cloud.runql.com/blog/index.html" />
+  <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+  <meta property="og:image:alt" content="runQL" />
+  <meta property="og:description"
+    content="Product updates and guides from runQL. Learn how teams find where data lives, understand definitions, and get answers fast across databases, Sigma, Retool, and Power BI." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://cloud.runql.com/blog/" />
+  <meta name="twitter:title" content="Blog | runQL" />
+  <meta name="twitter:description"
+    content="Product updates and guides from runQL for teams navigating data across databases, Sigma, Retool, and Power BI." />
+  <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+  <meta name="twitter:image:alt" content="runQL" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "runQL Blog",
+  "url": "https://cloud.runql.com/blog/",
+  "description": "Product updates and guides from runQL. Learn how teams find where data lives, understand definitions, and get answers fast across databases, Sigma, Retool, and Power BI.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "runQL",
+    "url": "https://cloud.runql.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cloud.runql.com/img/logo.png"
+    }
+  }
+}
+</script>
+
+
+  <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-floating">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/img/runQL-logo.png" alt="runQL Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product <i
+                class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+            <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+              <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                  Data Dictionary</a></li>
+              <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                  Resource Dictionary</a>
+              </li>
+              <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                  Search</a></li>
+              <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+              <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+              <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+              <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                  Integrations</a></li>
+            </ul>
+          </li>
+          <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources <i
+                class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+            <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+              <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+              <li><a class="dropdown-item py-2"
+                  href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark Report</a>
+              </li>
+              <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+              <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+              <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+              <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+            class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="">
+    <section class="hero-section">
+      <div class="container blog-posts-wrapper">
+        <div class="row">
+          <div class="col-12">
+            <div class="blog-posts">
+              <h1 class="fw-bold text-muted h4">Product Updates & More</h1>
+              <div class="row mb-5">
+                <div class="col-md-8">
+                  <div class="feature-card p-4 p-md-5 border-0 shadow-sm position-relative align-items-start"
+                    style="background: linear-gradient(to right bottom, #ffffff, #f8f9fa);">
+                    <span class="badge bg-primary mb-2">Featured</span>
+                    <h2 class="fw-bold">Bridging the AI Gap</h2>
+                    <p>
+                      Why Conversational Analytics Struggles with Structured Data (and how to fix it).</p>
+                    <p>Accuracy gaps, inconsistent results, and governance blind spots leave business leaders, BI
+                      experts,
+                      and business users hesitant to trust Conversational Analytics platforms.</p>
+                    <p>Learn where they deliver, where they fall short, and the guardrails needed.
+                      <br /><small class="text-muted fs-12p mb-2">runQL Team • Sep 30, 2025</small>
+                    </p>
+                    <a href="runql-update-bridging-the-ai-gap-2025.html" class="btn btn-primary stretched-link">Read
+                      Post</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Workspace 2.0</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">January 2026 Update: Workspace Improvements,
+                        Answer Viewing, AI Upgrades.</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • January 2026</small><br>
+                      <a href="runql-update-2026-01.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">New Data Hub & Data Assistant</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">December 2025 Update: New Data Hub, Data
+                        Assistant, Databricks & Salesforce integrations.</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • December 2025</small><br>
+                      <a href="runql-update-2025-12.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Business Dictionary MVP & Metadata Management</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">November 2025 Update: Data Dictionary MVP, Metadata,
+                        Exports.</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • November 2025</small><br>
+                      <a href="runql-update-2025-11.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Slack + Teams & Chat Experience</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">October 2025 Update: Slack & Teams Chat, Business
+                        Answers UX.</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • October 2025</small><br>
+                      <a href="runql-update-2025-10.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">BigQuery + Auth, Analyst AI & UX Polish</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">September 2025 Update: BigQuery OAuth, Analyst
+                        AI, and UX Polish.</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • September 2025</small><br>
+                      <a href="runql-update-2025-09.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Updates</span>
+                      <h5 class="fw-bold mb-2">Answers Library</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Discover how runQL’s Answers Library delivers
+                        verified, consistent answers...
+                      </p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • Aug 12, 2025</small><br>
+                      <a href="runql-update-2025-08-12.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Updates</span>
+                      <h5 class="fw-bold mb-2">Observability</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">From Black Box to Clarity: 3 New Ways runQL Helps
+                        You Get Trusted Answers,
+                        Faster...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • July 29, 2025</small><br>
+                      <a href="runql-update-2025-07-29.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Security</span>
+                      <h5 class="fw-bold mb-2">runQL's Security for Data Credentials</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">runQL’s data credential model protects your data
+                        even if the worst happens...
+                      </p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • July 23 2025</small><br>
+                      <a href="runql-update-2025-07-23.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Updates</span>
+                      <h5 class="fw-bold mb-2">Semantic Layer To-Dos + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">You can now create Semantic Layer TODOs based on
+                        user requests in runQL which
+                        shows up in VSCode-based IDEs via our MCP!</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • July 15 2025</small><br>
+                      <a href="runql-update-2025-07-15.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Updates</span>
+                      <h5 class="fw-bold mb-2">dbt Metrics Layer Integration + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">dbt Metrics Layer integration, more deterministic
+                        workflows, better intent
+                        detection, and user experience updates...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • June 2025</small><br>
+                      <a href="runql-update-2025-06.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Updates</span>
+                      <h5 class="fw-bold mb-2">runQL + Snowflake Cortex Analyst</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">You can now use Snoflake Cortex Analyst directly
+                        with runQL!</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • May/June 2025</small><br>
+                      <a href="runql-update-snowflake-cortex-analyst-2025-06.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Updates</span>
+                      <h5 class="fw-bold mb-2">runQL Context Engine (MCP) for VSCode-based IDEs + more
+                      </h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Introducing the runQL Context Engine (MCP) for
+                        DBT, PowerBI TMDL, and more in
+                        VSCode-based IDEs. Updated Self-Serve Analytics Trust Controls and DBT...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • April 2025</small><br>
+                      <a href="runql-update-2025-04.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Updates</span>
+                      <h5 class="fw-bold mb-2">Improvements: Natural Language Self-Serve for Business
+                        Users + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Improved Query Suggestions & Re-Ranking – Also
+                        get more coverage for business
+                        answers with far less work than other solutions...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • March 2025</small><br>
+                      <a href="runql-update-2025-03.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Podcast</span>
+                      <h5 class="fw-bold mb-2">The UNCOMMODiFiED Podcast</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">I had a blast chatting with Tim Windsor on the
+                        UNCOMMODiFiED Podcast about
+                        something that’s been on my mind...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • March 6, 2025</small><br>
+                      <a href="runql-update-2025-03-06.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Snowflake OAuth + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">You can now use Snowflake Oauth for your
+                        credentials, and more easily share
+                        links in the desktop app...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • February 2025</small><br>
+                      <a href="runql-update-2025-02.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Business Answers Chat (MVP) + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Our first version of natural language chat for
+                        business users is here! Get
+                        fast, trusted insights from analyst-approved queries.</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • January 2025</small><br>
+                      <a href="runql-update-2025-01.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product & Team Update</span>
+                      <h5 class="fw-bold mb-2">Desktop App, VC Round + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">We’ve got some exciting product, team, and
+                        company updates to share before
+                        the year wraps up!</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • November & December 2024</small><br>
+                      <a href="runql-update-2024-12.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Conversational AI, smart tabs + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">From conversational AI to schema editing, smarter
+                        tabs, and dark mode
+                        charts...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • October 2024</small><br>
+                      <a href="runql-update-2024-10.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product & Team Update</span>
+                      <h5 class="fw-bold mb-2">Our Team is Growing!</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">You can now add, edit, and delete data in a
+                        table, run quick queries, SSL
+                        updates, Snowflake updates...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • September 2024</small><br>
+                      <a href="runql-update-2024-09.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Federated Queries, MongoDB + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Get Federated Queries without building your own
+                        infrastructure, MongoDB
+                        support...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • July & August 2024</small><br>
+                      <a href="runql-update-2024-08.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Browser Extension, Auto Schema Metadata + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">We launched a browser extension, automated schema
+                        metadata, schema change
+                        detection, certification workflows...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • May & June 2024</small><br>
+                      <a href="runql-update-2024-06.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">CEO Summit</span>
+                      <h5 class="fw-bold mb-2">Inovia CEO Summit</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Last week I had a great time at Inovia Capital's
+                        CEO Summit. There were so
+                        many great conversations...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • June 20 2024</small><br>
+                      <a href="runql-update-2024-06.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Snippets, Auto Drafts + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Snippets, autosaved drafts, role-based CSV
+                        controls, and smart workflow
+                        documentation...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • April 2024</small><br>
+                      <a href="runql-update-2024-04.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">AI Inline comments, better autocomplete + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">AI inline query comments, smarter workflows,
+                        better autocomplete, improved
+                        Business Answers Search...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • February & March 2024</small><br>
+                      <a href="runql-update-2024-03.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">runQL v2! Business Answers Search + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">We launched runQL v2, Business User Answers
+                        Search, added support for Neo4J
+                        and Google BigQuery...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • January 2024</small><br>
+                      <a href="runql-update-2024-01.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Certified Queries, MS SQL + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">This month we launched approved queries, added MS
+                        SQL support, and rolled out
+                        smarter tagging...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • December 2023</small><br>
+                      <a href="runql-update-2023-12.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">AI Suggestions, Workflows, Git Import + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Query workflows, AI-assisted query generation,
+                        Git imports, and the all-new
+                        runQL Starting Block...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • November 2023</small><br>
+                      <a href="runql-update-2023-11.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Virtual Query Service, Charts + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">The Virtual Query Service went live, charting got
+                        smarter, the Navigator was
+                        redesigned...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • October 2023</small><br>
+                      <a href="runql-update-2023-10.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Workbooks, Parameters + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Workbooks (alpha), one-to-many query reuse,
+                        dynamic query parameters, LLM
+                        prompt management...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • September 2023</small><br>
+                      <a href="runql-update-2023-09.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Snowflake Connections, Smart Query Suggestions + more
+                      </h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">This month we brought advanced access control,
+                        Snowflake support, and
+                        AI-powered query suggestions to life...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • August 2023</small><br>
+                      <a href="runql-update-2023-08.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">SSH Support, Smarter Query Logs + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">From SSH tunneling for MySQL and Redshift, to an
+                        all-new history log
+                        experience, to better workspace permissions...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • July 2023</small><br>
+                      <a href="runql-update-2023-07.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Workspace Roles, Versioning + more</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Better workspace roles and visibility controls,
+                        Revamped query log and
+                        versioned queries...</p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • June 2023</small><br>
+                      <a href="runql-update-2023-06.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="feature-card h-100 position-relative">
+                    <div class="d-flex flex-column h-100 align-items-start">
+                      <span class="badge bg-light text-dark mb-2">Product Update</span>
+                      <h5 class="fw-bold mb-2">Introducing Data Analyst Studio</h5>
+                      <p class="text-secondary small mb-3 flex-grow-1">Are you looking for a smarter SQL IDE built
+                        specifically for data analysts?
+                      </p>
+                    </div>
+                    <div class="mt-auto pt-3 border-top">
+                      <small class="text-muted fs-12p">runQL Team • May 2023</small><br>
+                      <a href="runql-update-2023-05.html" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom CTA -->
+  <section class="section-padding bg-dark text-white text-center">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-3 text-white">When time-to-decision matters.</h2>
+      <p class="lead text-white-50 mb-5">Find where data is, understand how to use it, and get answers fast.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+          class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-3">
+          <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+          <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Product</h6>
+          <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+          <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+          <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+            Dictionary</a>
+          <a href="/product/integrations/" class="footer-link">Integrations</a>
+        </div>
+        <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Resources</h6>
+          <a href="/blog/" class="footer-link">Blog</a>
+          <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+            class="footer-link">Benchmark Report</a>
+          <a href="/data-security/" class="footer-link">Security</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Company</h6>
+          <a href="/about/" class="footer-link">About</a>
+
+          <a href="/privacy/" class="footer-link">Privacy</a>
+          <a href="/terms-of-service/" class="footer-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="/js/main.js"></script>
+
+
+  <!-- Scroll top -->
+  <div class="btn-scroll-top">
+    <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+      <path
+        d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+    </svg>
+  </div>
+</body>
+
+</html>

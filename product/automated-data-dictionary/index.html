@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- SEO -->
+    <title>Automated Data Dictionary | runQL</title>
+    <link rel="canonical" href="https://cloud.runql.com/product/automated-data-dictionary/" />
+
+    <meta name="description"
+        content="Automatically create and maintain clear descriptions across your data schema and external apps like Sigma and Retool—so teams can find the right tables, columns, and meaning fast." />
+
+    <meta name="author" content="runQL" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+    <!-- Optional: keywords (not used by Google; okay for internal/LLM hints) -->
+    <meta name="keywords"
+        content="automated data dictionary, data dictionary, schema documentation, column descriptions, table descriptions, metadata management, data definitions, searchable metadata, Sigma, Retool, data catalog, business terms, metric definitions, relationships, data discovery" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Automated Data Dictionary | runQL" />
+    <meta property="og:site_name" content="runQL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloud.runql.com/product/automated-data-dictionary/" />
+    <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta property="og:image:alt" content="runQL" />
+    <meta property="og:description"
+        content="Automatically create and maintain schema and resource descriptions (tables, columns, business terms, relationships) so teams can find the right data and meaning fast." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cloud.runql.com/product/automated-data-dictionary/" />
+    <meta name="twitter:title" content="Automated Data Dictionary | runQL" />
+    <meta name="twitter:description"
+        content="Auto-create and maintain descriptions for tables, columns, business terms, and related resources—so your team can find the right data and meaning fast." />
+    <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta name="twitter:image:alt" content="runQL" />
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Automated Data Dictionary",
+    "url": "https://cloud.runql.com/product/automated-data-dictionary/",
+    "description": "Automatically create and maintain clear descriptions across your data schema and external apps like Sigma and Retool—so teams can find the right tables, columns, and meaning fast.",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "runQL",
+        "url": "https://cloud.runql.com/"
+    },
+    "about": {
+        "@type": "SoftwareApplication",
+        "name": "runQL",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "featureList": [
+        "Automated table descriptions",
+        "Automated column descriptions (types, formats, examples)",
+        "Resource descriptions for Sigma/Retool",
+        "Key business terms and metric definitions",
+        "Relationship explanations in plain language",
+        "Human overrides and editable definitions",
+        "Auto-detection of new tables/columns and change review"
+        ],
+        "url": "https://cloud.runql.com/"
+    }
+    }
+    </script>
+
+    <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation (Same as Index) -->
+    <nav class="navbar navbar-expand-lg navbar-floating">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/img/runQL-logo.png" alt="runQL Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                                    Data Dictionary</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                                    Resource Dictionary</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                                    Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                            <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                                    Integrations</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                            <li><a class="dropdown-item py-2"
+                                    href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                                    Report</a></li>
+                            <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                            <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                            <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                            <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                        class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h1 class="display-4 fw-bold mb-4">Automatically document your data</h1>
+                    <p class="lead text-secondary mb-5 mx-auto" style="max-width: 800px;">
+                        runQL creates and maintains clear descriptions across your schema so anyone can find the right
+                        data and meaning fast.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 mb-5">
+                        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                            class="btn btn-primary btn-lg plausible-event-name--bookMeetingLink">Request demo</a>
+                        <a href="#learn-more" class="btn btn-outline-secondary btn-lg">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Hero Visual -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <!-- Hero Visual -->
+                        <div class="d-flex flex-column gap-3">
+                            <!-- Panel Data Hub -->
+                            <div class="bg-white p-3 rounded-3 shadow-sm border text-start">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-light text-black"><small
+                                            class="text-muted fw-bold text-uppercase" style="font-size: 0.7rem;">Data
+                                            Hub > Jaffle Shop > Dictionary > order_items</small></span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-0 fw-medium">
+                                    <span><i class="fa fa-table"></i> order_items</span>
+                                    <i class="text-muted fs-10p fa fa-pen-to-square opacity-50 me-2"></i>
+                                </div>
+                                <div class="small text-muted pb-3">
+                                    This table records each item that is part of a customer's order, detailing the
+                                    product and its price. It helps in understanding what products are being sold and at
+                                    what price, aiding in inventory and sales management.
+                                </div>
+                                <div class="mb-4 mt-1">
+                                    <!-- Glossary Row -->
+                                    <div class="d-flex align-items-center mb-2 gap-3">
+                                        <div class="text-secondary d-flex align-items-center gap-2 text-nowrap"
+                                            style="min-width: 80px;">
+                                            <i class="fa-solid fa-book-open small"></i>
+                                            <span class="small">Glossary:</span>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-3 small fw-normal text-primary">
+                                            <span>Order Management</span>
+                                            <span>Sales Analysis</span>
+                                            <span>Product Details</span>
+                                            <span>Product Pricing</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Domains Row -->
+                                    <div class="d-flex align-items-center mb-3 gap-3">
+                                        <div class="text-secondary d-flex align-items-center gap-2 text-nowrap"
+                                            style="min-width: 80px;">
+                                            <i class="fa-solid fa-landmark small"></i>
+                                            <span class="small">Domains:</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <span
+                                                class="badge bg-light text-secondary border rounded-pill fw-normal px-3">Retail</span>
+                                            <span
+                                                class="badge bg-light text-secondary border rounded-pill fw-normal px-3">E-commerce</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Search Bar -->
+                                    <div class="position-relative">
+                                        <i
+                                            class="fa-solid fa-magnifying-glass position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary opacity-50"></i>
+                                        <input type="text" class="form-control ps-5 py-2 border rounded-3 bg-white"
+                                            placeholder="Search columns...">
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column flex-xxl-row gap-3 mt-3">
+                                    <!-- Card 1 -->
+                                    <div class="card border rounded-3 shadow-sm w-100 text-start">
+                                        <div class="card-body p-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="fw-bold mb-0">order_id</h6>
+                                                <i class="text-muted fs-10p fa fa-pen-to-square opacity-50"></i>
+                                            </div>
+                                            <p class="text-secondary mb-3" style="font-size: 0.6rem; opacity:.6">
+                                                varchar(255) • NOT NULL</p>
+
+                                            <p class="small text-secondary mb-3"
+                                                style="font-size: 0.85rem; line-height: 1.5;">
+                                                This identifier connects an individual order item to the main customer
+                                                order. It allows you to group all items that were purchased together in
+                                                a single transaction. It is found in the <code
+                                                    class="text-dark bg-light px-1 rounded">order_id</code> column of
+                                                the <code class="text-dark bg-light px-1 rounded">order_items</code>
+                                                table and links to the <code
+                                                    class="text-dark bg-light px-1 rounded">id</code> in the <code
+                                                    class="text-dark bg-light px-1 rounded">orders</code> table.
+                                            </p>
+
+                                            <div class="d-flex gap-2 mb-2 flex-wrap">
+                                                <span class="badge bg-light text-secondary border fw-normal">Order
+                                                    Reference</span>
+                                                <span class=" badge bg-light text-secondary border fw-normal">Order
+                                                    Tracking</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-white border-top p-2 px-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fs-10p text-secondary">References & Relationships</span>
+                                                <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div class="card border rounded-3 shadow-sm w-100 text-start">
+                                        <div class="card-body p-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="fw-bold mb-0">is_drink_item</h6>
+                                                <i class="text-muted fs-10p fa fa-pen-to-square opacity-50"></i>
+                                            </div>
+                                            <p class="text-secondary mb-3" style="font-size: 0.6rem; opacity:.6">
+                                                tinyint(1) • NOT NULL</p>
+
+                                            <p class="small text-secondary mb-3"
+                                                style="font-size: 0.85rem; line-height: 1.5;">
+                                                This is a True/False indicator that tells you whether the product is
+                                                categorized as a drink item. It's useful for analyzing beverage sales,
+                                                managing drink inventory, or understanding customer preferences for
+                                                drinks. This is derived from the <code
+                                                    class="text-dark bg-light px-1 rounded">type</code> column in the
+                                                <code class="text-dark bg-light px-1 rounded">products</code>
+                                                table.
+                                            </p>
+
+                                            <div class="d-flex gap-2 mb-2 flex-wrap">
+                                                <span
+                                                    class="badge bg-light text-secondary border fw-normal">Identifier</span>
+                                                <span class="badge bg-light text-secondary border fw-normal">Order
+                                                    Tracking</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-white border-top p-2 px-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fs-10p text-secondary">References & Relationships</span>
+                                                <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 3 -->
+                                    <div class="card border rounded-3 shadow-sm w-100 text-start">
+                                        <div class="card-body p-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="fw-bold mb-0">ordered_at</h6>
+                                                <i class="text-muted fs-10p fa fa-pen-to-square opacity-50"></i>
+                                            </div>
+                                            <p class="text-secondary mb-3" style="font-size: 0.6rem; opacity:.6">
+                                                timestamp •
+                                                NOT NULL</p>
+
+                                            <p class="small text-secondary mb-3"
+                                                style="font-size: 0.85rem; line-height: 1.5;">
+                                                This field shows the exact date and time when a customer placed their
+                                                order. It's useful for understanding sales trends over time, identifying
+                                                peak ordering periods, and analyzing customer behavior patterns. It
+                                                comes from the <code
+                                                    class="text-dark bg-light px-1 rounded">ordered_at</code> column in
+                                                the <code class="text-dark bg-light px-1 rounded">orders</code>
+                                                table.
+                                            </p>
+
+                                            <div class="d-flex gap-2 mb-2 flex-wrap">
+                                                <span
+                                                    class="badge bg-light text-secondary border fw-normal">Timestamp</span>
+                                                <span class="badge bg-light text-secondary border fw-normal">Sales
+                                                    Analysis</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-white border-top p-2 px-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fs-10p text-secondary">References & Relationships</span>
+                                                <i class="fa-solid fa-chevron-down text-secondary small"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. What you get -->
+    <section id="learn-more" class="section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-3">What gets documented automatically</h2>
+                    <p class="text-secondary lead">Not just table names, real descriptions people can actually use.</p>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-table-list"></i></div>
+                        <h5 class="fw-bold">Table descriptions</h5>
+                        <p class="text-secondary mb-0">What this table represents and how it should be used.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-columns"></i></div>
+                        <h5 class="fw-bold">Column descriptions</h5>
+                        <p class="text-secondary mb-0">Meaning, data types, formats, and example values.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-key"></i></div>
+                        <h5 class="fw-bold">Resource descriptions</h5>
+                        <p class="text-secondary mb-0">The Sigma/Retool resources available and how they help.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-cube"></i></div>
+                        <h5 class="fw-bold">Key business terms</h5>
+                        <p class="text-secondary mb-0">Official definitions for metrics like "activation date" or "ARR".
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                        <h5 class="fw-bold">Relationships</h5>
+                        <p class="text-secondary mb-0">What connects to what, explained in plain language.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="static-feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-link"></i></div>
+                        <h5 class="fw-bold">Related resources</h5>
+                        <p class="text-secondary mb-0">Links to relevant dashboards, apps, and saved answers (queries).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. How we do it -->
+    <section id="how-it-works" class="section-padding bg-subtle">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How runQL generates and maintains descriptions</h2>
+                <p class="text-secondary">This is a one-time setup, then it keeps improving over time.</p>
+            </div>
+
+            <div class="row g-4 text-center justify-content-center">
+                <div class="col-md-3 position-relative">
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-plug"></i></div>
+                        <h6 class="fw-bold mt-2">Connect Schema & Apps</h6>
+                        <p class="small text-secondary mb-0">Read-only access to schemas and external apps.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-file-import"></i></div>
+                        <h6 class="fw-bold mt-2">Add Context</h6>
+                        <p class="small text-secondary mb-0">Ingest internal docs, dbt docs, or our built-in Saleforce
+                            CRM and MS F&O docs.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h6 class="fw-bold mt-2">Auto-Generate</h6>
+                        <p class="small text-secondary mb-0">Create metadata and business descriptions for all data and
+                            external resources.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-rotate-right"></i></div>
+                        <h6 class="fw-bold mt-2">Stay Current</h6>
+                        <p class="small text-secondary mb-0">New resources get auto documented; changes get flagged for
+                            review.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 5. Editing + Ownership -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-3">Edit anything to customize it as needed</h2>
+                    <p class="text-secondary mb-4">You’re not stuck with the automated text. Your team owns the final
+                        definitions.</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-pen-to-square text-primary mt-1"></i>
+                            <div><strong>Edit</strong> any table or column description, glossary terms, or tags.</div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-quote-right text-primary mt-1"></i>
+                            <div><strong>Human overrides</strong> - your specific wording automatically becomes the
+                                source of truth.
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-text-height text-primary mt-1"></i>
+                            <div><strong>Add custom examples</strong> to show exactly what data values look like or
+                                automatically pull in ENUM values.</div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-circle-exclamation text-primary mt-1"></i>
+                            <div><strong>Add usage notes</strong> (e.g., “don’t use this for revenue reporting”).</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <div class="p-3 bg-white border rounded shadow-sm">
+                            <!-- Toolbar -->
+                            <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+                                <div class="d-flex align-items-center gap-3 text-secondary">
+                                    <div class="dropdown d-none d-sm-block">
+                                        <button
+                                            class="btn btn-sm btn-link text-decoration-none text-dark fw-medium dropdown-toggle p-0"
+                                            type="button">
+                                            Normal
+                                        </button>
+                                    </div>
+                                    <div class="vr mx-1 d-none d-sm-block"></div>
+                                    <i class="fa-solid fa-bold small cursor-pointer"></i>
+                                    <i class="fa-solid fa-italic small cursor-pointer"></i>
+                                    <i class="fa-solid fa-underline small cursor-pointer"></i>
+                                    <i class="fa-solid fa-circle small text-primary cursor-pointer d-none d-sm-block"
+                                        style="font-size: 0.6rem;"></i>
+                                    <i class="fa-solid fa-list-ul small cursor-pointer"></i>
+                                    <i class="fa-solid fa-list-ol small cursor-pointer d-none d-sm-block"></i>
+                                    <i class="fa-regular fa-check-circle small cursor-pointer d-none d-sm-block"></i>
+                                    <i class="fa-solid fa-link small cursor-pointer"></i>
+                                    <i class="fa-solid fa-code small cursor-pointer d-none d-sm-block"></i>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button
+                                        class="btn btn-sm btn-light border text-secondary fw-medium px-3">Edit</button>
+                                    <button
+                                        class="btn btn-sm btn-light border text-secondary fw-medium px-3">Preview</button>
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="px-2">
+                                <h2 class="fw-bold mb-3">is_drink_item</h2>
+
+                                <!-- Meta -->
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center overflow-hidden"
+                                            style="width: 32px; height: 32px;">
+                                            <img src="/img/team/rob3.jpg" alt="Rob D" class="img-fluid"
+                                                style="width: 100%; height: 100%; object-fit: cover;">
+                                        </div>
+                                        <div class="d-flex flex-column" style="line-height: 1.2;">
+                                            <span class="small fw-bold text-dark">By Rob D</span>
+                                            <span class="small text-muted" style="font-size: 0.7rem;">Updated Jan 02,
+                                                2026</span>
+                                        </div>
+                                        <div class="ms-3 d-flex align-items-center gap-1">
+                                            <span class="bg-success rounded-circle d-inline-block"
+                                                style="width: 8px; height: 8px;"></span>
+                                            <span class="small text-muted">Published</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-3 text-muted small">
+                                        <span><i class="fa-regular fa-eye me-1"></i> 320</span>
+                                        <span><i class="fa-regular fa-heart me-1"></i> 24</span>
+                                    </div>
+                                </div>
+
+                                <!-- Alert Box -->
+                                <div
+                                    class="alert bg-primary bg-opacity-10 border-0 d-flex gap-3 align-items-start mb-4">
+                                    <i class="fa-solid fa-circle-question text-primary mt-1 opacity-50"></i>
+                                    <div>
+                                        <div class="text-primary fw-bold small text-uppercase mb-1"
+                                            style="letter-spacing: 0.5px; font-size: 0.7rem;">Example Question
+                                        </div>
+                                        <div class="text-dark fw-medium">What are the total number of drink orders in
+                                            2025?</div>
+                                    </div>
+                                </div>
+
+                                <!-- Summary Section -->
+                                <div class="mb-4">
+                                    <h5 class="fw-bold mb-2">Definition</h5>
+                                    <p class="text-secondary small mb-0" style="line-height: 1.6;">
+                                        This is a True/False indicator that tells you whether the product is categorized
+                                        as a drink item. It's useful for analyzing beverage sales, managing drink
+                                        inventory, or understanding customer preferences for drinks. This is derived
+                                        from the type column in the products table.
+                                    </p>
+                                </div>
+
+                                <!-- Business Definition Section -->
+                                <div class="mb-4">
+                                    <h5 class="fw-bold mb-2">Notes</h5>
+                                    <p class="text-secondary small mb-0" style="line-height: 1.6;">
+                                        0 means it is not a drink order, 1 means it is a drink order. Use this indicator
+                                        to understand drink order history for example as part of a query to understand
+                                        the revenue we make from drink orders or what type of drinks get ordered the
+                                        most.
+                                    </p>
+                                </div>
+
+                                <!-- Tags Section (New) -->
+                                <div class="mt-4 pt-3 border-top">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="fa-solid fa-tags text-muted small"></i>
+                                        <h6 class="fw-bold mb-0 small text-uppercase text-muted">Tags</h6>
+                                    </div>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span
+                                            class="badge bg-light text-secondary border fw-normal px-2 py-1">Identifier
+                                            <i class="fa-solid fa-xmark ms-1 opacity-50 cursor-pointer"></i></span>
+                                        <span class="badge bg-light text-secondary border fw-normal px-2 py-1">Order
+                                            Tracking
+                                            <i class="fa-solid fa-xmark ms-1 opacity-50 cursor-pointer"></i></span>
+                                        <button
+                                            class="btn btn-sm btn-outline-secondary py-0 px-2 small bg-white text-muted border-dashed"
+                                            style="font-size: 0.75rem;">+ Add Tag</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Maintenance -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <div class="card border-0 shadow-sm overflow-hidden rounded-3">
+                            <!-- Header -->
+                            <div
+                                class="card-header bg-primary bg-opacity-10 border-bottom border-primary border-opacity-25 p-3">
+                                <div class="d-flex align-items-center gap-3">
+                                    <i class="fa-solid fa-circle-info text-primary fs-4"></i>
+                                    <h5 class="mb-0 text-dark">Data Source Changes Detected</h5>
+                                </div>
+                            </div>
+                            <!-- Body -->
+                            <div class="card-body bg-light bg-opacity-50 p-4">
+                                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                                    <li class="d-flex gap-3">
+                                        <i class="fa-solid fa-circle text-secondary opacity-25 mt-2"
+                                            style="font-size: 0.5rem;"></i>
+                                        <div class="text-dark">
+                                            New column added to table:<br />
+                                            <code>`orders`.`count_order_items`</code>
+                                            <br /> Description created <i class="fa fa-check-circle text-success"></i>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-3">
+                                        <i class="fa-solid fa-circle text-secondary opacity-25 mt-2"
+                                            style="font-size: 0.5rem;"></i>
+                                        <div class="text-dark">
+                                            Column type changed: <br />
+                                            <code>DECIMAL(10,2) -> INT</code> in <code>`orders`.`total_cents`</code>
+                                            <br /> Description updated <i class="fa fa-check-circle text-success"></i>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex gap-3">
+                                        <i class="fa-solid fa-circle text-secondary opacity-25 mt-2"
+                                            style="font-size: 0.5rem;"></i>
+                                        <div class="text-dark">
+                                            New table added: <br />
+                                            <code>`customer_mapping`</code>
+                                            <br /> Description added <i class="fa fa-check-circle text-success"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Footer -->
+                            <div class="card-footer bg-light bg-opacity-50 border-top p-3 text-end">
+                                <div class="d-flex justify-content-end gap-2">
+                                    <button
+                                        class="btn btn-sm btn-light border bg-white text-secondary fw-medium px-4">Dismiss</button>
+                                    <button class="btn btn-sm btn-dark fw-medium px-4">Review Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-lg-1">
+                    <h2 class="fw-bold mb-3">It stays current as your data changes</h2>
+                    <p class="text-secondary mb-4">This is where manual documentation always breaks.</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-bolt text-warning mt-1"></i>
+                            <div><strong>New tables & columns</strong> are automatically detected and documented
+                                instantly.</div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-triangle-exclamation text-warning mt-1"></i>
+                            <div><strong>Schema changes</strong> surface as “needs review” (renames, type changes,
+                                meaning shifts).</div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-calendar-check text-warning mt-1"></i>
+                            <div><strong>Stop restarting</strong> documentation projects every quarter. It's always up
+                                to date.</div>
+                        </li>
+                        <li class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-magnifying-glass text-warning mt-1"></i>
+                            <div><strong>Data Chat & Search</strong> keeps working because the underlying descriptions
+                                stay updated.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Time Saved -->
+    <section class="section-padding bg-subtle">
+        <div class="container">
+            <h2 class="text-center mb-5">How much time this saves vs manual documentation</h2>
+            <p class="text-center text-secondary lead mb-5">Documenting and maintiaing a real schema manually is a major
+                project. runQL
+                does the first pass automatically.</p>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-danger mb-4"><i class="fa-solid fa-xmark me-2"></i>Manual Reality
+                            </h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li class="text-secondary"><i class="fa-regular fa-clock me-2 opacity-50"></i>A mid-size
+                                    schema can have hundreds to thousands of columns.</li>
+                                <li class="text-secondary"><i
+                                        class="fa-regular fa-pen-to-square me-2 opacity-50"></i>Writing a usable
+                                    definition isn’t just text—it’s meaning, caveats, usage notes.</li>
+                                <li class="text-secondary"><i
+                                        class="fa-solid fa-rotate-right me-2 opacity-50"></i>Manual documentation
+                                    typically becomes stale the moment migrations start.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card h-100 border-primary border-2 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-primary mb-4"><i class="fa-solid fa-check me-2"></i>With runQL</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li class="text-dark"><i class="fa-solid fa-bolt me-2 text-primary"></i>Generated
+                                    descriptions across the whole schema in minutes.</li>
+                                <li class="text-dark"><i class="fa-solid fa-filter me-2 text-primary"></i>Review focuses
+                                    on the important 10–20% (IDs, key metrics, high-traffic tables).</li>
+                                <li class="text-dark"><i
+                                        class="fa-solid fa-arrow-trend-up me-2 text-primary"></i>Maintenance becomes
+                                    incremental, not a re-write.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Basic Savings Calc -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-8">
+                    <div class="bg-white p-4 rounded border dashed-border text-center opacity-75">
+                        <div class="d-flex justify-content-around flex-wrap gap-3 align-items-center">
+                            <div>
+                                <div class="small text-uppercase text-muted fw-bold">Schema Size</div>
+                                <div class="h3 fw-bold mb-0">200 <span class="fs-6 text-muted fw-normal">tables</span>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block text-muted">×</div>
+                            <div>
+                                <div class="small text-uppercase text-muted fw-bold">Manual Time</div>
+                                <div class="h3 fw-bold mb-0">3.5 <span class="fs-6 text-muted fw-normal">min/col</span>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block text-muted">=</div>
+                            <div>
+                                <div class="small text-uppercase text-danger fw-bold">One Time Total Effort</div>
+                                <div class="h3 fw-bold text-danger mb-0">~400+ <span class="fs-6 fw-normal">hours
+                                        saved</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Related Features -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Related features</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <a href="/product/data-chat-search/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h4 class="h6 fw-bold">Data Chat & Search</h4>
+                        <p class="small text-secondary mb-0">Ask questions in plain English and get pointed to the right
+                            place.</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/automated-resource-dictionary/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h4 class="h6 fw-bold">Automated Resource Dictionary</h4>
+                        <p class="small text-secondary mb-0">Index Sigma and Retool resources to prevent duplicate work.
+                        </p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/product/integrations/" class="feature-card h-100">
+                        <div class="feature-icon"><i class="fa-solid fa-plug"></i></div>
+                        <h4 class="h6 fw-bold">One-Click Integrations</h4>
+                        <p class="small text-secondary mb-0">Connect your stack (database, Snowflake, Salesforce, Sigma,
+                            Slack) in minutes.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section-padding bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 text-white">Make your data usable for the whole team.</h2>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                    class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+                    <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Product</h6>
+                    <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+                    <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+                    <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+                        Dictionary</a>
+                    <a href="/product/integrations/" class="footer-link">Integrations</a>
+                </div>
+                <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Resources</h6>
+                    <a href="/blog/" class="footer-link">Blog</a>
+                    <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                        class="footer-link">Benchmark Report</a>
+                    <a href="/data-security/" class="footer-link">Security</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="/about/" class="footer-link">About</a>
+
+                    <a href="/privacy/" class="footer-link">Privacy</a>
+                    <a href="/terms-of-service/" class="footer-link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

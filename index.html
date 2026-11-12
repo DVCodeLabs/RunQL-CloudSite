@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- SEO -->
+    <title>runQL | Find the Right Data Fast</title>
+    <link rel="canonical" href="https://cloud.runql.com/" />
+
+    <meta name="description"
+        content="Find the right data fast. runQL helps teams find where data lives, understand definitions, and get answers across databases, Sigma, Retool, and saved answers—right from Slack, Microsoft Teams, or the runQL app." />
+
+    <meta name="author" content="runQL" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+    <!-- Optional: keywords (not used by Google; OK for internal/LLM hints) -->
+    <meta name="keywords"
+        content="find the right data fast, data discovery, data definitions, automated data dictionary, automated resource dictionary, Sigma, Retool, Slack, Microsoft Teams, answers library, data catalog, searchable metadata, ops analytics, customer success analytics" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="runQL | Find the Right Data Fast" />
+    <meta property="og:site_name" content="runQL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloud.runql.com/" />
+    <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta property="og:image:alt" content="runQL" />
+    <meta property="og:description"
+        content="runQL helps teams find where data lives, understand definitions, and get answers across databases, Sigma, Retool, and saved answers—right from Slack, Teams, or the runQL app." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cloud.runql.com/" />
+    <meta name="twitter:title" content="runQL | Find the Right Data Fast" />
+    <meta name="twitter:description"
+        content="Find where data lives, understand definitions, and get answers across databases, Sigma, and Retool—from Slack, Teams, or the runQL app." />
+    <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png" />
+    <meta name="twitter:image:alt" content="runQL" />
+
+    <script type="application/ld+json">
+    [
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "runQL",
+        "url": "https://cloud.runql.com/",
+        "description": "runQL helps teams find the right data fast by creating and maintaining searchable metadata across databases, dashboards, and internal apps.",
+        "publisher": {
+        "@type": "Organization",
+        "name": "runQL",
+        "url": "https://cloud.runql.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://cloud.runql.com/img/logo.png"
+        }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "runQL",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://cloud.runql.com/",
+        "description": "Find the right data fast across databases, Sigma dashboards, Retool apps, and saved answers—from Slack, Microsoft Teams, or the runQL app.",
+        "featureList": [
+        "Automated Data Dictionary",
+        "Automated Resource Dictionary",
+        "Data Chat & Search",
+        "Answers Library",
+        "One-click integrations"
+        ]
+    }
+    ]
+    </script>
+
+    <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-floating">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/img/runQL-logo.png" alt="runQL Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                                    Data Dictionary</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                                    Resource Dictionary</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                                    Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+                            <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                                    Integrations</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Solutions
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+                            <li><a class="dropdown-item py-2"
+                                    href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark
+                                    Report</a></li>
+                            <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+                            <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+                            <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+                            <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about/">About</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                        class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+                    <a href="https://app.runql.com/" class="btn btn-sm btn-outline-secondary">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-auto text-center">
+                    <a href="https://runql.com/" target="_blank" rel="noopener"
+                        class="badge border text-primary rounded-pill text-decoration-none px-4 py-2 fs-6">
+                        <span class="text-dark">Introducing RunQL-IDE:</span> an open-source SQL editor for VS Code, built for data work in the AI era&nbsp;&rarr;
+                    </a>
+                </div>
+            </div>
+            <div class="row align-items-center mt-5 pt-5">
+                <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
+                    <h1 class="display-4 mb-4 fw-bold lh-tight">
+                        Find the right data. <br /> <span class="text-primary"
+                            style="color: var(--primary-blue) !important;">Fast.</span>
+                    </h1>
+                    <p class="lead mb-5 text-secondary fs-4 fw-normal">
+                        Help your team find data, understand it, and get answers fast. Ask in Slack or Microsoft Teams,
+                        or ask and search in
+                        the runQL app.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                            class="btn btn-primary btn-lg px-4 py-3 fs-5 plausible-event-name--bookMeetingLink">Request
+                            demo</a>
+                        <a href="#learn-more" class="btn btn-secondary-action btn-lg px-4 py-3 fs-5">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-animation-container text-start" id="heroAnimationContainer"
+                        onclick="toggleHeroAnimation()" title="Click to pause/resume">
+                        <!-- first card -->
+                        <div class="hero-visual-card p-4 bg-light">
+                            <!-- Hero Visual -->
+                            <div class="d-flex flex-column gap-3">
+                                <!-- Panel A: Ask -->
+                                <div class="bg-white p-3 rounded-3 shadow-sm border hero-panel-a">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="/img/integrations/slack-icon.svg" alt="Slack" height="20">
+                                        <span class="badge bg-light text-black"><small
+                                                class="text-muted fw-bold text-uppercase"
+                                                style="font-size: 0.7rem;">Ask</small></span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0 fw-medium hero-typewriter-text"
+                                            data-text="Where do I find the activation date for a customer?">
+                                            <span class="type-text"></span><span class="typing-cursor">|</span>
+                                        </p>
+                                        <span class="hero-return-key text-muted ms-2"><i
+                                                class="fa-solid fa-arrow-turn-down fa-rotate-90"></i></span>
+                                    </div>
+                                </div>
+
+                                <!-- Panel B: Point -->
+                                <div class="bg-white p-3 rounded-3 shadow-sm border mt-2 hero-panel-b">
+                                    <span class="badge bg-light text-black"><small
+                                            class="text-muted fw-bold text-uppercase"
+                                            style="font-size: 0.7rem;">Find</small></span>
+                                    <div class="small text-muted pb-4 hero-stream-text">
+                                        You can find the activation date for a customer in the <span
+                                            class="text-primary">activation_date</span>
+                                        column in the <span class="text-primary">Customers</span> table. The <span
+                                            class="text-primary">New Customers</span> Sigma dashboard shows customers
+                                        in the last 30 days by activation_date and the <span
+                                            class="text-primary">Customer
+                                            Activation
+                                            Date</span> saved answer gives the activation date for a specified
+                                        customer.
+                                    </div>
+                                    <div class="d-flex gap-2 flex-wrap hero-boxes">
+                                        <div
+                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill position-relative">
+                                            <div class="static-tooltip">Definitions</div>
+                                            <i class="fa-regular fa-file-lines text-secondary"></i>
+                                            <small class="fw-semibold">activation_date</small>
+                                        </div>
+                                        <div
+                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill position-relative">
+                                            <div class="static-tooltip">Sigma Dashboard</div>
+                                            <img src="/img/integrations/sigma-icon.png" alt="Sigma" height="20">
+                                            <small class="fw-semibold">New Customers <i
+                                                    class="fa fa-arrow-up-right-from-square ms-2"></i></small>
+                                        </div>
+                                        <div
+                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill position-relative">
+                                            <div class="static-tooltip tooltip-responsive-bottom">Saved Answer
+                                            </div>
+                                            <img src="/img/runQL-logo-only.png" alt="Answer" height="16">
+                                            <small class="fw-semibold">Saved Answer</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Panel C: Explain -->
+                                <div
+                                    class="bg-white p-3 rounded-3 shadow-sm border mt-2 border-primary border-opacity-25 hero-panel-c">
+                                    <span class="badge bg-light text-black"><small
+                                            class="text-muted fw-bold text-uppercase"
+                                            style="font-size: 0.7rem;">Understand</small></span>
+                                    <p class="mb-0"><span class="text-primary small">activation_date</span></p>
+                                    <p class="small text-muted mb-0">This is the date when the customer completed the
+                                        onboarding
+                                        flow and made their first payment.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- second card -->
+                        <div class="hero-visual-card p-4 bg-light">
+                            <!-- Hero Visual -->
+                            <div class="d-flex flex-column gap-3">
+                                <!-- Panel A: Ask -->
+                                <div class="bg-white p-3 rounded-3 shadow-sm border hero-panel-a">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="/img/integrations/ms-teams-icon.svg" alt="Microsoft Teams"
+                                            height="20">
+                                        <span class="badge bg-light text-black"><small
+                                                class="text-muted fw-bold text-uppercase"
+                                                style="font-size: 0.7rem;">Ask</small></span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0 fw-medium hero-typewriter-text"
+                                            data-text="I need to find the activation date for Alice Smith.">
+                                            <span class="type-text"></span><span class="typing-cursor">|</span>
+                                        </p>
+                                        <span class="hero-return-key text-muted ms-2"><i
+                                                class="fa-solid fa-arrow-turn-down fa-rotate-90"></i></span>
+                                    </div>
+                                </div>
+
+                                <!-- Panel B: Point -->
+                                <div class="bg-white p-3 rounded-3 shadow-sm border mt-2 hero-panel-b">
+                                    <span class="badge bg-light text-black"><small
+                                            class="text-muted fw-bold text-uppercase"
+                                            style="font-size: 0.7rem;">Find</small></span>
+                                    <div class="small text-muted pb-4 hero-stream-text">
+                                        Click the answer card below to see the <span
+                                            class="text-primary">activation_date</span> and other details
+                                        for this customer. If you're looking for multiple New Customers in the past 30
+                                        days, you may find the <span class="text-primary">New Customers</span> app in
+                                        Retool useful.<br />&nbsp;
+                                    </div>
+                                    <div class="d-flex gap-2 flex-wrap hero-boxes">
+                                        <div
+                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill position-relative">
+                                            <div class="static-tooltip">Definitions</div>
+                                            <i class="fa-regular fa-file-lines text-secondary"></i>
+                                            <small class="fw-semibold">activation_date</small>
+                                        </div>
+                                        <div
+                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill position-relative">
+                                            <div class="static-tooltip">Retool App</div>
+                                            <img src="/img/integrations/retool-icon.svg" alt="Retool" height="20">
+                                            <small class="fw-semibold">New Customers <i
+                                                    class="fa fa-arrow-up-right-from-square ms-2"></i></small>
+                                        </div>
+                                        <div
+                                            class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill position-relative">
+                                            <div class="static-tooltip tooltip-responsive-bottom">Saved Answer
+                                            </div>
+                                            <img src="/img/runQL-logo-only.png" alt="Answer" height="16">
+                                            <small class="fw-semibold">Saved Answer</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Panel C: Explain -->
+                                <div
+                                    class="bg-white p-3 rounded-3 shadow-sm border mt-2 border-primary border-opacity-25 hero-panel-c">
+                                    <span class="badge bg-light text-black"><small
+                                            class="text-muted fw-bold text-uppercase"
+                                            style="font-size: 0.7rem;">Understand</small></span>
+                                    <p class="mb-0"><span class="text-primary small">activation_date</span></p>
+                                    <p class="small text-muted mb-0">This is the date when the customer completed the
+                                        onboarding
+                                        flow and made their first payment.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="hero-progress-container d-flex gap-2">
+                            <div class="hero-progress-segment flex-fill">
+                                <div class="hero-progress-fill fill-1"></div>
+                            </div>
+                            <div class="hero-progress-segment flex-fill">
+                                <div class="hero-progress-fill fill-2"></div>
+                            </div>
+                        </div>
+
+                        <!-- Pause/Play Button -->
+                        <button class="hero-pause-btn" onclick="event.stopPropagation(); toggleHeroAnimation()"
+                            title="Pause/Play Animation">
+                            <i class="fa-solid fa-pause" id="pauseIcon"></i>
+                            <i class="fa-solid fa-play d-none" id="playIcon"></i>
+                        </button>
+
+                        <script>
+                            function toggleHeroAnimation() {
+                                var container = document.getElementById('heroAnimationContainer');
+                                var pauseIcon = document.getElementById('pauseIcon');
+                                var playIcon = document.getElementById('playIcon');
+
+                                container.classList.toggle('paused');
+
+                                if (container.classList.contains('paused')) {
+                                    pauseIcon.classList.add('d-none');
+                                    playIcon.classList.remove('d-none');
+                                } else {
+                                    pauseIcon.classList.remove('d-none');
+                                    playIcon.classList.add('d-none');
+                                }
+                            }
+
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const container = document.getElementById('heroAnimationContainer');
+                                const cards = document.querySelectorAll('.hero-visual-card');
+                                // Target the text spans inside the cards
+                                const textSpans = [
+                                    cards[0].querySelector('.type-text'),
+                                    cards[1].querySelector('.type-text')
+                                ];
+                                // Read the full text from the parent's data-text attribute
+                                const fullTexts = [
+                                    cards[0].querySelector('.hero-typewriter-text').getAttribute('data-text'),
+                                    cards[1].querySelector('.hero-typewriter-text').getAttribute('data-text')
+                                ];
+
+                                let progress = 0; // 0 to 20000ms
+                                let lastFrame = performance.now();
+
+                                // Animation Parameters
+                                const TOTAL_CYCLE = 20000;
+                                const TYPE_DURATION = 2000; // Time to type out full string
+
+                                // Card 1 timings
+                                const C1_START = 500;
+                                const C1_END_TYPE = C1_START + TYPE_DURATION;
+                                const C1_HIDE = 17000; // Reset text
+
+                                // Card 2 timings (offset by 10s / 10000ms)
+                                const C2_START = 10500;
+                                const C2_END_TYPE = C2_START + TYPE_DURATION;
+                                const C2_HIDE = 7000; // Reset text earlier in the next loop effectively, or just clear at end of its active phase
+
+                                function step(timestamp) {
+                                    const delta = timestamp - lastFrame;
+                                    lastFrame = timestamp;
+
+                                    if (!container.classList.contains('paused')) {
+                                        progress = (progress + delta) % TOTAL_CYCLE;
+                                    }
+
+                                    updateCard(0, progress, C1_START, C1_END_TYPE, C1_HIDE);
+                                    updateCard(1, progress, C2_START, C2_END_TYPE, C2_HIDE);
+
+                                    requestAnimationFrame(step);
+                                }
+
+                                function updateCard(index, currentMs, startType, endType, hideTime) {
+                                    const textSpan = textSpans[index];
+                                    const fullText = fullTexts[index];
+
+                                    if (!textSpan || !fullText) return;
+
+                                    if (currentMs < startType) {
+                                        // Before typing starts
+                                        textSpan.textContent = "";
+                                    } else if (currentMs >= startType && currentMs < endType) {
+                                        // Typing phase
+                                        const typeProgress = (currentMs - startType) / (endType - startType);
+                                        const charCount = Math.floor(typeProgress * fullText.length);
+                                        textSpan.textContent = fullText.substring(0, charCount);
+                                    } else if (currentMs >= endType) {
+                                        // Finished typing
+                                        // For Card 1, it stays visible until hideTime (17s)
+                                        // For Card 2, it stays visible until the loop wraps or hideTime
+
+                                        // Special handling for wrap-around hide logic if needed, 
+                                        // but here we just check if we should clear it.
+                                        // For Card 2, hideTime might be small (start of next loop) or large?
+                                        // Let's explicitly say: clear if in "hidden" phase.
+
+                                        // Simplified: Just keep full text until specific hide time or loop reset
+                                        // Since opacity handles visibility of the card, we mainly care about resetting for the next type cycle.
+
+                                        // If we are past the hide time (and hide time is > endType), clear it
+                                        if (hideTime > endType && currentMs > hideTime) {
+                                            textSpan.textContent = "";
+                                        } else {
+                                            textSpan.textContent = fullText;
+                                        }
+                                    }
+
+                                    // Special reset for Card 2 wrapping: 
+                                    // Card 2 types 10.5-12.5s. Hides at say 20s or 0s. 
+                                    // Actually, let's just let the opacity animation hide the card, 
+                                    // and we just need to ensure text is ready to type again.
+                                    // The startType check at the top handles the "reset to empty" 
+                                    // as soon as progress wraps to 0 and becomes < startType.
+                                }
+
+                                requestAnimationFrame(step);
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="learn-more" class="section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-6 fw-bold mb-3">Empower your team
+                    </h2>
+                    <p class="text-muted ps-5 pe-5">
+                        Give your team instant access to answers so they can win deals, help customers, stay ahead of
+                        inventory, and increase revenue.
+                    </p>
+                </div>
+            </div>
+            <!-- Row 1: FIND -->
+            <div class="row align-items-center mb-5 pb-5">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="text-uppercase fw-bold text-primary mb-2 small" style="letter-spacing: 1px;">Where can I
+                        find this data?</div>
+                    <h3 class="fw-bold mb-3">Find the right data, dashboard, or app in seconds.</h3>
+                    <p class="text-secondary mb-4 lead fs-6">Enable everyone on your team to find the right table,
+                        dashboard, or app, without endlessly digging or asking five people.</p>
+                    <a href="/product/data-chat-search/" class="fw-bold text-decoration-none">Explore Data Chat & Search
+                        <i class="fa-solid fa-arrow-right ms-1 small"></i></a>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <img src="/img/features/runQL-data-chat-search.png" alt="Find Data with runQL"
+                            class="img-fluid rounded-3 shadow-sm border">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: UNDERSTAND -->
+            <div class="row align-items-center mb-5 pb-5">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="text-uppercase fw-bold text-primary mb-2 small" style="letter-spacing: 1px;">What does
+                        this field mean or dashboard do?
+                    </div>
+                    <h3 class="fw-bold mb-3">Get clear definitions so everyone's on the same page.</h3>
+                    <p class="text-secondary mb-4 lead fs-6">Give your team clear definitions so they understand what a
+                        field means, which dashboard to use, and how
+                        teams define key terms, right from where they're already working.</p>
+                    <a href="/product/automated-data-dictionary/" class="fw-bold text-decoration-none">Explore Automated
+                        Data Dictionary <i class="fa-solid fa-arrow-right ms-1 small"></i></a><br />
+                    <a href="/product/automated-resource-dictionary/" class="fw-bold text-decoration-none">Explore
+                        Automated
+                        Resource Dictionary <i class="fa-solid fa-arrow-right ms-1 small"></i></a>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <!-- Hero Visual -->
+                        <div class="d-flex flex-column gap-3">
+                            <!-- Panel Data Hub -->
+                            <div class="bg-white p-3 rounded-3 shadow-sm border">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-light text-black"><small
+                                            class="text-muted fw-bold text-uppercase" style="font-size: 0.7rem;">Data
+                                            Hub</small></span>
+                                </div>
+                                <p class="mb-0 fw-medium ">Jaffle Shop
+                                </p>
+                                <div class="small text-muted pb-3">
+                                    Information about our customers, orders, products, store locations, and supplies.
+                                    This provides insights into our customer interactions and operational performance.
+                                </div>
+                                <div class="dictionary-example">
+                                    <div class="tags-container">
+                                        <div class="tag-pill">Sales</div>
+                                        <div class="tag-pill">Customer Management</div>
+                                        <div class="tag-pill">Operations</div>
+                                        <div class="tag-pill">Inventory Management</div>
+                                        <div class="tag-pill">Procurement</div>
+                                    </div>
+
+                                    <!-- Tab Bar -->
+                                    <div class="tab-bar">
+                                        <div class="tab-item">
+                                            <i class="fa-solid fa-book-open"></i>
+                                            Glossary
+                                        </div>
+                                        <div class="tab-item active">
+                                            <i class="fa-solid fa-database"></i>
+                                            Dictionary
+                                        </div>
+                                        <div class="tab-item">
+                                            <i class="fa-solid fa-diagram-project"></i>
+                                            Relationships
+                                        </div>
+                                        <div class="tab-item">
+                                            <i class="fa-regular fa-circle-question"></i>
+                                            Answers
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-white p-3 mt-4 rounded-3 shadow-sm border mt-2 border-primary border-opacity-25">
+                                    <p class="mb-0"><span class="text-primary small">activation_date</span></p>
+                                    <p class="small text-muted mb-0">This is the date when the customer completed the
+                                        onboarding flow and made their first payment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: ANSWERS / REUSE -->
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="text-uppercase fw-bold text-primary mb-2 small" style="letter-spacing: 1px;">I need an
+                        answer right now
+                    </div>
+                    <h3 class="fw-bold mb-3">Get answers so you can move fast.</h3>
+                    <p class="text-secondary mb-4 lead fs-6">Get answers via Sigma or Retool—or get instant answers in
+                        runQL. Pivot, filter, and export results instantly, then save the answer for your team when it's
+                        worth reusing.</p>
+                    <a href="/product/instant-answers/" class="fw-bold text-decoration-none">Explore Instant Answers <i
+                            class="fa-solid fa-arrow-right ms-1 small"></i></a><br />
+                    <a href="/product/answers-library/" class="fw-bold text-decoration-none">Explore Answers Library <i
+                            class="fa-solid fa-arrow-right ms-1 small"></i></a>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="hero-visual-card p-4 bg-light">
+                        <!-- Hero Visual -->
+                        <div class="d-flex flex-column gap-3">
+                            <!-- Panel Data Hub -->
+                            <div class="bg-white p-3 rounded-3 shadow-sm border">
+                                <div>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-light text-black"><small
+                                                class="text-muted fw-bold text-uppercase"
+                                                style="font-size: 0.7rem;">Answer</small></span>
+                                    </div>
+
+                                    <div class="mt-2">
+                                        <div class="small text-muted pb-4">
+                                            You can find the activation date for a customer in the <span
+                                                class="text-primary">activation_date</span>
+                                            column in the <span class="text-primary">Customers</span> table. The <span
+                                                class="text-primary">New Customers</span> Sigma dashboard shows
+                                            customers
+                                            in the last 30 days by activation_date and the <span
+                                                class="text-primary">Customer Activation
+                                                Date</span> saved answer gives the activiation date for a specified
+                                            customer.
+                                        </div>
+                                        <div class="d-flex gap-2 flex-wrap">
+                                            <div
+                                                class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                <i class="fa-solid fa-file-lines text-secondary"></i>
+                                                <small class="fw-semibold">activation_date</small>
+                                            </div>
+                                            <div
+                                                class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill">
+                                                <img src="/img/integrations/sigma-icon.png" alt="Sigma" height="20">
+                                                <small class="fw-semibold">New Customers <i
+                                                        class="fa fa-arrow-up-right-from-square ms-2"></i></small>
+                                            </div>
+                                            <div
+                                                class="border rounded p-2 d-flex align-items-center justify-content-center gap-2 flex-fill bg-dark text-white">
+                                                <img src="/img/runQL-logo-only.png" alt="Answer" height="16">
+                                                <small class="fw-semibold">Saved Answer</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fake-form-entry mb-4 mt-4">
+                                        <label class="form-label small text-muted text-uppercase mb-2"
+                                            style="font-size: 0.7rem; letter-spacing: 0.5px;">Customer Name</label>
+                                        <div class="d-flex gap-2">
+                                            <div class="border border-primary rounded-2 p-2 px-3 d-flex align-items-center bg-white shadow-sm flex-grow-1"
+                                                style="box-shadow: 0 0 0 4px rgba(51, 113, 179, 0.1) !important;">
+                                                <span class="text-dark small">Alice </span><span
+                                                    class="typing-cursor text-primary">|</span>
+                                            </div>
+                                            <button
+                                                class="btn btn-primary d-flex align-items-center gap-2 px-3 py-2 btn-sm">
+                                                <small class="fw-semibold">Get Results</small>
+                                                <i class="fa-solid fa-arrow-right small"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="dictionary-data-results-example">
+                                        <table class="data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Customer Name</th>
+                                                    <th class="d-none d-sm-block">Plan</th>
+                                                    <!-- Active Column -->
+                                                    <th class="active-column-header">
+                                                        Activation Date
+
+                                                        <!-- Tooltip Popover -->
+                                                        <div class="definition-tooltip">
+                                                            <span
+                                                                class="tooltip-title text-primary">activation_date</span>
+                                                            <div class="tooltip-desc text-muted">
+                                                                This is the date when the customer completed the
+                                                                onboarding
+                                                                flow and made their first
+                                                                payment.
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Alice Smith</td>
+                                                    <td class="d-none d-sm-block">Pro</td>
+                                                    <td>Jan 15, 2026</td>
+                                                    <td><span class="status-badge status-active">Active</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Alice Johnson</td>
+                                                    <td class="d-none d-sm-block">Basic</td>
+                                                    <td>Nov 1, 2025</td>
+                                                    <td><span class="status-badge status-active">Active</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section-padding bg-subtle">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-6 fw-bold">How it works</h2>
+                    <p class="text-muted">
+                        Dashboard or App tools aren’t designed to store meaningful, searchable metadata at scale. We
+                        automatically create and maintain the descriptions and context your team needs across your
+                        stack.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 position-relative">
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-plug"></i></div>
+                        <h5 class="fw-bold mb-2">Connect your stack</h5>
+                        <p class="small text-secondary mb-0">Databases, Cloud Datawarehouses, Sigma, Retool, Salesforce,
+                            MS Teams, Slack,
+                            and more.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-gears"></i></div>
+                        <h5 class="fw-bold mb-2">runQL Engine</h5>
+                        <p class="small text-secondary mb-0">Your tables, dashboards, and apps are automatically
+                            documented, indexed, and maintained.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h5 class="fw-bold mb-2">Ask or search</h5>
+                        <p class="small text-secondary mb-0">Use Slack, MS Teams, the runQL app or MCP to ask or
+                            search. We work where
+                            you
+                            work.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <i class="fa-solid fa-arrow-right position-absolute top-50 start-0 translate-middle text-muted d-none d-md-block"
+                        style="z-index: 1;"></i>
+                    <div class="step-card">
+                        <div class="mb-3 text-primary fs-4"><i class="fa-solid fa-rotate-right"></i></div>
+                        <h5 class="fw-bold mb-2">Reuse what you learn</h5>
+                        <p class="small text-secondary mb-0">Save links, code, and answers so the next time is faster
+                            for
+                            you and your team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Feature Grid -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-9 text-center">
+                    <h2 class="display-6 fw-bold mb-3">Everything you need to help your team</h2>
+                    <p class="text-secondary">Explore the features that help your team move fast without rebuilding
+                        your data or app stack.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/product/automated-data-dictionary/" class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">Automated Data Dictionary</h4>
+                        <p class="small text-secondary mb-0">Automatically document schemas so everyone knows what
+                            fields mean.</p>
+                    </a>
+                </div>
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/product/automated-resource-dictionary/" class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">Automated Resource Dictionary</h4>
+                        <p class="small text-secondary mb-0">Automatically index and document Sigma and Retool resources
+                            to prevent duplicate work.
+                        </p>
+                    </a>
+                </div>
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/product/data-chat-search/" class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">Data Chat & Search</h4>
+                        <p class="small text-secondary mb-0">Ask questions in plain English or search and get pointed to
+                            the right
+                            place.</p>
+                    </a>
+                </div>
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/product/instant-answers/" class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">Instant Answers</h4>
+                        <p class="small text-secondary mb-0">Get answers via Sigma or Retool, or get an instant answer
+                            via runQL.</p>
+                    </a>
+                </div>
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/product/answers-library/" class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">Answers Library</h4>
+                        <p class="small text-secondary mb-0">Turn answered questions into reusable assets for the whole
+                            team.</p>
+                    </a>
+                </div>
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="static-feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">Request Management (Optional)</h4>
+                        <p class="small text-secondary mb-0">Send questions to your team experts without losing context.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="static-feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">SQL Assistance</h4>
+                        <p class="small text-secondary mb-0">Get the SQL query you need to answer a question or for
+                            building in Retool and Sigma.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="static-feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">ERDs</h4>
+                        <p class="small text-secondary mb-0">See how tables connect so joins stop being guesswork.</p>
+                    </div>
+                </div>
+                <!-- Feature -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/product/integrations/" class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-plug"></i>
+                        </div>
+                        <h4 class="h6 fw-bold mb-2">One-Click Integrations</h4>
+                        <p class="small text-secondary mb-0">Connect your data and app stack in minutes.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="section-padding bg-subtle">
+        <div class="container text-center">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-9 text-center">
+                    <h2 class="display-6 fw-bold">Works with what you already use</h2>
+                    <p class="text-secondary">
+                        runQL integrates with your existing data and app stack.
+                    </p>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4 mb-6 justify-content-center">
+                <!-- Snowflake -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/partners/Snowflake_Logo.svg" alt="Snowflake" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Snowflake</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- BigQuery -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/google-logo-icon.svg" alt="Google BigQuery" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Google BigQuery</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Databricks -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/databricks-logo.svg" alt="Databricks" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Databricks</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Redshift -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/amazon.svg" alt="Redshift" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Redshift</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PostgreSQL -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/postgres.svg" alt="PostgreSQL" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">PostgreSQL</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MySQL -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/mysql.svg" alt="MySQL" class="img-fluid"
+                                style="max-height:90px;">
+                            <div class="mb-0 mt-1 text-muted fs-10p">MySQL</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SQL Server -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/mssql.svg" alt="SQL Server" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">SQL Server</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MS Fabric -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/microsoft-fabric.png" alt="Microsoft Fabric" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Microsoft Fabric</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Trino -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/trino.png" alt="Trino" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Trino</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Salesforce -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/salesforce.svg" alt="Salesforce" class="img-fluid"
+                                style="max-height:60px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Salesforce CRM</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- dbt -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/dbt-labs-logo.svg" alt="dbt" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">dbt</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cube -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/cube.png" alt="Cube" class="img-fluid" style="max-height:30px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Cube</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sigma -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/sigma.png" alt="Sigma" class="img-fluid"
+                                style="max-height:30px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Sigma</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Retool -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/retool.svg" alt="Retool" class="img-fluid"
+                                style="max-height:30px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Retool</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slack -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/Slack_logo.png" alt="Slack" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Slack</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Teams -->
+                <div class="col text-center">
+                    <div class="card h-100 shadow-sm border-0 py-4">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <img src="/img/integrations/microsoft-teams-logo.png" alt="Teams" class="img-fluid"
+                                style="max-height:40px;">
+                            <div class="mb-0 mt-2 text-muted fs-10p">Microsoft Teams</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <a href="/product/integrations/" class="btn btn-outline-secondary rounded-pill px-4">View all
+                    integrations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section-padding bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 text-white">When time-to-decision matters.</h2>
+            <p class="lead text-white-50 mb-5">Find where data is, understand how to use it, and get answers fast.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+                    class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+                    <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Product</h6>
+                    <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+                    <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+                    <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+                        Dictionary</a>
+                    <a href="/product/integrations/" class="footer-link">Integrations</a>
+                </div>
+                <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Resources</h6>
+                    <a href="/blog/" class="footer-link">Blog</a>
+                    <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+                        class="footer-link">Benchmark Report</a>
+                    <a href="/data-security/" class="footer-link">Security</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="/about/" class="footer-link">About</a>
+
+                    <a href="/privacy/" class="footer-link">Privacy</a>
+                    <a href="/terms-of-service/" class="footer-link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

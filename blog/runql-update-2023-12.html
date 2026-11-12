@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="canonical" href="https://cloud.runql.com/" />
+  <!-- Favicon icon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/img/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#6366f1" />
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>December 2023 Product Update: Git Import, Approved Queries, MS SQL Support & More | runQL</title>
+  <meta name="title"
+    content="December 2023 Product Update: Git Import, Approved Queries, MS SQL Support & More | runQL">
+  <meta name="description"
+    content="December 2023 brings Git import upgrades, approved query support, MSSQL compatibility, AI enhancements, and UI updates across runQL.">
+  <meta name="keywords"
+    content="runQL, Git SQL import, MS SQL support, query versioning, approved queries, query reuse, virtual query service, AI suggestions">
+  <meta name="author" content="runQL">
+  <meta property="og:title"
+    content="December 2023 Product Update: Git Import, Approved Queries, MS SQL Support & More | runQL">
+  <meta property="og:description"
+    content="December 2023 brings Git import upgrades, approved query support, MSSQL compatibility, AI enhancements, and UI updates across runQL.">
+  <meta property="og:site_name" content="runQL.com">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cloud.runql.com/blog/runql-update-2023-12.html">
+  <meta property="og:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title"
+    content="December 2023 Product Update: Git Import, Approved Queries, MS SQL Support & More | runQL">
+  <meta name="twitter:description"
+    content="December 2023 brings Git import upgrades, approved query support, MSSQL compatibility, AI enhancements, and UI updates across runQL.">
+  <meta name="twitter:image" content="https://cloud.runql.com/img/runQL-social-share.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "BlogPosting",
+     "headline": "December 2023 Product Update: Git Import, Approved Queries, MS SQL Support & More",
+     "datePublished": "2023-12-15",
+     "author": {
+       "@type": "Organization",
+       "name": "runQL"
+     },
+     "publisher": {
+       "@type": "Organization",
+       "name": "runQL",
+       "logo": {
+         "@type": "ImageObject",
+         "url": "https://cloud.runql.com/img/logo.png"
+       }
+     },
+     "description": "December 2023 brings Git import upgrades, approved query support, MSSQL compatibility, AI enhancements, and UI updates across runQL."
+   }
+   </script>
+
+
+  <script defer data-domain="cloud.runql.com" src="https://insights.runql.com/js/script.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-floating">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/img/runQL-logo.png" alt="runQL Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Product <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+            <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+              <li><a class="dropdown-item py-2" href="/product/automated-data-dictionary/">Automated
+                  Data Dictionary</a></li>
+              <li><a class="dropdown-item py-2" href="/product/automated-resource-dictionary/">Automated
+                  Resource Dictionary</a>
+              </li>
+              <li><a class="dropdown-item py-2" href="/product/data-chat-search/">Data Chat &
+                  Search</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/answers-library/">Answers Library</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/instant-answers/">Instant Answers</a></li>
+                            <!--<li><a class="dropdown-item py-2" href="/product/erd/">ERDs</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/request-management/">Request
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/product/sql-assistance/">SQL Assistance</a>
+                            </li>-->
+              <li><a class="dropdown-item py-2" href="/product/integrations/">One-Click
+                  Integrations</a></li>
+            </ul>
+          </li>
+          <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+                            <li><a class="dropdown-item py-2" href="/solutions/ai-ready-data/">AI-Ready Data</a>
+                            </li>
+                            <li><a class="dropdown-item py-2" href="/solutions/semantic-model-generation/">Semantic
+                                    Model Generation</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/data-democratization/">Data
+                                    Democratization</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/change-management/">Change
+                                    Management</a></li>
+                            <li><a class="dropdown-item py-2" href="/solutions/trust-engine/">Trust Engine</a></li>
+                        </ul>
+                    </li>-->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Resources <i class="fa-solid fa-chevron-down fa-xs ms-1"></i></a>
+            <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2">
+              <li><a class="dropdown-item py-2" href="/blog/">Blog</a></li>
+              <li><a class="dropdown-item py-2"
+                  href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html">Benchmark Report</a>
+              </li>
+              <li><a class="dropdown-item py-2" href="/data-security/">Data & Security</a></li>
+              <li><a class="dropdown-item py-2" href="/terms-of-service/">Terms of Service</a></li>
+              <li><a class="dropdown-item py-2" href="/acceptable-use/">Acceptable Use</a></li>
+              <li><a class="dropdown-item py-2" href="/privacy/">Privacy</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+            class="btn btn-sm btn-primary plausible-event-name--bookMeetingLink">Request demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="">
+    <section class="hero-section">
+      <div class="container blog-wrapper">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="blog-post">
+
+
+              <div class="text-center mb-5 mt-5">
+                <!-- <span class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small" style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span> -->
+                <h1 class="display-5 fw-bold mb-3"> December 2023 Product Updates</h1>
+
+                <div
+                  class="d-flex justify-content-center align-items-center gap-3 text-muted small text-uppercase fw-bold"
+                  style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                  <span>runQL Team</span>
+                  <span>•</span>
+                  <span></span>
+                </div>
+              </div>
+
+              <p class="mb-4">
+                This month we launched approved queries, added MS SQL support, and rolled out smarter tagging,
+                shortcuts, and confirmation prompts to reduce risk and boost efficiency. Scroll down to see what’s new
+                and what’s better.
+              </p>
+
+              <!-- December 15 -->
+              <h5 class="mt-5 mb-3 border-bottom pb-2">December 15, 2023</h5>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Git Import <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>When there are multiple queries per sql file, we now import each of them into a separate saved query.
+                  If the imported query also contains a comment then we now import that as a query description. Along
+                  with this we updated the documentation for git imports on the Admin/Documentation page.</p>
+                <ul>
+                  <li>Each SQL statement now imports as a separate saved query</li>
+                  <li>Query comments are pulled in as descriptions</li>
+                  <li>Updated Git import documentation for clarity</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Attach Database to Workspace <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Added a UI fix to make "attach a database" to a workspace more visible (like it was before we
+                  re-organized the UI). Thanks to JC for pointing out that this was missing.</p>
+                <ul>
+                  <li>Improved visibility of “Attach a database” option</li>
+                  <li>Restores UX parity from previous UI</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Manage Workspace <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Made all the Workspace admin items more visible when clicking on the menu for Manage Workspaces.</p>
+                <ul>
+                  <li>Improved discoverability of admin actions</li>
+                  <li>Streamlined access from workspace menus</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Adding Connections/Database Change <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>When adding a connection (host/port), specifying a particular database is now required. If there are
+                  multiple DBs on the same server then each one will require a separate entry. This is to support more
+                  granular security and access for organizations.</p>
+                <ul>
+                  <li>Granular access control per database</li>
+                  <li>Supports security-first org setups</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Confirmation on Delete Statement <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>When you run a delete statement you will now get a confirmation prompt... because. :-)</p>
+                <ul>
+                  <li>Prevents accidental destructive queries</li>
+                  <li>Simple safety net for analysts and devs</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Virtual Query Service <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Fixed an issue with approved queries and the virtual query service.</p>
+                <ul>
+                  <li>Ensures correct approved query execution</li>
+                  <li>Improved stability for external BI tools</li>
+                </ul>
+              </div>
+
+              <!-- December 8 -->
+              <h5 class="mt-5 mb-3 border-bottom pb-2">December 8, 2023</h5>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Approved Queries <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>Teams now have the capability to mark a query version as approved. This approved query will show up
+                  as the top query in saved queries. The approved query is the version that gets used for all queries
+                  run through the Virtual Query Service.</p>
+                <ul>
+                  <li>Enables trusted version control for queries</li>
+                  <li>Integrates with the Virtual Query Service</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Result Tabs Memory <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>We now keep the column sorting preferences, etc. when changing between result set tabs.</p>
+                <ul>
+                  <li>Preserves grid settings across tabs</li>
+                  <li>Improves multi-tab data comparison workflows</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Inviting Users to Org <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Multiple updates to invite users to orgs in the admin panel and in a workspace. Also a change to
+                  lower.</p>
+                <ul>
+                  <li>Simplified user invitation flows</li>
+                  <li>Improved reliability of magic link invites</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Tags Generation <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Update to the auto generation of tags for database, tables and columns for saved queries.</p>
+                <ul>
+                  <li>Better tagging for improved searchability</li>
+                  <li>Enables more accurate content organization</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Data Types and Charts <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Update for data types to display correctly in charts.</p>
+                <ul>
+                  <li>Fixes chart display issues</li>
+                  <li>Improves accuracy in visualizations</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Explore Tab from Saved Query <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>On the saved queries page, if you click "use query" and you already had that query open in an explore
+                  tab then the focus would not be set to the tab. This has been fixed.</p>
+                <ul>
+                  <li>Explore tab reuse now preserves context</li>
+                  <li>Reduces duplicate tab clutter</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Plan Limits for AI Queries <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Plan limits are in place for AI query generation based on the subscription plan.</p>
+                <ul>
+                  <li>Ensures compliance with tiered plans</li>
+                  <li>Supports upcoming PLG rollout</li>
+                </ul>
+              </div>
+
+              <!-- December 1 -->
+              <h5 class="mt-5 mb-3 border-bottom pb-2">December 1, 2023</h5>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">MS SQL Support <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>We now support MS SQL Server in both cloud and local installations. This in preparation for
+                  onboarding a company that uses MS SQL and MS Azure SQL.</p>
+                <ul>
+                  <li>Supports hybrid MS SQL + Azure SQL setups</li>
+                  <li>Expands compatibility with enterprise stacks</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Query to Prompt Mapping Library <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>We now automatically generate and store a non-technical question that the query answers when you save
+                  a query. This is for your organization's reuse library to get trusted answers faster for Frontline
+                  Data Professionals and eventually the rest of the organization.</p>
+                <ul>
+                  <li>Auto-mapped natural language summaries</li>
+                  <li>Improves reuse and discoverability</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Keyboard Shortcuts <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>Alt or Option + T: creates a new explore tab.<br>
+                  Alt or Option + W: closes an explore tab.<br>
+                  Enter: runs the query.</p>
+                <ul>
+                  <li>Boosts productivity with fast navigation</li>
+                  <li>Keyboard-friendly experience</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Explore Tab, Edit Saved Query Description <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">New</span>
+                </h2>
+                <p>You can now edit the AI generated description right from the explore tab. While editing the
+                  description is not often needed, this saves you from having to break out of your workflow to edit it
+                  on the saved queries page.</p>
+                <ul>
+                  <li>Inline editing speeds up iteration</li>
+                  <li>Reduces context switching</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Global Saved and Global Query History <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Speed improvements and pagination.</p>
+                <ul>
+                  <li>Improved performance for large orgs</li>
+                  <li>Easier navigation of historical queries</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Clear Suggestions When a Query is Run <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Clear the starting block suggestions when a query is run so that the focus is on the data results and
+                  the query itself.</p>
+                <ul>
+                  <li>Improves clarity in query experience</li>
+                  <li>Less visual noise</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="h3 fw-bold mb-3">Plan Limits for Workflows <span
+                    class="badge bg-primary-subtle text-primary align-middle rounded-pill px-2 py-1 small"
+                    style="background-color: rgba(51, 113, 179, 0.1); color: var(--primary-blue); font-size: 0.6em;">Update</span>
+                </h2>
+                <p>Plan limits are in place for workflows based on the subscription plan.</p>
+                <ul>
+                  <li>Support for PLG pricing strategy</li>
+                  <li>Controls feature access by tier</li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <p>— The runQL Team</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+  <!-- Bottom CTA -->
+  <section class="section-padding bg-dark text-white text-center">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-3 text-white">When time-to-decision matters.</h2>
+      <p class="lead text-white-50 mb-5">Find where data is, understand how to use it, and get answers fast.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="https://calendar.app.google/KsMCgQDqLCmWn8GT7"
+          class="btn btn-primary btn-lg  px-4 plausible-event-name--bookMeetingLink">Request demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-3">
+          <img src="/img/runQL-logo.png" alt="runQL" class="footer-logo">
+          <p class="small text-muted">&copy; 2026 runQL Inc.<br>All rights reserved.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Product</h6>
+          <a href="/product/data-chat-search/" class="footer-link">Data Chat</a>
+          <a href="/product/automated-data-dictionary/" class="footer-link">Automated Data Dictionary</a>
+          <a href="/product/automated-resource-dictionary/" class="footer-link">Automated Resource
+            Dictionary</a>
+          <a href="/product/integrations/" class="footer-link">Integrations</a>
+        </div>
+        <!--<div class="col-6 col-lg-2">
+                    <h6 class="footer-heading">Solutions</h6>
+                    <a href="/solutions/ai-ready-data/" class="footer-link">AI-Ready Data</a>
+                    <a href="/solutions/data-democratization/" class="footer-link">Democratization</a>
+                    <a href="/solutions/trust-engine/" class="footer-link">Trust Engine</a>
+                </div>-->
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Resources</h6>
+          <a href="/blog/" class="footer-link">Blog</a>
+          <a href="/reports/conversational-analytics-technical-leaders-benchmark-2025.html"
+            class="footer-link">Benchmark Report</a>
+          <a href="/data-security/" class="footer-link">Security</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Company</h6>
+          <a href="/about/" class="footer-link">About</a>
+
+          <a href="/privacy/" class="footer-link">Privacy</a>
+          <a href="/terms-of-service/" class="footer-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="/js/main.js"></script>
+
+
+  <!-- Scroll top -->
+  <div class="btn-scroll-top">
+    <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+      <path
+        d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+    </svg>
+  </div>
+</body>
+
+</html>

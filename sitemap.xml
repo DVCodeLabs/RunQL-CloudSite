@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+    <url>
+        <loc>https://cloud.runql.com/</loc>
+        <lastmod>2026-01-30T15:20:39+00:00</lastmod>
+        <priority>1.00</priority>
+    </url>
+        <url>
+        <loc>https://cloud.runql.com/product/automated-data-dictionary/</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>0.90</priority>
+    </url>
+        <url>
+        <loc>https://cloud.runql.com/product/automated-resource-dictionary/</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>0.90</priority>
+    </url>
+        <url>
+        <loc>https://cloud.runql.com/product/data-chat-search/</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://cloud.runql.com/product/answers-library/</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://cloud.runql.com/product/instant-answers/</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>0.90</priority>
+    </url>
+        <url>
+        <loc>https://cloud.runql.com/product/integrations/</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://cloud.runql.com/about/</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://cloud.runql.com/blog/</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>.80</priority>
+    </url>
+    <url>
+        <loc>https://cloud.runql.com/reports/conversational-analytics-technical-leaders-benchmark-2025.html</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>.75</priority>
+    </url>
+    <url>
+        <loc>https://cloud.runql.com/reports/conversational-analytics-business-leaders-report-2025.html</loc>
+        <lastmod>2026-01-21T15:20:39+00:00</lastmod>
+        <priority>.75</priority>
+    </url>
+</urlset>
